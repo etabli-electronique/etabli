@@ -154,7 +154,11 @@ body.dragging,body.dragging *{cursor:grabbing!important;user-select:none}
 .star[aria-pressed="true"]{color:var(--copper)}
 .hstar{color:var(--copper);font-size:14px}
 .lib-search{position:sticky;top:-10px;z-index:2;background:var(--panel);padding:2px 0 6px;margin:-2px 0 2px}
-.lib-search input{width:100%;border:1px solid var(--line);background:var(--panel-2);border-radius:8px;padding:8px 10px;font-size:14px}
+.lib-search{display:flex;gap:6px;align-items:center}
+.lib-search .lib-all{flex:none;width:38px;height:36px;border:1px solid var(--line);background:var(--panel-2);border-radius:8px;display:grid;place-items:center;color:var(--ink-2);cursor:pointer;padding:0}
+.lib-search .lib-all:hover{color:var(--copper)}
+.lib-search .lib-all svg{width:18px;height:18px}
+.lib-search input{width:100%;min-width:0;border:1px solid var(--line);background:var(--panel-2);border-radius:8px;padding:8px 10px;font-size:14px}
 .lib h3 .cat-h{all:unset;box-sizing:border-box;display:flex;align-items:center;gap:7px;width:100%;cursor:pointer;padding:2px 0;border-radius:5px}
 .lib h3 .cat-h:focus-visible{outline:2px solid var(--copper);outline-offset:2px}
 .chev{width:12px;color:var(--ink-3);font-size:12px}
@@ -287,6 +291,7 @@ dialog::backdrop{background:rgba(10,15,12,.5)}
 .dlg-h h2{margin:0;font-family:'Barlow Semi Condensed',sans-serif;font-size:21px}
 .dlg-b{padding:14px 16px;overflow:auto}
 .dlg-f{display:flex;gap:8px;justify-content:flex-end;padding:12px 16px;border-top:1px solid var(--line);flex-wrap:wrap}
+.dlg-f .dlg-left{margin-right:auto}
 .plist{list-style:none;margin:0;padding:0;display:grid;gap:6px}
 .plist li{display:flex;align-items:center;gap:8px;border:1px solid var(--line);border-radius:8px;padding:8px 10px}
 .plist li.cur{border-color:var(--copper)}
@@ -312,6 +317,16 @@ dialog.wide{width:min(1060px,96vw)}
 .aw-item[aria-pressed="true"]{border-color:var(--copper);background:var(--copper-soft)}
 .aw-item small{color:var(--ink-2);font-size:12.5px}
 .aw-r{max-height:62vh;overflow:auto}
+.aw-bench{font-size:14px;margin:0 0 8px}.aw-bench b{font-size:16px;color:var(--copper)}.aw-bench small{color:var(--ink-2);margin-left:4px}
+.aw-codes{display:grid;gap:6px;margin:0 0 6px}.aw-cg{display:flex;align-items:flex-start;gap:8px}.aw-cg .seg{flex:1;min-width:0}.awc-n{padding-top:7px}.awc-n{font-size:12px;color:var(--ink-3);width:58px;flex:none}
+.aw-codes .seg{flex-wrap:wrap}.aw-codes .seg button{position:relative;font-family:'Barlow Semi Condensed',sans-serif;font-weight:600;letter-spacing:.04em;min-width:44px}
+.awc-me{position:absolute;top:3px;right:3px;width:7px;height:7px;border-radius:50%;background:var(--copper)}
+.aw-hint{font-size:12px;margin:0 0 10px}
+.awq{border:1px solid var(--line);border-radius:8px;padding:8px 10px;margin:6px 0;background:var(--panel-2)}
+.awq.awq-ok{background:transparent;border-style:dashed}.awq.awq-ok p{margin:0}.awq.awq-ok .btn{margin-left:6px}
+.awq.awq-open{border-color:var(--copper);box-shadow:0 0 0 2px var(--copper-soft)}
+.awq p{margin:0 0 6px}.awq-v{display:grid;gap:4px;margin-bottom:6px}.awq-v button{text-align:left}.awq small{color:var(--ink-2)}.awq-c{flex-wrap:wrap}.awq-n{font-size:12.5px;margin:6px 0 0}
+.awq-cnt{font-size:12px;background:var(--copper);color:#fff;border-radius:10px;padding:1px 8px;margin-left:6px;vertical-align:middle}
 @media (max-width:760px){.aw{grid-template-columns:1fr}.aw-list{max-height:30vh}}
 .pq{width:100%;border:1px solid var(--line);background:var(--panel-2);border-radius:8px;padding:8px 10px;margin-bottom:6px}
 .slider{display:flex;align-items:center;gap:10px}
@@ -332,6 +347,63 @@ dialog.wide{width:min(1060px,96vw)}
 .pl{display:inline-grid;place-items:center;width:18px;height:18px;border-radius:50%;font:800 11px 'Barlow Semi Condensed',sans-serif;color:#15171a;vertical-align:-3px}.pl.N{background:#d4483f}.pl.S{background:#3d7bd0}
 .shm .bad{color:var(--err,#c0392b);font-weight:600}
 .shlist{display:grid;gap:2px;max-height:260px;overflow:auto;margin:6px 0}.shm{font-size:14px}
+
+/* Contact / Amélioration */
+.fb-cats{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:8px;margin:8px 0 6px}
+.fb-cat{display:grid;grid-template-columns:34px 1fr;grid-template-rows:auto auto;column-gap:8px;text-align:left;border:1px solid var(--line);background:var(--panel-2);border-radius:10px;padding:10px;cursor:pointer;color:var(--ink)}
+.fb-cat .fb-ico{grid-row:1/3;display:grid;place-items:center;width:32px;height:32px;border-radius:50%;background:var(--copper);color:#fff;font:700 16px 'Barlow',sans-serif}
+.fb-cat b{font:600 15px 'Barlow Semi Condensed',sans-serif}.fb-cat small{color:var(--ink-2);font-size:12.5px}
+.fb-cat:hover{border-color:var(--copper)}.fb-cat[aria-pressed="true"]{outline:2px solid var(--copper);outline-offset:1px;border-color:var(--copper)}
+.fb-form{margin-top:6px}.fb-f{margin:0 0 10px}.fb-f textarea,.fb-f input[type=text],.fb-f select{width:100%;box-sizing:border-box}
+.fb-f textarea{resize:vertical;min-height:84px;font:inherit}.fb-seg{flex-wrap:wrap}.fb-req{color:var(--copper)}
+.fb-two{display:grid;grid-template-columns:1fr 1fr;gap:10px}@media (max-width:640px){.fb-two{grid-template-columns:1fr}}
+.fb-chk{margin:4px 0 10px}.fb-hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
+.fb-done{text-align:center;padding:30px 10px}.fb-ok{width:56px;height:56px;border-radius:50%;background:var(--copper);color:#fff;display:grid;place-items:center;font-size:30px;margin:0 auto 12px}
+
+/* Guide utilisateur */
+dialog.guide-dlg{width:min(1120px,96vw);height:88vh}
+dialog.guide-dlg #dlgBody{display:flex;flex-direction:column;height:100%}
+dialog.guide-dlg .dlg-b{padding:0;overflow:hidden;flex:1;min-height:0;display:flex}
+.guide{display:grid;grid-template-columns:220px 1fr;width:100%;min-height:0}
+.g-toc{overflow:auto;border-right:1px solid var(--line);padding:10px 8px;display:flex;flex-direction:column;gap:2px}
+.g-toc button{all:unset;box-sizing:border-box;cursor:pointer;padding:8px 10px;border-radius:7px;font:600 14.5px/1.2 'Barlow Semi Condensed',sans-serif;color:var(--ink-2);display:flex;gap:9px;align-items:baseline}
+.g-toc button span{color:var(--copper);min-width:16px;text-align:right}
+.g-toc button:hover{color:var(--ink)}.g-toc button[aria-current="true"]{background:var(--panel-2);color:var(--ink)}
+.g-body{overflow:auto;padding:4px 26px 40px;line-height:1.55;font-size:15px}
+.g-sec{padding:16px 0 20px;border-bottom:1px solid var(--line)}.g-sec:last-child{border-bottom:0}
+.g-sec h3{font:700 21px 'Barlow Semi Condensed',sans-serif;margin:0 0 10px;display:flex;align-items:center;gap:10px}
+.g-sec h3 span{display:inline-grid;place-items:center;width:28px;height:28px;border-radius:50%;background:var(--copper);color:#fff;font-size:15px}
+.g-sec p{margin:0 0 10px}.g-ul,.g-ol{margin:0 0 10px;padding-left:22px}.g-ul li,.g-ol li{margin:0 0 6px}
+.g-sec code{font-size:13px;background:var(--panel-2);padding:1px 5px;border-radius:4px}
+.g-map{width:100%;max-width:720px;height:auto;display:block;margin:4px 0 12px}
+.g-map .g-bg{fill:var(--panel-2);stroke:var(--line)}.g-map .g-bar,.g-map .g-pan{fill:var(--panel);stroke:var(--line)}
+.g-map .g-mat{fill:#26302b}.g-map .g-pu{fill:#ece6da;stroke:#9a9384}.g-map .g-pot{fill:#d3d6d1;stroke:#7d827d}
+.g-map .g-wire{stroke:#c66a2a;stroke-width:4;fill:none;stroke-linecap:round}.g-map .g-btn{fill:var(--panel-2);stroke:var(--line)}.g-map .g-hot{fill:var(--copper);stroke:none}
+.g-map .g-dark{fill:#1c231f}.g-map .g-line{fill:var(--line)}.g-map .g-s{font:600 10px 'Barlow Semi Condensed',sans-serif;fill:var(--ink-2)}
+.g-map .g-w{fill:#d9ddd6}.g-map .g-ink{fill:#2b2118}.g-map .g-c{fill:#e7a46c}.g-map .g-t{font:700 13px 'Barlow',sans-serif;fill:var(--ink)}
+.g-map .g-n{fill:var(--copper);stroke:#fff;stroke-width:2}.g-map g>text{font:700 12px 'Barlow',sans-serif;fill:#fff}
+.g-row{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px;margin:6px 0 12px}
+.g-th{margin:0;background:#26302b;border-radius:10px;padding:8px;color:#efe9dd;text-align:center}.g-th svg{width:100%;height:86px}.g-th figcaption{font:600 12.5px 'Barlow Semi Condensed',sans-serif;margin-top:4px}
+.g-frame{display:flex;gap:26px;align-items:center;flex-wrap:wrap;margin:8px 0 14px}
+.g-fbox{position:relative;width:250px;height:150px;border:2px dashed var(--copper);border-radius:12px;background:#26302b;padding:14px 18px;box-sizing:border-box}.g-fbox>svg{width:100%;height:100%}
+.g-h{position:absolute;line-height:0}.g-h-rot{top:-15px;right:-15px}.g-h-del{bottom:-15px;left:-15px}.g-h-swap{bottom:-15px;right:-15px}
+.g-legend{list-style:none;margin:0;padding:0;display:grid;gap:8px}.g-legend li{display:flex;align-items:center;gap:8px}
+.g-ico{vertical-align:middle;overflow:visible}
+.g-wsvg{width:100%;max-width:520px;height:auto;background:#26302b;border-radius:10px;margin:4px 0 12px;display:block}
+.g-wsvg .g-term{fill:#bfc3c6;stroke:#555}.g-wsvg .g-ring{fill:none;stroke:var(--copper);stroke-width:2.5}.g-wsvg .g-wire2{stroke:#efe9dd;stroke-width:5;fill:none;stroke-linecap:round}
+.g-wsvg .g-bend{fill:#1c231f;stroke:#fff;stroke-width:2}.g-wsvg .g-s{font:600 12px 'Barlow Semi Condensed',sans-serif;fill:#d9ddd6}
+.g-scope{width:100%;max-width:420px;height:auto;background:#0f1610;border-radius:10px;margin:4px 0 12px;display:block}.g-scope line{stroke:rgba(120,200,140,.18)}.g-scope path{stroke:#7be08f;stroke-width:2;fill:none}
+.g-codes{display:flex;gap:6px;flex-wrap:wrap;margin:2px 0 12px}.g-codes span{font:700 15px 'Barlow Semi Condensed',sans-serif;letter-spacing:.05em;padding:5px 12px;border-radius:7px;background:var(--panel-2);border:1px solid var(--line)}
+.g-pole{display:inline-grid;place-items:center;width:20px;height:20px;border-radius:50%;color:#fff;font:700 11px 'Barlow',sans-serif;vertical-align:middle}.g-n2{background:#d4483f}.g-s2{background:#3d7bd0}
+.g-sec kbd{font:600 12.5px 'Barlow Semi Condensed',sans-serif;border:1px solid var(--line);border-bottom-width:2px;border-radius:5px;padding:1px 6px;background:var(--panel-2)}
+.g-keys td:first-child{white-space:nowrap}
+.g-faq dt{font-weight:700;margin:12px 0 3px}.g-faq dd{margin:0 0 4px}
+@media (max-width:900px){.guide{grid-template-columns:1fr;grid-template-rows:auto 1fr}.g-toc{flex-direction:row;overflow-x:auto;border-right:0;border-bottom:1px solid var(--line);padding:8px}.g-toc button{white-space:nowrap}.g-body{padding:4px 16px 30px}}
+.swapgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:8px;margin-top:10px}
+.swapt{display:grid;grid-template-rows:84px auto;justify-items:center;gap:4px;border:1px solid var(--line);background:#26302b;border-radius:10px;padding:8px 6px 7px;cursor:pointer;color:#efe9dd}
+.swapt svg{width:100%;height:84px}.swapt b{font:600 12.5px/1.15 'Barlow Semi Condensed',sans-serif;text-align:center}
+.swapt:hover{border-color:var(--copper)}.swapt[aria-pressed="true"]{outline:2px solid var(--copper);outline-offset:1px;border-color:var(--copper)}
+.swap-res{margin-top:10px}.swap-res p{margin:0 0 8px}
 .capstyles{display:grid;grid-template-columns:repeat(auto-fill,minmax(98px,1fr));gap:6px}
 .capst{display:grid;justify-items:center;gap:3px;border:1px solid var(--line);background:#ece6da;border-radius:8px;padding:6px 4px 5px;cursor:pointer;color:#2b2620;min-height:64px}
 .capst b{font:600 11.5px 'Barlow Semi Condensed',sans-serif;line-height:1.1;text-align:center}
@@ -455,6 +527,7 @@ body.osclock .ocrl{gap:4px}
 </style>
 </head>
 <body>
+<noscript><div style="position:fixed;inset:0;z-index:9999;display:grid;place-items:center;background:#1b201e;color:#f4ecdc;font:500 18px/1.5 'Barlow',sans-serif;padding:24px;text-align:center"><div style="max-width:520px"><b style="font-size:24px">L’établi ne peut pas démarrer ici</b><br><br>Cette page a besoin de JavaScript, que l’aperçu de l’app Fichiers (iPad, iPhone) n’exécute pas.<br>Ouvrez l’établi depuis son adresse web dans Safari, puis Partager → « Sur l’écran d’accueil ».</div></div></noscript>
 <header class="top" id="top">
   <button class="brand" id="aboutBtn" type="button" title="À propos et accueil" aria-label="À propos de l’Établi électronique">
     <svg width="26" height="26" viewBox="0 0 26 26" aria-hidden="true"><circle cx="13" cy="11" r="8" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="13" cy="11" r="2.6" fill="currentColor"/><path d="M7 20v4M13 20v4M19 20v4" stroke="var(--copper)" stroke-width="2.4" stroke-linecap="round"/></svg>
@@ -978,7 +1051,8 @@ Object.values(TYPES).forEach(T=>{if(T.cat!=='micro')return;T.fields.push({k:'che
 const LIB=[
   {cat:'micro',title:'Micros',items:[
     {label:'Simple bobinage Strat',type:'single',props:{kind:'strat'}},
-    {label:'Simple Tele',type:'single',props:{kind:'tele'}},
+    {label:'Simple Tele chevalet',type:'single',props:{kind:'tele',position:'chevalet',cover:'noir'}},
+    {label:'Simple Tele manche',type:'single',props:{kind:'tele',position:'manche',cover:'chrome',winding:'rw',magnet:'N'}},
     {label:'P90',type:'single',props:{kind:'p90'}},
     {label:'Humbucker 4 conducteurs',type:'hb4'},
     {label:'Humbucker 2 conducteurs',type:'hb2'},
@@ -1037,8 +1111,11 @@ const LIB=[
   {cat:'test',title:'Banc de test',items:[{label:'Amplificateur de test',type:'amp'}]}
 ];
 
+/* Règle d’atelier : volume en courbe audio (A, log), tonalité en linéaire (B) */
+const TAPER_RULE={volume:'A',tone:'B'},TAPER_POTS=new Set(['pot','pushpull']);
+const taperTxt=t=>t==='B'?'B (linéaire)':'A (log)';
 function makeComp(type,props,x,y){
-  const T=TYPES[type];if(type==='single'&&props)props=normPU({...props});if((type==='hb4'||type==='hb2')&&props&&'magnet' in props)props=normHB({...props});
+  const T=TYPES[type];if(TAPER_POTS.has(type)&&props&&!props.taper&&TAPER_RULE[props.role])props={...props,taper:TAPER_RULE[props.role]};if(type==='single'&&props)props=normPU({...props});if((type==='hb4'||type==='hb2')&&props&&'magnet' in props)props=normHB({...props});
   const c={id:uid('c'),type,x:x||0,y:y||0,props:{...T.defaults(),...(props||{})},state:{}};
   ctrlsOf(c).forEach(ct=>c.state[ct.key]=ct.def??0);
   if(props&&props.brand&&!props.colors&&type!=='active'){const tb=type==='hb4'?HB_BRANDS:type==='single'?SC_BRANDS:PB_BRANDS;if(tb[props.brand]&&tb[props.brand].c)c.props.colors=tb[props.brand].c.slice();}
@@ -1103,7 +1180,7 @@ function labelE(e,byId,parentOp){
   }
   const flat=[];const walk=x=>{if(x.op===e.op&&x.parts&&!isAtom(x,byId))x.parts.forEach(walk);else flat.push(x);};
   e.parts.forEach(walk);
-  const s=flat.map(p=>labelE(p,byId,e.op)).join(e.op==='S'?' + ':' ∥ ');
+  const s=flat.map(p=>labelE(p,byId,e.op)).join(e.op==='S'?' + ':' ∥ ')+(e.op==='S'&&flat.length>1?' en série':'');
   return parentOp&&parentOp!==e.op&&flat.length>1?`(${s})`:s;
 }
 
@@ -1341,6 +1418,7 @@ function staticIssues(P,rows,cur){
     const p25=pots.filter(p=>p.props.value==='25k');
     if(p25.length)add('warn','Potentiomètre de 25 kΩ avec des micros passifs','Un 25 kΩ charge très fortement un micro passif et étouffe le son.',{focus:p25[0].id,action:setPots(p25,bass?'250k':'500k')});
   }
+  pots.filter(p=>p.props.role==='tone'&&TAPER_POTS.has(p.type)&&p.props.taper==='A').forEach(p=>add('tip',`${dn(p)} : courbe linéaire (B) conseillée`,'La règle d’atelier met les tonalités en linéaire (B) : l’effet se répartit sur toute la course du bouton.',{focus:p.id,action:{label:'Passer en B (lin)',fn:()=>{p.props.taper='B';}}}));
   pots.filter(p=>p.props.role==='volume'&&p.props.taper==='B').forEach(p=>add('tip',`${dn(p)} : courbe log (A) conseillée`,'Avec une courbe linéaire, presque tout le volume se joue sur le dernier quart de la course.',{focus:p.id,action:{label:'Passer en A (log)',fn:()=>{p.props.taper='A';}}}));
   if(cur.gnd)pots.forEach(p=>{if(cur.net(p.id,'case')!==cur.gnd)add('warn',`${dn(p)} : boîtier non relié à la masse`,'Soudez le boîtier à la masse pour éviter les ronflements, même si le pot n’en a pas besoin électriquement.',{focus:p.id});});
   if(passives.length){
@@ -1372,10 +1450,13 @@ function staticIssues(P,rows,cur){
   }
   const short=rows.filter(r=>r.r.status==='short');
   if(short.length)add('error',`Court-circuit en ${short.length} position(s)`,'La sortie est reliée directement à la masse : aucun son. Vérifiez les cosses du sélecteur et du volume.');
-  const none=rows.filter(r=>r.r.status==='nosignal');
+  /* Switch de phase posé exprès : ses positions hors phase (et le centre d’un on-off-on, micro coupé) sont voulues */
+  const phSw=P.comps.filter(c=>c.props.use==='phase'),swAt=(r,c)=>r.combo?r.combo[c.id+'|sw']:undefined;
+  const none=rows.filter(r=>r.r.status==='nosignal'&&!P.comps.some(c=>(c.props.use==='phase'||c.props.use==='series')&&c.type==='mini3'&&swAt(r,c)===1));
   if(none.length&&pickups.length)add('warn',`Aucun son en ${none.length} position(s)`,(none.some(r=>r.r.resPath)?'Le signal ne passe que par la piste d’un potentiomètre : vérifiez l’ordre des cosses 1, 2 et 3. ':'Aucun micro n’arrive jusqu’au jack, ou un circuit de micro est ouvert. ')+'Positions concernées : '+none.slice(0,6).map(r=>r.label).join(' ; ')+(none.length>6?'…':'')+'. Normal seulement pour une position « off » voulue.');
   const oop=rows.filter(r=>r.r.phase);
-  if(oop.length)add('warn',`${oop.length} position(s) hors phase`,'Son creux et nasal. Parfois voulu (le son « Peter Green »), sinon inversez chaud et froid d’un des micros, ou vérifiez au testeur de polarité que bobinage et aimant sont inversés ensemble (RWRP).');
+  if(oop.length&&phSw.length&&oop.every(r=>phSw.some(c=>swAt(r,c)===(c.type==='mini3'?2:1))))add('info',`${oop.length} position(s) hors phase, voulues`,`Obtenues par ${phSw.map(c=>'« '+dn(c)+' »').join(', ')} : son creux et nasal, façon « Peter Green ». Basculez le switch pour revenir en phase.`);
+  else if(oop.length)add('warn',`${oop.length} position(s) hors phase`,'Son creux et nasal. Parfois voulu (le son « Peter Green »), sinon inversez chaud et froid d’un des micros, ou vérifiez au testeur de polarité que bobinage et aimant sont inversés ensemble (RWRP).');
   const noisy=rows.filter(r=>r.r.status==='ok'&&!r.r.phase&&r.r.hum==='Présent'&&r.r.activeCoils.size>=2&&[...r.r.activeCoils].every(k=>{const c=byId[k.split(':')[0]];return c&&c.type==='single'&&!c.props.noiseless;}));
   if(noisy.length)add('info',`Ronflement non annulé en ${noisy.length} position(s) combinée(s)`,'Les deux simples sont en phase mais bobinés dans le même sens : le bruit s’additionne. Pour l’annuler, l’un des deux doit avoir le bobinage ET l’aimant inversés (RWRP). Positions : '+noisy.slice(0,4).map(r=>r.label).join(' ; ')+(noisy.length>4?'…':'')+'.');
   if(rows.some(r=>r.r.capShort.length)&&!pots.some(p=>(p.state.lvl??10)<=0)){const cid=rows.find(r=>r.r.capShort.length).r.capShort[0];add('warn','Aigus coupés en permanence','Un condensateur relie directement le signal à la masse, même tonalité à 10. Il doit passer par les cosses 1 et 2 du potentiomètre de tonalité, pas par 2 et 3.',{focus:cid});}
@@ -1474,22 +1555,22 @@ const W_TONES2='T1.p2 C1.t1|T2.p2 C2.t1',G_TONES2='C1.t2 C2.t2 T1.case T2.case V
 const W_TONE1='V.p3 T1.p1|T1.p2 C1.t1',G_TONE1='C1.t2 T1.case V.p1 J.sleeve G.w';
 const L_ONE={B:[40,0],V:[40,340],T1:[260,340],C1:[260,580],J:[480,390],G:[680,390]};
 const RECIPES=[
-  {id:'one_hb',cfg:'Un',inst:'guitare',label:'Un humbucker, volume, tonalité',src:'Câblage Gibson standard (type Les Paul Junior HB)',
+  {id:'one_hb',std:true,cfg:'Un',inst:'guitare',label:'Un humbucker, volume, tonalité',src:'Câblage Gibson standard (type Les Paul Junior HB)',
     parts:{B:RP('hb4',{name:'Chevalet',position:'chevalet'}),...POTS_1T('500k','22n')},L:L_ONE,
     w:'B.l2 B.l3|B.l1 V.p3|V.p2 J.tip|'+W_TONE1,g:'B.l4 B.bare '+G_TONE1},
-  {id:'one_hb_vol',cfg:'Un',inst:'guitare',alt:true,label:'Un humbucker, volume seul',src:'Câblage minimal (esprit EVH)',note:'Sans tonalité : le son reste le plus brillant possible.',
+  {id:'one_hb_vol',std:true,cfg:'Un',inst:'guitare',alt:true,label:'Un humbucker, volume seul',src:'Câblage minimal (esprit EVH)',note:'Sans tonalité : le son reste le plus brillant possible.',
     parts:{B:RP('hb4',{name:'Chevalet',position:'chevalet'}),V:RP('pot',{name:'Volume',role:'volume',value:'500k'}),J:RP('jack'),G:RP('bridgegnd')},L:{B:[40,0],V:[40,340],J:[300,390],G:[500,390]},
     w:'B.l2 B.l3|B.l1 V.p3|V.p2 J.tip',g:'B.l4 B.bare V.p1 J.sleeve G.w'},
-  {id:'one_p90',cfg:'Un',inst:'guitare',label:'Un P90, volume, tonalité',src:'Câblage Gibson standard (type Les Paul Junior)',
+  {id:'one_p90',std:true,cfg:'Un',inst:'guitare',label:'Un P90, volume, tonalité',src:'Câblage Gibson standard (type Les Paul Junior)',
     parts:{B:RP('single',{name:'Chevalet',position:'chevalet',kind:'p90',brand:'generic',cover:'noir'}),...POTS_1T('500k','22n')},L:L_ONE,
     w:'B.hot V.p3|V.p2 J.tip|'+W_TONE1,g:'B.cold '+G_TONE1},
-  {id:'one_sc',cfg:'Un',inst:'guitare',label:'Un simple Tele au chevalet, volume, tonalité',src:'Esquire simplifié (sans sélecteur)',
+  {id:'one_sc',std:true,cfg:'Un',inst:'guitare',label:'Un simple Tele au chevalet, volume, tonalité',src:'Esquire simplifié (sans sélecteur)',
     parts:{B:RP('single',{name:'Chevalet',position:'chevalet',kind:'tele',cover:'noir'},15),...POTS_1T('250k','47n')},L:L_ONE,
     w:'B.hot V.p3|V.p2 J.tip|'+W_TONE1,g:'B.cold '+G_TONE1},
   {id:'mm_pass',cfg:'Un',inst:'basse',label:'Basse, un humbucker (MM) passif, volume, tonalité',src:'Câblage passif courant',
     parts:{B:RP('hb4',{name:'Chevalet',position:'chevalet',kind:'bass'}),...POTS_1T('250k','47n')},L:L_ONE,
     w:'B.l2 B.l3|B.l1 V.p3|V.p2 J.tip|'+W_TONE1,g:'B.l4 B.bare '+G_TONE1},
-  {id:'sss_fender',cfg:'SSS',inst:'guitare',label:'Strat SSS, sélecteur 5 voies',src:'Câblage Fender standard',
+  {id:'sss_fender',std:true,cfg:'SSS',inst:'guitare',label:'Strat SSS, sélecteur 5 voies',src:'Câblage Fender standard',
     parts:{...PU_SSS(),S:RP('blade5',{name:'Sélecteur 5 voies'}),...POTS_2T('250k','47n')},L:L_SSS,st:{S:{sw:2}},
     w:'B.hot S.a1|M.hot S.a2|N.hot S.a3|S.ac V.p3|V.p2 J.tip|S.a3 T1.p1|S.a2 T2.p1|'+W_TONES2,g:'N.cold M.cold B.cold '+G_TONES2},
   {id:'sss2_mega',cfg:'SSS',inst:'guitare',label:'Strat SSS, Megaswitch S',src:'Schaller, schéma SSS2',
@@ -1498,7 +1579,7 @@ const RECIPES=[
   {id:'sss1_mega',cfg:'SSS',inst:'guitare',label:'Strat SSS vintage 3 positions, Megaswitch T',src:'Schaller, schéma SSS1',
     parts:{...PU_SSS(),S:RP('megaT',{name:'Megaswitch T'}),...POTS_2T('250k','47n')},L:L_SSS,st:{S:{sw:1}},
     w:'M.hot S.m1|N.hot S.m2|B.hot S.m3|S.m4 S.m8|S.m4 V.p3|V.p2 J.tip|S.m5 T2.p1|S.m6 T1.p1|'+W_TONES2,g:'N.cold M.cold B.cold '+G_TONES2},
-  {id:'hss_pp',cfg:'HSS',inst:'guitare',label:'Strat HSS, split du humbucker par push-pull',src:'Sélecteur 5 voies standard',
+  {id:'hss_pp',std:true,cfg:'HSS',inst:'guitare',label:'Strat HSS, split du humbucker par push-pull',src:'Sélecteur 5 voies standard',
     parts:{N:RP('single',{name:'Manche',position:'manche'}),M:RP('single',{name:'Milieu',position:'milieu',winding:'rw',magnet:'N'}),B:RP('hb4',{name:'Chevalet',position:'chevalet'}),S:RP('blade5',{name:'Sélecteur 5 voies'}),
       ...POTS_2T('500k','22n'),V:RP('pushpull',{name:'Volume (split)',role:'volume',value:'500k'})},L:L_HSS,st:{S:{sw:0}},
     w:'B.l1 S.a1|M.hot S.a2|N.hot S.a3|B.l2 B.l3|B.l3 V.c1|V.b1 V.case|S.ac V.p3|V.p2 J.tip|S.a3 T1.p1|S.a2 T2.p1|'+W_TONES2,g:'N.cold M.cold B.l4 B.bare '+G_TONES2},
@@ -1517,7 +1598,7 @@ const RECIPES=[
   {id:'hsh2_mega',cfg:'HSH',inst:'guitare',label:'HSH, splits en positions 2 et 4, Megaswitch S',src:'Schaller, schéma HSH2',note:'Positions 2 et 4 : le humbucker voisin est splitté et joue en parallèle avec le micro du milieu.',
     parts:{N:RP('hb4',{name:'Manche',position:'manche'}),M:RP('single',{name:'Milieu',position:'milieu'}),B:RP('hb4',{name:'Chevalet',position:'chevalet'}),S:RP('megaS',{name:'Megaswitch S'}),...POTS_1T('500k','22n')},L:L_HSH,st:{S:{sw:1}},
     w:'M.hot S.m1|N.l1 S.m2|B.l1 S.m3|N.l2 N.l3|B.l2 B.l3|N.l3 S.m6|B.l3 S.m7|S.m4 V.p3|V.p2 J.tip|'+W_TONE1,g:'S.m5 N.l4 N.bare M.cold B.l4 B.bare '+G_TONE1},
-  {id:'tele_fender',cfg:'SS',inst:'guitare',label:'Tele, sélecteur 3 voies',src:'Câblage Fender standard',
+  {id:'tele_fender',std:true,cfg:'SS',inst:'guitare',label:'Tele, sélecteur 3 voies',src:'Câblage Fender standard',
     parts:{N:RP('single',{name:'Manche',position:'manche',kind:'tele',winding:'rw',magnet:'N',cover:'chrome'}),B:RP('single',{name:'Chevalet',position:'chevalet',kind:'tele',cover:'noir'},15),S:RP('blade3',{name:'Sélecteur 3 voies'}),...POTS_1T('250k','47n')},L:L_SS,st:{S:{sw:1}},
     w:'B.hot S.a1|S.a1 S.a2|N.hot S.b2|S.b2 S.b3|S.ac S.bc|S.ac V.p3|V.p2 J.tip|'+W_TONE1,g:'N.cold B.cold '+G_TONE1},
   {id:'ss1_mega',cfg:'SS',inst:'guitare',label:'Deux simples, 3 positions, Megaswitch T',src:'Schaller, schéma SS1',
@@ -1526,17 +1607,17 @@ const RECIPES=[
   {id:'ss2_mega',cfg:'SS',inst:'guitare',label:'Deux simples, position médiane en série, Megaswitch T',src:'Schaller, schéma SS2',note:'Le fil froid du micro chevalet passe par le switch : il ne doit pas être relié à la masse ni à la plaque du micro. Reliez la plaque à la masse par un fil séparé.',
     parts:{N:RP('single',{name:'Manche',position:'manche',kind:'tele',winding:'rw',magnet:'N',cover:'chrome'}),B:RP('single',{name:'Chevalet',position:'chevalet',kind:'tele',cover:'noir'},15),S:RP('megaT',{name:'Megaswitch T'}),...POTS_1T('250k','47n')},L:L_SS,st:{S:{sw:1}},
     w:'B.hot S.m3|S.m3 S.m1|N.hot S.m2|N.hot S.m5|B.cold S.m8|S.m4 V.p3|V.p2 J.tip|'+W_TONE1,g:'S.m7 S.m6 N.cold '+G_TONE1},
-  {id:'lp_hh',cfg:'HH',inst:'guitare',label:'Les Paul HH, 2 volumes, 2 tonalités, toggle',src:'Câblage Gibson standard',
+  {id:'lp_hh',std:true,cfg:'HH',inst:'guitare',label:'Les Paul HH, 2 volumes, 2 tonalités, toggle',src:'Câblage Gibson standard',
     parts:{N:RP('hb4',{name:'Manche',position:'manche',cover:'creme'}),B:RP('hb4',{name:'Chevalet',position:'chevalet',cover:'creme'}),S:RP('toggle3',{name:'Toggle'}),
       V:RP('pot',{name:'Volume manche',role:'volume'}),V2:RP('pot',{name:'Volume chevalet',role:'volume'}),T1:RP('pot',{name:'Tonalité manche',role:'tone'}),T2:RP('pot',{name:'Tonalité chevalet',role:'tone'}),C1:RP('cap',{value:'22n'}),C2:RP('cap',{value:'22n'}),J:RP('jack'),G:RP('bridgegnd')},
     L:{N:[40,0],B:[440,0],S:[340,340],V:[40,360],T1:[40,600],V2:[620,360],T2:[620,600],C1:[240,680],C2:[820,680],J:[870,360],G:[880,560]},st:{S:{sw:1}},
     w:'N.l2 N.l3|B.l2 B.l3|N.l1 V.p3|B.l1 V2.p3|V.p3 T1.p1|V2.p3 T2.p1|T1.p2 C1.t1|T2.p2 C2.t1|V.p2 S.n|V2.p2 S.b|S.c J.tip',g:'N.l4 N.bare B.l4 B.bare V.p1 V2.p1 V2.case T1.case T2.case C1.t2 C2.t2 S.g J.sleeve G.w'},
-  {id:'lp_split',cfg:'HH',inst:'guitare',label:'Les Paul HH, splits par push-pull sur les tonalités',src:'Variante courante 4 conducteurs',
+  {id:'lp_split',std:true,cfg:'HH',inst:'guitare',label:'Les Paul HH, splits par push-pull sur les tonalités',src:'Variante courante 4 conducteurs',
     parts:{N:RP('hb4',{name:'Manche',position:'manche',cover:'creme'}),B:RP('hb4',{name:'Chevalet',position:'chevalet',cover:'creme'}),S:RP('toggle3',{name:'Toggle'}),
       V:RP('pot',{name:'Volume manche',role:'volume'}),V2:RP('pot',{name:'Volume chevalet',role:'volume'}),T1:RP('pushpull',{name:'Tonalité manche (split)',role:'tone'}),T2:RP('pushpull',{name:'Tonalité chevalet (split)',role:'tone'}),C1:RP('cap',{value:'22n'}),C2:RP('cap',{value:'22n'}),J:RP('jack'),G:RP('bridgegnd')},
     L:{N:[40,0],B:[440,0],S:[340,340],V:[40,360],T1:[40,600],V2:[620,360],T2:[620,600],C1:[240,680],C2:[820,680],J:[870,360],G:[880,560]},st:{S:{sw:1}},
     w:'N.l2 N.l3|B.l2 B.l3|N.l3 T1.c1|B.l3 T2.c1|N.l1 V.p3|B.l1 V2.p3|V.p3 T1.p1|V2.p3 T2.p1|T1.p2 C1.t1|T2.p2 C2.t1|V.p2 S.n|V2.p2 S.b|S.c J.tip',g:'T1.b1 T2.b1 N.l4 N.bare B.l4 B.bare V.p1 V2.p1 V2.case T1.case T2.case C1.t2 C2.t2 S.g J.sleeve G.w'},
-  {id:'hh_active',cfg:'HH',inst:'guitare',label:'HH actif (EMG), 2 volumes, 1 tonalité',src:'Câblage actif courant',note:'Brochage des micros actifs à confirmer sur la notice du fabricant.',
+  {id:'hh_active',needs:'active',cfg:'HH',inst:'guitare',label:'HH actif (EMG), 2 volumes, 1 tonalité',src:'Câblage actif courant',note:'Brochage des micros actifs à confirmer sur la notice du fabricant.',
     parts:{N:RP('active',{name:'Manche',position:'manche',model:'EMG 60'}),B:RP('active',{name:'Chevalet',position:'chevalet',model:'EMG 81'}),S:RP('toggle3',{name:'Toggle'}),
       V:RP('pot',{name:'Volume manche',value:'25k'}),V2:RP('pot',{name:'Volume chevalet',value:'25k'}),T1:RP('pot',{name:'Tonalité',role:'tone',value:'25k'}),C1:RP('cap',{value:'47n'}),J:RP('jack_st'),BAT:RP('battery')},
     L:{N:[40,0],B:[440,0],S:[470,340],V:[40,360],V2:[240,360],T1:[700,360],C1:[700,580],J:[900,360],BAT:[880,580]},st:{S:{sw:1}},
@@ -1567,19 +1648,30 @@ const RECIPES=[
   {id:'pbass',cfg:'Basse',inst:'basse',label:'P-Bass, volume, tonalité',src:'Câblage Fender standard',
     parts:{PB:RP('pbass',{name:'P-Bass'}),V:RP('pot',{name:'Volume',value:'250k'}),T1:RP('pot',{name:'Tonalité',role:'tone',value:'250k'}),C1:RP('cap',{value:'47n'}),J:RP('jack'),G:RP('bridgegnd')},
     L:{PB:[40,0],V:[40,320],T1:[240,320],C1:[240,540],J:[440,350],G:[640,350]},
-    w:'PB.a2 PB.b1|PB.a1 V.p3|V.p2 J.tip|'+W_TONE1,g:'PB.b2 '+G_TONE1}
+    w:'PB.a2 PB.b1|PB.a1 V.p3|V.p2 J.tip|'+W_TONE1,g:'PB.b2 '+G_TONE1},
+  {id:'pj',cfg:'Basse',inst:'basse',label:'PJ (P-Bass au manche, Jazz au chevalet), 2 volumes, 1 tonalité',src:'Câblage Fender standard (Precision PJ)',
+    parts:{PB:RP('pbass',{name:'P-Bass',position:'manche'}),B:RP('single',{name:'Chevalet',position:'chevalet',kind:'jbass',brand:'generic',cover:'noir'}),
+      V:RP('pot',{name:'Volume P',value:'250k'}),V2:RP('pot',{name:'Volume J',value:'250k'}),T1:RP('pot',{name:'Tonalité',role:'tone',value:'250k'}),C1:RP('cap',{value:'47n'}),J:RP('jack'),G:RP('bridgegnd')},
+    L:{PB:[40,0],B:[480,0],V:[40,320],V2:[240,320],T1:[440,320],C1:[440,540],J:[660,340],G:[680,540]},
+    w:'PB.a2 PB.b1|PB.a1 V.p3|B.hot V2.p3|V.p2 V2.p2|V2.p2 J.tip|V2.p2 T1.p1|T1.p2 C1.t1',g:'PB.b2 B.cold V.p1 V2.p1 V2.case T1.case C1.t2 J.sleeve G.w'}
 ];
 const RECIPE_CFG=[['Un','Un seul micro'],['SSS','Trois simples'],['HSS','HSS'],['HSH','HSH'],['SS','Deux simples (Tele)'],['HH','Deux humbuckers'],['Basse','Basse']];
-function recipeById(id){return RECIPES.find(r=>r.id===id);}
+function recipeById(id){return RECIPES.find(r=>r.id===id)||GENR[id];}
 const FAMILY=t=>t==='jack_st'?'jack':t;
 function matchRecipe(P,R){
   const used=new Set(),map={},roles=Object.keys(R.parts);
   const preSig=c=>JSON.stringify(preChannels(c).map(ch=>ch.ins));
-  const ok=(c,sp)=>FAMILY(c.type)===FAMILY(sp.type)&&(c.type!=='preamp'||preSig(c)===preSig({props:sp.props}));
+  const ok=(c,sp)=>FAMILY(c.type)===FAMILY(sp.type)&&!(c.type==='jack'&&sp.type==='jack_st')&&(c.type!=='preamp'||preSig(c)===preSig({props:sp.props}));
   const exact=(c,sp)=>{const T=TYPES[sp.type];if(sp.type==='preamp')return c.props.model===sp.props.model;if(T.cat==='micro')return !sp.props.position||c.props.position===sp.props.position;if(T.cat==='pot')return !sp.props.role||c.props.role===sp.props.role;return c.type===sp.type;};
   for(const pass of [0,1])for(const r of roles){
     if(map[r])continue;const sp=R.parts[r];
     const c=P.comps.find(c=>!used.has(c.id)&&ok(c,sp)&&(pass||exact(c,sp)));
+    if(c){map[r]=c.id;used.add(c.id);}
+  }
+  /* Un push-pull peut tenir la place d’un potentiomètre simple (son switch reçoit ensuite un rôle) ; l’inverse est impossible */
+  for(const pass of [0,1])for(const r of roles){
+    if(map[r]||R.parts[r].type!=='pot')continue;const sp=R.parts[r];
+    const c=P.comps.find(c=>!used.has(c.id)&&c.type==='pushpull'&&(pass||!sp.props.role||c.props.role===sp.props.role));
     if(c){map[r]=c.id;used.add(c.id);}
   }
   return {map,missing:roles.filter(r=>!map[r]),unused:P.comps.filter(c=>!used.has(c.id)&&!['gndsym','bus','joint','amp','shield'].includes(c.type))};
@@ -1587,7 +1679,7 @@ function matchRecipe(P,R){
 /* Seuls les simples Fender (Strat, Tele) sont inclinés au chevalet ; humbuckers et P90 restent droits */
 const fenderSlant=c=>c.type==='single'&&['strat','tele'].includes(c.props.kind||'strat');
 function applyRecipe(P,R,o={}){
-  const {map,missing}=matchRecipe(P,R),ids=new Set(Object.values(map)),pol=[];
+  const {map,missing}=o.map?{map:{...o.map},missing:Object.keys(R.parts).filter(r=>!o.map[r])}:matchRecipe(P,R),ids=new Set(Object.values(map)),pol=[];
   if(o.replace!==false)P.wires=P.wires.filter(w=>!(ids.has(w.a.c)||ids.has(w.b.c)));
   const ox=o.ox||0,oy=o.oy||0;
   if(o.layout){const mv=Object.entries(map).map(([r,id])=>[r,P.comps.find(x=>x.id===id)]);mv.forEach(([r,c])=>{c.x=-1e6;c.y=-1e6;});mv.forEach(([r,c])=>{const [x,y]=R.L[r]||[0,0],sp=R.parts[r];if(TYPES[c.type].cat==='micro'){if(fenderSlant(c)){if(sp.rot&&!c.rot)c.rot=sp.rot;}else if(c.rot===10||c.rot===15)c.rot=0;}c.x=ox+x;c.y=oy+y;if(o.place)o.place(c,ox+x,oy+y);});}
@@ -1597,7 +1689,7 @@ function applyRecipe(P,R,o={}){
     if(TYPES[c.type].cat==='micro'&&sp.props.position)c.props.position=sp.props.position;
     /* Montage classique : le modèle fixe bobinage et aimant des simples (RWRP au milieu d’une Strat, au manche d’une Tele…) */
     if(c.type==='single'&&sp.type==='single'){const w=sp.props.winding||'std',m=sp.props.magnet||'S';if(c.props.winding!==w||c.props.magnet!==m){c.props.winding=w;c.props.magnet=m;pol.push(c.id);}}
-    if(!c.props.name&&sp.props.name)c.props.name=sp.props.name;
+    if(!c.props.name&&sp.props.name)c.props.name=sp.props.name;if(sp.props.use)c.props.use=sp.props.use;
     if(R.st&&R.st[r])Object.assign(c.state,R.st[r]);});
   const end=s=>{const [r,t]=s.split('.');return {c:map[r],t};};
   R.w.split('|').forEach(s=>{const [a,b,col]=s.trim().split(/\s+/);P.wires.push({id:uid('w'),a:end(a),b:end(b),color:col||null});});
@@ -1606,6 +1698,296 @@ function applyRecipe(P,R,o={}){
   return {map,missing,pol};
 }
 function recipeProject(R){const P={id:uid('p'),v:1,meta:{name:R.label.split(',')[0],instrument:R.inst,notes:'Câblage : '+R.label+' ('+R.src+').'},comps:[],wires:[]};applyRecipe(P,R);return P;}
+
+/* ===== Propositions de câblage selon la combinaison de micros =====
+   Code lu du chevalet vers le manche, comme « HSS » : humbucker au chevalet, simple au milieu, simple au manche.
+   H = double bobinage (humbucker 4 ou 2 conducteurs, actif) ; S = simple bobinage (Strat, Tele, P90).
+   Les schémas standard sont fabriqués pour la combinaison demandée ; les schémas spéciaux (Megaswitch…) s’y ajoutent. */
+const PU_H=new Set(['hb4','hb2','active']);
+const puLetter=c=>PU_H.has(c.type)?'H':'S';
+const POS_RANK={chevalet:0,milieu:1,manche:2};
+const GUITAR_CODES=[['H','S'],['HH','HS','SH','SS'],['HHH','HHS','HSH','HSS','SHH','SHS','SSH','SSS']];
+function guitarPickups(Pr){
+  const ps=Pr.comps.filter(c=>TYPES[c.type].cat==='micro'&&c.type!=='pbass'&&c.props.kind!=='jbass'&&c.props.kind!=='bass');
+  const distinct=new Set(ps.map(c=>c.props.position||'chevalet')).size===ps.length;
+  return ps.slice().sort((a,b)=>distinct?POS_RANK[a.props.position||'chevalet']-POS_RANK[b.props.position||'chevalet']:(b.y-a.y)||(a.x-b.x));
+}
+const benchCode=Pr=>guitarPickups(Pr).map(puLetter).join('');
+function puWord(sp){if(sp.type==='active')return 'actif';if(PU_H.has(sp.type))return 'humbucker';const k=sp.props.kind||'strat';return k==='p90'?'P90':k==='tele'?'simple Tele':k==='strat'?'simple Strat':'simple';}
+function codeDesc(code){const W={H:'humbucker',S:'simple'},P3=['chevalet','milieu','manche'],P2=['chevalet','manche'];
+  if(code.length===1)return code==='H'?'un humbucker':'un simple bobinage';
+  const ps=code.length===2?P2:P3;return [...code].map((l,i)=>`${ps[i]} ${W[l]}`).join(', ');}
+function recipeCode(R){return Object.entries(R.parts).filter(([r,sp])=>TYPES[sp.type].cat==='micro').sort((a,b)=>POS_RANK[a[1].props.position||'chevalet']-POS_RANK[b[1].props.position||'chevalet']).map(([r,sp])=>PU_H.has(sp.type)?'H':'S').join('');}
+function genParts(code,pus){
+  const roles=code.length===1?['B']:code.length===2?['B','N']:['B','M','N'];
+  const POSN={B:'chevalet',M:'milieu',N:'manche'},NAME={chevalet:'Chevalet',milieu:'Milieu',manche:'Manche'};
+  const sing=roles.filter((r,i)=>code[i]==='S'),rw=sing.length>=2?(sing.includes('M')?'M':'N'):null,parts={};
+  roles.forEach((r,i)=>{const c=pus&&pus[i],L=code[i];let type,props;
+    if(c&&puLetter(c)===L){type=c.type;props=JSON.parse(JSON.stringify(c.props));}
+    else if(L==='H'){type='hb4';props={};}
+    else{type='single';props=code==='SS'?{kind:'tele',cover:r==='N'?'chrome':'noir'}:{kind:'strat'};}
+    props.position=code.length===1?((c&&c.props.position)||'chevalet'):POSN[r];
+    if(!props.name||(c&&NAME[c.props.position]===props.name))props.name=NAME[props.position];
+    if(type==='single'){props.winding=r===rw?'rw':'std';props.magnet=r===rw?'N':'S';}
+    const slant=type==='single'&&['strat','tele'].includes(props.kind||'strat')&&props.position==='chevalet'?((props.kind||'strat')==='tele'?15:10):0;
+    parts[r]=RP(type,props,slant);});
+  return {roles,parts};
+}
+function puEnds(r,sp){switch(sp.type){
+  case 'hb4':return {hot:r+'.l1',gnd:[r+'.l4',r+'.bare'],w:[r+'.l2 '+r+'.l3'],tap:r+'.l3'};
+  case 'hb2':return {hot:r+'.hot',gnd:[r+'.shield'],w:[]};
+  case 'active':return {hot:r+'.out',gnd:[r+'.gnd'],w:[r+'.v9 BAT.pos rouge'],act:true};
+  default:return {hot:r+'.hot',gnd:[r+'.cold'],w:[]};}}
+const puStep=sp=>PU_H.has(sp.type)?300:(sp.props.kind==='tele'?(sp.props.position==='chevalet'?300:240):sp.props.kind==='p90'?250:215);
+const GENR={};
+function genRecipes(code,pus){
+  if(!/^[HS]{1,3}$/.test(code))return [];
+  const {roles,parts:PU}=genParts(code,pus),E={};roles.forEach(r=>E[r]=puEnds(r,PU[r]));
+  const n=roles.length,act=roles.some(r=>E[r].act),anyH=code.includes('H'),hb4s=roles.filter(r=>PU[r].type==='hb4');
+  const pv=act?'25k':anyH?'500k':'250k',cv='22n',cap=act?'47n':anyH?cv:'47n';
+  const pw=roles.flatMap(r=>E[r].w),pg=roles.flatMap(r=>E[r].gnd),tail=act?['BAT.neg J.ring noir']:[],gEnd=act?['J.sleeve']:['J.sleeve','G.w'];
+  const pot=(name,role,pp)=>RP(pp?'pushpull':'pot',{name,role,value:pv});
+  const fin=act?{J:RP('jack_st'),BAT:RP('battery')}:{J:RP('jack'),G:RP('bridgegnd')};
+  const name1=n===1?`Un ${puWord(PU.B)}`:code;
+  const out=[];
+  const mk=(topo,label,src,ctrl,w,g,st,note)=>{
+    /* Rangement : micros en colonne (manche en haut), commandes en ligne dessous */
+    const L={},px=n>1?600:40;let y=0;[...roles].reverse().forEach(r=>{L[r]=[px,y];y+=puStep(PU[r]);});
+    const Y=Math.max(y+30,n>1?560:0);if(ctrl.S)L.S=[40,n===3?260:300];
+    const pots=Object.keys(ctrl).filter(k=>/^(V|V2|T1|T2)$/.test(k));pots.forEach((k,i)=>{L[k]=[40+i*210,Y];});
+    ['C1','C2'].forEach((k,i)=>{if(ctrl[k]){const t=L['T'+(i+1)]||L.V;L[k]=[t[0],Y+230];}});
+    const jx=40+pots.length*210+20;L.J=[jx,Y+50];if(ctrl.G!==undefined||fin.G)L.G=[jx+220,Y+50];if(fin.BAT)L.BAT=[jx,Y+260];
+    const R={id:`g-${code}-${topo}`,gen:true,cfg:code,inst:'guitare',label,src,note,parts:{...PU,...ctrl,...fin},L,st,
+      w:[...pw,...w,...tail].join('|'),g:[...pg,...g,...gEnd].join(' ')};
+    if(R.L.G&&!R.parts.G)delete R.L.G;GENR[R.id]=R;out.push(R);};
+  const H=r=>E[r].hot;
+  if(n===1){
+    mk('vt',`${name1}, volume, tonalité`,'Câblage standard',{V:pot('Volume','volume'),T1:pot('Tonalité','tone'),C1:RP('cap',{value:cap})},[`${H('B')} V.p3`,'V.p2 J.tip','V.p3 T1.p1','T1.p2 C1.t1'],['C1.t2','T1.case','V.p1']);
+    mk('v',`${name1}, volume seul`,'Câblage minimal',{V:pot('Volume','volume')},[`${H('B')} V.p3`,'V.p2 J.tip'],['V.p1'],null,'Sans tonalité : le son reste le plus brillant possible.');
+    if(hb4s.length)mk('vt_split',`${name1}, volume, tonalité push-pull (split)`,'Variante courante 4 conducteurs',{V:pot('Volume','volume'),T1:pot('Tonalité (split)','tone',true),C1:RP('cap',{value:cap})},
+      [`${H('B')} V.p3`,'V.p2 J.tip','V.p3 T1.p1','T1.p2 C1.t1',`${E.B.tap} T1.c1`],['C1.t2','T1.case','V.p1','T1.b1'],null,'Bouton de tonalité tiré : une bobine du humbucker est court-circuitée (son de simple).');
+  }else if(n===2){
+    const b3=['S.a1 S.a2',`${H('N')} S.b2`,'S.b2 S.b3','S.ac S.bc','S.ac V.p3','V.p2 J.tip','V.p3 T1.p1','T1.p2 C1.t1'];
+    mk('blade3',`${code}, sélecteur 3 voies, volume, tonalité`,'Câblage Fender standard (type Tele)',{S:RP('blade3',{name:'Sélecteur 3 voies'}),V:pot('Volume','volume'),T1:pot('Tonalité','tone'),C1:RP('cap',{value:cap})},
+      [`${H('B')} S.a1`,...b3],['C1.t2','T1.case','V.p1'],{S:{sw:1}});
+    const tg=['V.p3 T1.p1','V2.p3 T2.p1','T1.p2 C1.t1','T2.p2 C2.t1','V.p2 S.n','V2.p2 S.b','S.c J.tip'];
+    mk('toggle',`${code}, toggle 3 voies, 2 volumes, 2 tonalités`,'Câblage Gibson standard (type Les Paul)',{S:RP('toggle3',{name:'Toggle'}),V:pot('Volume manche','volume'),T1:pot('Tonalité manche','tone'),V2:pot('Volume chevalet','volume'),T2:pot('Tonalité chevalet','tone'),C1:RP('cap',{value:cap}),C2:RP('cap',{value:cap})},
+      [`${H('N')} V.p3`,`${H('B')} V2.p3`,...tg],['V.p1','V2.p1','V2.case','T1.case','T2.case','C1.t2','C2.t2','S.g'],{S:{sw:1}});
+    if(hb4s.length){
+      mk('blade3_split',`${code}, sélecteur 3 voies, split par push-pull sur le volume`,'Variante courante 4 conducteurs',{S:RP('blade3',{name:'Sélecteur 3 voies'}),V:pot('Volume (split)','volume',true),T1:pot('Tonalité','tone'),C1:RP('cap',{value:cap})},
+        [`${H('B')} S.a1`,...b3,...hb4s.map((r,k)=>`${E[r].tap} V.c${k+1}`)],['C1.t2','T1.case','V.p1',...hb4s.map((r,k)=>'V.b'+(k+1))],{S:{sw:1}},'Volume tiré : '+(hb4s.length>1?'les humbuckers passent':'le humbucker passe')+' en simple bobinage.');
+      const ppN=PU.N.type==='hb4',ppB=PU.B.type==='hb4';
+      mk('toggle_split',`${code}, toggle, split${hb4s.length>1?'s':''} par push-pull sur ${hb4s.length>1?'les tonalités':'la tonalité'}`,'Variante courante 4 conducteurs',{S:RP('toggle3',{name:'Toggle'}),V:pot('Volume manche','volume'),T1:pot('Tonalité manche'+(ppN?' (split)':''),'tone',ppN),V2:pot('Volume chevalet','volume'),T2:pot('Tonalité chevalet'+(ppB?' (split)':''),'tone',ppB),C1:RP('cap',{value:cap}),C2:RP('cap',{value:cap})},
+        [`${H('N')} V.p3`,`${H('B')} V2.p3`,...tg,...(ppN?[`${E.N.tap} T1.c1`]:[]),...(ppB?[`${E.B.tap} T2.c1`]:[])],['V.p1','V2.p1','V2.case','T1.case','T2.case','C1.t2','C2.t2','S.g',...(ppN?['T1.b1']:[]),...(ppB?['T2.b1']:[])],{S:{sw:1}});
+    }
+  }else{
+    const b5=[`${H('B')} S.a1`,`${H('M')} S.a2`,`${H('N')} S.a3`,'S.ac V.p3','V.p2 J.tip'];
+    const t2=['S.a3 T1.p1','S.a2 T2.p1','T1.p2 C1.t1','T2.p2 C2.t1'],t2g=['C1.t2','C2.t2','T1.case','T2.case','V.p1'];
+    const sw5=RP('blade5',{name:'Sélecteur 5 voies'}),c2={T1:pot('Tonalité manche','tone'),T2:pot('Tonalité milieu','tone'),C1:RP('cap',{value:cap}),C2:RP('cap',{value:cap})};
+    mk('blade5',`${code}, sélecteur 5 voies, volume, 2 tonalités`,'Câblage Fender standard (type Strat)',{S:sw5,V:pot('Volume','volume'),...c2},[...b5,...t2],t2g,{S:{sw:2}});
+    mk('blade5_1t',`${code}, sélecteur 5 voies, volume, tonalité générale`,'Variante courante',{S:sw5,V:pot('Volume','volume'),T1:pot('Tonalité','tone'),C1:RP('cap',{value:cap})},[...b5,'V.p3 T1.p1','T1.p2 C1.t1'],['C1.t2','T1.case','V.p1'],{S:{sw:2}},'Une seule tonalité, active sur toutes les positions.');
+    if(hb4s.length&&hb4s.length<=2)mk('blade5_split',`${code}, sélecteur 5 voies, split par push-pull sur le volume`,'Sélecteur 5 voies standard',{S:sw5,V:pot('Volume (split)','volume',true),...c2},
+      [...b5,...t2,...hb4s.map((r,k)=>`${E[r].tap} V.c${k+1}`)],[...t2g,...hb4s.map((r,k)=>'V.b'+(k+1))],{S:{sw:2}},'Volume tiré : '+(hb4s.length>1?'les humbuckers passent':'le humbucker passe')+' en simple bobinage.');
+  }
+  return out;
+}
+
+/* ===== Basse : schémas fabriqués pour les micros posés (1 ou 2 micros de tout type) ===== */
+function bassPickups(Pr){const ps=Pr.comps.filter(c=>TYPES[c.type].cat==='micro');const distinct=new Set(ps.map(c=>c.props.position||'chevalet')).size===ps.length;
+  return ps.slice().sort((a,b)=>distinct?POS_RANK[a.props.position||'chevalet']-POS_RANK[b.props.position||'chevalet']:(b.y-a.y)||(a.x-b.x));}
+const bassWord=c=>c.type==='pbass'?'P':c.type==='active'?'actif':PU_H.has(c.type)?'MM':c.props.kind==='jbass'?'J':'simple';
+function bassEnds(r,sp){return sp.type==='pbass'?{hot:r+'.a1',gnd:[r+'.b2'],w:[r+'.a2 '+r+'.b1']}:puEnds(r,sp);}
+function genBass(pus){
+  if(!pus||!pus.length||pus.length>2)return [];
+  const roles=pus.length===1?['B']:['B','N'],POSN={B:'chevalet',N:'manche'},parts={},E={};
+  roles.forEach((r,i)=>{const c=pus[i],props=JSON.parse(JSON.stringify(c.props));if(pus.length>1)props.position=POSN[r];props.name=props.name||(r==='B'?'Chevalet':'Manche');parts[r]=RP(c.type,props);E[r]=bassEnds(r,parts[r]);});
+  const act=pus.some(c=>c.type==='active'),pv=act?'25k':'250k',code=[...pus].reverse().map(bassWord).join(' + ');
+  const pw=roles.flatMap(r=>E[r].w),pg=roles.flatMap(r=>E[r].gnd),tail=act?['BAT.neg J.ring noir']:[],gEnd=act?['J.sleeve']:['J.sleeve','G.w'];
+  const fin=act?{J:RP('jack_st'),BAT:RP('battery')}:{J:RP('jack'),G:RP('bridgegnd')};
+  const pot=(name,role)=>RP('pot',{name,role,value:pv}),cap=RP('cap',{value:'47n'}),out=[];
+  const mk=(topo,label,ctrl,L,w,g)=>{const R={id:`gb-${pus.map(bassWord).join('')}-${topo}`,gen:true,cfg:'Basse',inst:'basse',label,src:'Câblage standard de basse',parts:{...parts,...ctrl,...fin},L,
+      w:[...pw,...w,...tail].join('|'),g:[...pg,...g,...gEnd].join(' ')};GENR[R.id]=R;out.push(R);};
+  const LJ={J:[660,320],G:[680,520],BAT:[660,540]};
+  if(roles.length===1){
+    mk('vt',`Basse, 1 micro (${code}), volume, tonalité`,{V:pot('Volume','volume'),T1:pot('Tonalité','tone'),C1:cap},{B:[40,0],V:[40,320],T1:[240,320],C1:[240,540],...LJ},[`${E.B.hot} V.p3`,'V.p2 J.tip','V.p3 T1.p1','T1.p2 C1.t1'],['C1.t2','T1.case','V.p1']);
+  }else{
+    mk('vvt',`Basse ${code}, 2 volumes, 1 tonalité`,{V:pot('Volume manche','volume'),V2:pot('Volume chevalet','volume'),T1:pot('Tonalité','tone'),C1:cap},{N:[40,0],B:[480,0],V:[40,320],V2:[240,320],T1:[440,320],C1:[440,540],...LJ},
+      [`${E.N.hot} V.p3`,`${E.B.hot} V2.p3`,'V.p2 V2.p2','V2.p2 J.tip','V2.p2 T1.p1','T1.p2 C1.t1'],['V.p1','V2.p1','V2.case','T1.case','C1.t2']);
+    mk('vbt',`Basse ${code}, volume, balance, tonalité`,{V:pot('Volume','volume'),BAL:RP('balance',{name:'Balance',value:pv}),T1:pot('Tonalité','tone'),C1:cap},{N:[40,0],B:[480,0],V:[40,320],BAL:[240,320],T1:[440,320],C1:[440,540],...LJ},
+      [`${E.N.hot} BAL.a2`,`${E.B.hot} BAL.b2`,'BAL.a3 V.p3','BAL.b3 V.p3','V.p2 J.tip','V.p3 T1.p1','T1.p2 C1.t1'],['BAL.a1','BAL.b1','BAL.case','V.p1','T1.case','C1.t2']);
+  }
+  return out;
+}
+/* Toutes les propositions pour une combinaison : schémas standard fabriqués, puis schémas spéciaux de même combinaison */
+function proposalsFor(code,pus){
+  const allAct=pus&&pus.length&&pus.every(c=>c.type==='active');
+  return genRecipes(code,pus).concat(RECIPES.filter(R=>R.inst==='guitare'&&!R.std&&recipeCode(R)===code&&(R.needs!=='active'||allAct)));
+}
+
+/* ===== Pièces en plus : les intégrer au câblage automatique =====
+   Fonctions courantes des schémas de constructeurs (Seymour Duncan, Fender, Schaller…) :
+   split d’un humbucker, série / parallèle, inversion de phase, ajout du micro manche ou chevalet (Strat « 7 sons »),
+   coupe-son, treble bleed, tonalité du micro chevalet, blender. Chaque fonction modifie le schéma choisi. */
+const DPDT=new Set(['mini2','mini3','pushpull']);
+const POS_FR={chevalet:'chevalet',milieu:'milieu',manche:'manche'};
+function recipePickups(R){return Object.keys(R.parts).filter(r=>TYPES[R.parts[r].type].cat==='micro').sort((a,b)=>POS_RANK[R.parts[a].props.position||'chevalet']-POS_RANK[R.parts[b].props.position||'chevalet']);}
+const puLabel=(R,r)=>`${puWord(R.parts[r])} ${POS_FR[R.parts[r].props.position]||''}`.trim();
+/* Fonctions possibles pour une pièce en plus, selon le schéma choisi et ce que les autres pièces font déjà */
+function extraFuncs(R,c,others){
+  const T=c.type,out=[],W=R.w.split('|').map(x=>x.trim()),G=R.g.split(/\s+/);
+  if(R.inst!=='guitare')return out;
+  const pus=recipePickups(R),hasV=!!R.parts.V&&W.some(x=>x.split(' ').includes('V.p3')),three=pus.length===3&&hasV;
+  const taken=new Set(others.flatMap(f=>{const [a,b]=f.replace(/^pp>/,'').split(':');return a==='split'||a==='serpar'?[`ser:${b}`]:a==='phase'?[`ph:${b}`,...[]]:[`${a}:${b||''}`];}));
+  const serpar=others.map(f=>f.replace(/^pp>/,'')).filter(f=>f.startsWith('serpar:')).map(f=>f.split(':')[1]);
+  const phase=others.map(f=>f.replace(/^pp>/,'')).filter(f=>f.startsWith('phase:')).map(f=>f.split(':')[1]);
+  const hbOk=r=>R.parts[r].type==='hb4'&&W.includes(`${r}.l2 ${r}.l3`)&&!W.some(x=>x.split(' ').includes(`${r}.l3`)&&x!==`${r}.l2 ${r}.l3`);
+  const stdCold=r=>G.includes(puEnds(r,R.parts[r]).gnd[0]),allStd=pus.every(stdCold);
+  const phOk=r=>['single','hb4'].includes(R.parts[r].type)&&G.includes(R.parts[r].type==='hb4'?`${r}.l4`:`${r}.cold`);
+  const ser=others.map(f=>f.replace(/^pp>/,'')).filter(f=>f.startsWith('series:')).map(f=>f.split(':')[1]);
+  const sw=(dp)=>{const f=[];
+    pus.filter(hbOk).forEach(r=>{if(ser.includes(r))return;if(!taken.has(`ser:${r}`))f.push([`split:${r}`,`Split du ${puLabel(R,r)}`,'Levier basculé : une bobine est court-circuitée, le humbucker sonne comme un simple.']);
+      if(dp&&T!=='mini3'&&!taken.has(`ser:${r}`)&&!phase.includes(r))f.push([`serpar:${r}`,`Série / parallèle du ${puLabel(R,r)}`,'Levier basculé : les deux bobines passent en parallèle, son plus clair, toujours sans souffle.']);});
+    const nk=pus.find(r=>R.parts[r].props.position==='manche'),br=pus.find(r=>R.parts[r].props.position==='chevalet');
+    const sel=R.parts.S&&R.parts.S.type,b3=sel==='blade3'&&W.includes('S.a1 S.a2')&&dp&&T!=='mini3',b5=sel==='blade5';
+    if(T!=='spst'&&R.gen&&!R.parts.V2&&(b3||b5)&&nk&&br&&phOk(nk)&&(R.parts[nk].type!=='hb4'||(hbOk(nk)&&!taken.has(`ser:${nk}`)))&&!taken.has(`series:${nk}`)&&!phase.includes(nk))
+      f.push([`series:${nk}:${br}`,'Micros manche et chevalet en série',b3?'Levier basculé : positions milieu et manche, le manche et le chevalet jouent en série (son plus gras et plus fort, comme le mode série des Tele 4 positions) ; position chevalet inchangée.':`Levier basculé : position manche, manche + chevalet en série ; position manche + milieu, (manche + chevalet en série) ∥ milieu.${T==='mini3'?' Centre : micro manche coupé.':''}`]);
+    if(dp&&pus.length>=2)pus.filter(phOk).forEach(r=>{if(!taken.has(`ph:${r}`)&&!serpar.includes(r)&&!ser.includes(r))f.push([`phase:${r}`,`Inversion de phase du ${puLabel(R,r)}`,T==='mini3'?'Haut : normal, centre : micro coupé, bas : hors phase. Hors phase, le son se creuse quand ce micro joue avec un autre.':'Levier basculé : le micro est hors phase ; le son se creuse quand il joue avec un autre.']);});
+    if(three&&allStd)['N','B'].map(k=>pus.find(r=>R.parts[r].props.position===(k==='N'?'manche':'chevalet'))).filter(Boolean).forEach(r=>{if(!taken.has(`add:${r}`))f.push([`add:${r}`,`Ajouter le ${puLabel(R,r)} au sélecteur`,R.parts[r].props.position==='manche'?'Levier basculé : le micro manche s’ajoute en parallèle ; positions chevalet + manche et les trois micros ensemble (Strat « 7 sons »).':'Levier basculé : le micro chevalet s’ajoute en parallèle ; positions manche + chevalet et les trois micros ensemble.']);});
+    return f;};
+  if(T==='kill'){if(!taken.has('kill:'))out.push(['kill','Coupe-son (kill switch)',c.props.contact==='nc'?'Contact normalement fermé, en série dans la sortie : appuyer coupe le son.':'Appuyé, la sortie est reliée à la masse : plus aucun son.']);}
+  else if(T==='spst'||T==='mini1')out.push(...sw(false));
+  else if(T==='mini2'||T==='mini3')out.push(...sw(true));
+  else if(T==='pushpull'&&hasV&&R.parts.V.type==='pot')sw(true).forEach(([f,l,n])=>out.push([`pp>${f}`,`Remplacer « Volume » par ce push-pull : ${l.charAt(0).toLowerCase()+l.slice(1)}`,'Bouton tiré : '+n.replace(/^Levier basculé : /,'')+' L’ancien potentiomètre de volume reste sur l’établi, non câblé.']));
+  else if(T==='cap')['V','V2'].filter(v=>R.parts[v]&&W.some(x=>x.split(' ').includes(v+'.p2'))).forEach(v=>{if(!taken.has(`bleed:${v}`))out.push([`bleed:${v}`,`Treble bleed sur « ${R.parts[v].props.name||'Volume'} »`,'Entre l’entrée (cosse 3) et la sortie (cosse 2) du volume : les aigus restent quand on baisse le volume. 1 nF est la valeur courante.']);});
+  else if(T==='res')others.filter(f=>f.startsWith('bleed:')).map(f=>f.split(':')[1]).forEach(v=>{if(!taken.has(`bres:${v}`))out.push([`bres:${v}:p`,`Treble bleed sur « ${R.parts[v].props.name||'Volume'} », en parallèle du condensateur`,'Montage Kinman : 150 kΩ en parallèle de 1 nF, l’effet reste doux.'],[`bres:${v}:s`,`Treble bleed sur « ${R.parts[v].props.name||'Volume'} », en série avec le condensateur`,'Montage en série : l’effet est plus discret.']);});
+  else if((T==='pot'||T==='potmid')&&R.inst==='guitare'){
+    if(T==='pot'&&R.parts.S&&R.parts.S.type==='blade5'&&R.parts.T2&&!taken.has('btone:'))out.push(['btone','Tonalité du micro chevalet (un condensateur sera ajouté)','Le chevalet a sa propre tonalité, comme sur les Strat modernes.']);
+    if(hasV&&allStd&&pus.length>=2)pus.filter(r=>['manche','chevalet'].includes(R.parts[r].props.position)).forEach(r=>{if(!taken.has(`blend:${r}`))out.push([`blend:${r}`,`Blender : dose le ${puLabel(R,r)} en plus du sélecteur`,'Version simplifiée : cosse 3 au micro, curseur à l’entrée du volume. Tourné à fond, le micro s’ajoute en parallèle ; au minimum, il est presque coupé.']);});
+  }
+  return out;
+}
+
+/* Liaisons réelles de l’établi, par les fils seulement (sans les contacts internes des switchs, qui dépendent de leur position) */
+function wireNets(P){
+  const K=(c,t)=>c+'.'+t,uf=new UF(),byId=idx(P);
+  P.comps.forEach(c=>termsOf(c).forEach(t=>uf.add(K(c.id,t.id))));
+  P.wires.forEach(w=>{if(byId[w.a.c]&&byId[w.b.c])uf.union(K(w.a.c,w.a.t),K(w.b.c,w.b.t));});
+  const jk=P.comps.find(c=>c.type==='jack'||c.type==='jack_st');
+  if(jk)P.comps.forEach(c=>{if(c.type==='gndsym')uf.union(K(c.id,'g'),K(jk.id,'sleeve'));});
+  shieldBonds(P).forEach(([s,c,t])=>uf.union(K(s,'gnd'),K(c,t)));
+  P.comps.forEach(c=>{if(c.type==='bus'||c.type==='joint'){const r={shorts:[],res:[],caps:[],coils:[]};TYPES[c.type].internal&&TYPES[c.type].internal(c,stateOf(c,null),r);r.shorts.forEach(([a,b])=>uf.union(K(c.id,a),K(c.id,b)));}});
+  const wired=new Set();P.wires.forEach(w=>{wired.add(K(w.a.c,w.a.t));wired.add(K(w.b.c,w.b.t));});
+  return {net:(c,t)=>uf.find(K(c,t)),gnd:jk?uf.find(K(jk.id,'sleeve')):null,wired:t=>wired.has(t)};
+}
+/* Une pièce en plus est-elle déjà câblée exactement comme la fonction le demande dans ce schéma ?
+   Chaque liaison attendue avec une pièce déjà sur l’établi doit exister, et aucune de ses cosses ne doit être reliée ailleurs. */
+function modCoherent(P,c,role,eff,map,NW){
+  if(!P.wires.some(w=>w.a.c===c.id||w.b.c===c.id))return false;
+  const res=e=>{const [r,t]=e.split('.');const id=map[r];return id?[id,t]:null;},used=new Set();let checked=0;
+  for(const seg of eff.w.split('|')){const [a,b]=seg.trim().split(/\s+/);if(!a||!b)continue;if(a.split('.')[0]!==role&&b.split('.')[0]!==role)continue;
+    [a,b].forEach(e=>{if(e.split('.')[0]===role)used.add(e.split('.')[1]);});
+    const A=res(a),B=res(b);if(!A||!B)continue;checked++;if(NW.net(...A)!==NW.net(...B))return false;}
+  for(const e of eff.g.split(/\s+/)){if(e.split('.')[0]!==role)continue;used.add(e.split('.')[1]);checked++;if(!NW.gnd||NW.net(c.id,e.split('.')[1])!==NW.gnd)return false;}
+  if(!checked)return false;
+  return termsOf(c).every(t=>used.has(t.id)||!NW.wired(c.id+'.'+t.id));
+}
+/* Applique les fonctions choisies au schéma : nouvelles pièces (X1, X2…) et nouveaux fils */
+function applyMods(R,mods){
+  if(!mods.length)return {R,map:{}};
+  const W=R.w.split('|').map(x=>x.trim()).filter(Boolean),G=R.g.split(/\s+/).filter(Boolean),parts={...R.parts},L={...R.L},map={};
+  const repEnd=(from,to)=>W.forEach((x,i)=>{W[i]=x.split(/\s+/).map(e=>e===from?to:e).join(' ');});
+  const drop=seg=>{const i=W.indexOf(seg);if(i>=0)W.splice(i,1);},dropG=e=>{const i=G.indexOf(e);if(i>=0)G.splice(i,1);};
+  const ys=Object.values(L).map(v=>v[1]);let y0=(ys.length?Math.max(...ys):0)+260,xi=0;
+  const bleedRole={};
+  const order=m=>/^bres/.test(m.fn)?2:/^phase/.test(m.fn)?1:0;
+  mods.slice().sort((a,b)=>order(a)-order(b)).forEach(m=>{
+    let X=m.role,type=m.type,fn=m.fn,isPP=false;
+    const pm=fn.match(/^pp(?:@(\w+))?>(.*)$/);
+    if(pm){const r0=pm[1]||'V';fn=pm[2];X=r0;isPP=true;type='pushpull';parts[X]=RP('pushpull',{...R.parts[X].props,...(pm[1]?{}:{name:(R.parts.V.props.name||'Volume')+' (push-pull)'})});map[X]=m.id;}
+    else{map[X]=m.id;L[X]=[40+xi*210,y0];xi++;}
+    const [f,a,b]=fn.split(':'),C=type==='mini1'?['c','a','b']:type==='spst'||type==='kill'?['t1',null,'t2']:['c1','a1','b1'];
+    const nm=(n,props)=>{if(!isPP)parts[X]=RP(type,{name:n,...(props||{})});else if(props&&props.use)parts[X].props.use=props.use;};
+    if(f==='kill'){nm('Coupe-son');if(type==='kill'&&m.c&&m.c.props.contact==='nc'){repEnd('J.tip',X+'.t1');W.push(X+'.t2 J.tip');}else{W.push(`${X}.${C[0]} J.tip`);G.push(`${X}.${C[2]}`);}}
+    else if(f==='split'){nm('Split '+R.parts[a].props.position);W.push(`${a}.l3 ${X}.${C[0]}`);G.push(`${X}.${C[2]}`);}
+    else if(f==='serpar'){nm('Série / parallèle');drop(`${a}.l2 ${a}.l3`);W.push(`${a}.l2 ${X}.c1`,`${a}.l3 ${X}.c2`,`${X}.a1 ${X}.a2`,`${X}.b2 ${a}.l1`);G.push(X+'.b1');}
+    else if(f==='phase'){nm('Phase '+R.parts[a].props.position,{use:'phase'});const hb=R.parts[a].type==='hb4',hot=hb?a+'.l1':a+'.hot',cold=hb?a+'.l4':a+'.cold';
+      repEnd(hot,X+'.a1');dropG(cold);W.push(`${X}.a1 ${X}.b2`,`${X}.a2 ${X}.b1`,`${hot} ${X}.c1`,`${cold} ${X}.c2`);G.push(X+'.a2');}
+    else if(f==='series'){nm('Série manche + chevalet',{use:'series'});const cold=R.parts[a].type==='hb4'?a+'.l4':a+'.cold';dropG(cold);W.push(`${cold} ${X}.${C[0]}`,`${X}.${C[2]} ${puEnds(b,R.parts[b]).hot}`);G.push(`${X}.${C[1]}`);
+      /* Sélecteur 3 voies : le 2e pôle coupe le pont A1-A2, sinon en position milieu le chevalet relié à la sortie court-circuiterait le manche */
+      if(R.parts.S&&R.parts.S.type==='blade3'&&W.includes('S.a1 S.a2')&&DPDT.has(type)){drop('S.a1 S.a2');W.push(`S.a2 ${X}.c2`,`${X}.a2 S.a1`);}}
+    else if(f==='add'){nm('Ajout '+R.parts[a].props.position);const hot=puEnds(a,R.parts[a]).hot;W.push(`${hot} ${X}.${C[0]}`,`${X}.${C[2]} V.p3`);}
+    else if(f==='bleed'){nm('Treble bleed');W.push(`${X}.t1 ${a}.p3`,`${X}.t2 ${a}.p2`);bleedRole[a]=X;}
+    else if(f==='bres'){nm('Résistance treble bleed');const cr=bleedRole[a];if(b==='s'&&cr){drop(`${cr}.t2 ${a}.p2`);W.push(`${cr}.t2 ${X}.t1`,`${X}.t2 ${a}.p2`);}else W.push(`${X}.t1 ${a}.p3`,`${X}.t2 ${a}.p2`);}
+    else if(f==='btone'){nm('Tonalité chevalet',{role:'tone'});const cr=X+'C',bh=recipePickups(R).find(r=>R.parts[r].props.position==='chevalet');
+      parts[cr]=RP('cap',{value:(R.parts.C1&&R.parts.C1.props.value)||'47n'});L[cr]=[L[X][0],y0+230];W.push(`S.a1 ${X}.p1`,`${X}.p2 ${cr}.t1`);G.push(cr+'.t2',X+'.case');}
+    else if(f==='blend'){nm('Blender '+R.parts[a].props.position,{role:'blend'});W.push(`${X}.p3 ${puEnds(a,R.parts[a]).hot}`,`${X}.p2 V.p3`);G.push(X+'.case');}
+  });
+  return {R:{...R,parts,L,w:W.join('|'),g:G.join(' ')},map};
+}
+
+/* ===== Interchanger une pièce =====
+   Familles de pièces interchangeables, et correspondance des cosses de l’ancienne vers la nouvelle pièce. */
+const SWAP_FAMS=[
+  {k:'micro',t:['single','hb4','hb2','active','pbass'],label:'micro'},
+  {k:'pot',t:['pot','pushpull','potmid','balance'],label:'potentiomètre'},
+  {k:'sel',t:['blade3','blade5','toggle3','superswitch','megaS','megaT'],label:'sélecteur'},
+  {k:'sw',t:['mini1','mini2','mini3','spst','kill'],label:'switch'},
+  {k:'cap',t:['cap'],label:'condensateur'},{k:'res',t:['res'],label:'résistance'},
+  {k:'jack',t:['jack','jack_st'],label:'jack'},{k:'preamp',t:['preamp'],label:'préampli'}];
+const swapFam=type=>SWAP_FAMS.find(f=>f.t.includes(type));
+const SAME_TERMS=[['pot','pushpull','potmid'],['mini2','mini3'],['spst','kill'],['jack','jack_st']];
+const TERM_MAP={'single>hb4':{hot:'l1',cold:'l4'},'hb4>single':{l1:'hot',l4:'cold'},'single>hb2':{hot:'hot',cold:'shield'},'hb2>single':{hot:'hot',shield:'cold'},
+  'hb4>hb2':{l1:'hot',l4:'shield'},'hb2>hb4':{hot:'l1',shield:'l4'},'single>active':{hot:'out',cold:'gnd'},'hb4>active':{l1:'out',l4:'gnd'},'hb2>active':{hot:'out',shield:'gnd'},
+  'active>single':{out:'hot',gnd:'cold'},'active>hb4':{out:'l1',gnd:'l4'},'active>hb2':{out:'hot',gnd:'shield'},
+  'mini1>mini2':{c:'c1',a:'a1',b:'b1'},'mini1>mini3':{c:'c1',a:'a1',b:'b1'},'mini2>mini1':{c1:'c',a1:'a',b1:'b'},'mini3>mini1':{c1:'c',a1:'a',b1:'b'},
+  'spst>mini1':{t1:'c',t2:'b'},'kill>mini1':{t1:'c',t2:'b'},'mini1>spst':{c:'t1',b:'t2'},'mini1>kill':{c:'t1',b:'t2'},
+  'spst>mini2':{t1:'c1',t2:'b1'},'spst>mini3':{t1:'c1',t2:'b1'},'kill>mini2':{t1:'c1',t2:'b1'},'kill>mini3':{t1:'c1',t2:'b1'},
+  'mini2>spst':{c1:'t1',b1:'t2'},'mini3>spst':{c1:'t1',b1:'t2'},'mini2>kill':{c1:'t1',b1:'t2'},'mini3>kill':{c1:'t1',b1:'t2'}};
+function termMap(a,b){
+  const ids=new Set(termsOf(b).map(t=>t.id)),sp=TERM_MAP[a.type+'>'+b.type],same=a.type===b.type||SAME_TERMS.some(g=>g.includes(a.type)&&g.includes(b.type));
+  const M={};termsOf(a).forEach(t=>{M[t.id]=sp?(sp[t.id]||null):same&&ids.has(t.id)?t.id:null;});return M;
+}
+/* Remplace la pièce `old` par une nouvelle (type + réglages), au même endroit, et reprend les fils qui peuvent l’être */
+function swapPart(P,old,type,itemProps){
+  const T0=TYPES[old.type],T1=TYPES[type],props=JSON.parse(JSON.stringify(itemProps||{}));
+  /* Le nom décrit la place de la pièce (Chevalet, Volume…) : gardé pour les micros et potentiomètres ; un sélecteur ou un switch prend le nom de la nouvelle pièce */
+  if(old.props.name&&(T1.cat==='micro'||T1.cat==='pot'))props.name=old.props.name;
+  if(T1.cat==='micro'){if(old.props.position)props.position=old.props.position;if(old.props.strings&&!props.strings)props.strings=old.props.strings;}
+  if(T1.cat==='pot'&&T0.cat==='pot'&&old.props.role&&!['balance','potmid'].includes(type)&&!['balance','potmid'].includes(old.type))props.role=old.props.role;
+  const nc=makeComp(type,props,old.x,old.y);
+  nc.rot=(T1.cat==='micro'&&!(type==='single'&&['strat','tele'].includes(props.kind||'strat'))&&[10,15,-10,-15].includes(old.rot||0))?0:(old.rot||0);
+  const M=termMap(old,nc);let kept=0;const lostT=new Set(),wires=[];
+  P.wires.forEach(w=>{let drop=false;const nw={...w,a:{...w.a},b:{...w.b}};
+    ['a','b'].forEach(k=>{if(w[k].c===old.id){const t=M[w[k].t];if(t)nw[k]={c:nc.id,t};else{drop=true;lostT.add(w[k].t);}}});
+    if(drop)return;if(w.a.c===old.id||w.b.c===old.id)kept++;wires.push(nw);});
+  P.wires=wires;
+  /* Humbucker 4 conducteurs venant d’un micro à 2 fils : bobines reliées en série et tresse avec le fil de masse */
+  const added=[];
+  if(type==='hb4'&&old.type!=='hb4'){
+    added.push({id:uid('w'),a:{c:nc.id,t:'l2'},b:{c:nc.id,t:'l3'}});
+    const g=P.wires.find(w=>(w.a.c===nc.id&&w.a.t==='l4')||(w.b.c===nc.id&&w.b.t==='l4'));
+    if(g){const o=g.a.c===nc.id&&g.a.t==='l4'?g.b:g.a;added.push({id:uid('w'),a:{c:nc.id,t:'bare'},b:{...o}});}}
+  P.wires.push(...added);
+  const i=P.comps.indexOf(old);P.comps.splice(i,1,nc);
+  P.comps.forEach(c=>{if(c.type==='shield'&&Array.isArray(c.props.exc))c.props.exc=c.props.exc.map(id=>id===old.id?nc.id:id);});
+  /* Ce qui demande d’adapter le câblage */
+  const why=[],lbl=t=>{const x=termsOf(old).find(y=>y.id===t);return x?(x.long||x.label):t;};
+  if(lostT.size)why.push(`${lostT.size} fil${lostT.size>1?'s':''} non repris (${[...lostT].map(lbl).join(', ')})`);
+  if(T1.cat==='micro'&&T0.cat==='micro'&&PU_H.has(type)!==PU_H.has(old.type))why.push(PU_H.has(type)?'un humbucker remplace un simple : la combinaison de micros change':'un simple remplace un humbucker : la combinaison de micros change');
+  if(type==='pushpull'&&old.type!=='pushpull')why.push('le switch du push-pull n’a pas encore de rôle');
+  if(type==='active'&&old.type!=='active')why.push('le micro actif demande une pile 9 V et un jack stéréo'+(P.comps.some(x=>x.id!==nc.id&&TYPES[x.type].cat==='micro'&&x.type!=='active')?' ; les micros actifs ne se mélangent pas aux passifs, remplacez aussi les autres':''));
+  if(swapFam(type)&&swapFam(type).k==='sel'&&type!==old.type)why.push('un sélecteur différent se câble autrement');
+  if(type==='balance'&&old.type!=='balance')why.push('une balance se câble entre deux micros');
+  if(swapFam(type).k==='sw'&&type!==old.type&&P.wires.some(w=>w.a.c===nc.id||w.b.c===nc.id))why.push('le nouveau switch n’a pas les mêmes positions : son rôle est à vérifier');
+  return {nc,kept,added:added.length,why};
+}
+/* Pour « câbler sans » une pièce : retire la pièce et ses fils du schéma */
+const TONE_PAIR={T1:'C1',C1:'T1',T2:'C2',C2:'T2'},OPTIONAL_ROLES=new Set(['T1','T2','C1','C2','G']);
+function pruneRecipe(R,skip){
+  if(!skip.size)return R;const keep=e=>!skip.has(e.split('.')[0]);
+  const parts={},L={};Object.keys(R.parts).forEach(r=>{if(!skip.has(r)){parts[r]=R.parts[r];if(R.L[r])L[r]=R.L[r];}});
+  return {...R,parts,L,w:R.w.split('|').filter(seg=>seg.trim().split(/\s+/).slice(0,2).every(keep)).join('|'),g:R.g.split(/\s+/).filter(x=>x&&keep(x)).join(' ')};
+}
 
 function migrateProject(P){P.comps.forEach(c=>{c.state=c.state||{};
   if(c.type==='hb4'||c.type==='hb2'){if(!c.props.magv&&!('magnet' in c.props))c.props.magnet='N';normHB(c.props);if(!c.props.screw)c.props.screw='cold';}
@@ -1885,6 +2267,7 @@ const SVG_CSS=`
 .rothandle circle{fill:#1c231f;stroke:#fff;stroke-width:1.6}
 .rothandle path{fill:none;stroke:#fff;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
 .rothandle:hover circle{fill:#b0602a}
+.swaphandle .sq{fill:#000;stroke:none}.swaphandle path{stroke-width:1.7}
 .delhandle:hover circle,.delhandle:active circle{fill:#b8322c}
 .bendh{cursor:grab}.bendh circle{fill:rgba(28,35,31,.88);stroke:#ff9a4f;stroke-width:2}
 .bendh path{fill:none;stroke:#fff;stroke-width:1.6;stroke-linecap:round}
@@ -1937,6 +2320,11 @@ function poleRow(n,cx,cy,pitch,r,col,screw,mag){let s='';for(let i=0;i<n;i++){co
   if(screw)s+=`<circle cx="${x}" cy="${cy}" r="${(r*0.78).toFixed(1)}" fill="none" stroke="rgba(0,0,0,.4)" stroke-width="1"/><line x1="${(x-r*.95).toFixed(1)}" y1="${(cy+r*.95).toFixed(1)}" x2="${(x+r*.95).toFixed(1)}" y2="${(cy-r*.95).toFixed(1)}" stroke="rgba(255,255,255,.55)" stroke-width="1.8"/>`;
   if(mag)s+=`<text class="polel" x="${x}" y="${(cy+r*0.42).toFixed(1)}" text-anchor="middle" style="font-size:${(r*1.4).toFixed(1)}px">${mag}</text>`;
   else if(screw)s+=`<line x1="${x-r*.6}" y1="${cy}" x2="${x+r*.6}" y2="${cy}" stroke="rgba(0,0,0,.6)" stroke-width="1.4"/>`;}return s;}
+/* Fils qui sortent chacun de leur œillet (micros Tele) : [terminal, x de l’œillet, y de l’œillet, x d’arrivée] */
+function fanFrom(list,fy){let s='';const terms=list.map(([t,ex,ey,x])=>{const d=`M${ex},${ey} C${ex},${ey+16} ${x},${ey+8} ${x},${ey+28} L${x},${fy-6}`,col=COLORS[t.color]||'#888';
+  if(LIGHT.has(t.color))s+=`<path d="${d}" stroke="#55595a" stroke-width="5.6" fill="none"/>`;
+  s+=`<path d="${d}" stroke="${col}" stroke-width="3.4" fill="none"/><line x1="${x}" y1="${fy-7}" x2="${x}" y2="${fy}" stroke="#bfc3c6" stroke-width="2.4"/>`;
+  return {...t,x,y:fy,dx:0,dy:1,lx:x+6,ly:fy-15,anchor:'start',sub:true};});return {s,terms};}
 function fan(ts,ex,ey,fy,sp,sheath){
   const n=ts.length,x0=ex-(n-1)*sp/2,sy=sheath?ey+18:ey;let s='';
   if(sheath)s+=`<line x1="${ex}" y1="${ey-2}" x2="${ex}" y2="${sy}" stroke="${sheath}" stroke-width="10" stroke-linecap="round"/>`;
@@ -1954,6 +2342,7 @@ const hole=(x,y)=>`<circle cx="${x}" cy="${y}" r="2.5" fill="#fff" stroke="${MET
 const hlug=(x1,x2,y,h)=>`<rect x="${Math.min(x1,x2)}" y="${y-h/2}" width="${Math.abs(x2-x1)}" height="${h}" rx="2.5" fill="${METAL}" stroke="${METAL_S}" stroke-width="1.2"/>`;
 const PARTS={
   single(c){
+    if(c.props.kind==='tele')return PARTS._tele(c);
     const k=c.props.kind,cv=COVERS[c.props.cover]||COVERS.blanc,n=puStr(c);let W,H,rx,np,pitch;
     /* Largeur réelle : on part du modèle 6 cordes (ou 4 pour la basse) et on ajoute l’écart des plots supplémentaires */
     if(k==='jbass'){np=2*n;pitch=({4:9.6,5:8.75,6:8})[n];W=95+(np-1)*pitch-7*9.6;H=19;rx=7;}
@@ -1966,6 +2355,56 @@ const PARTS={
     if(!c.props.noiseless)art+=windMark(13,H+16,c.props.winding==='rw');
     const f=fan(termsOf(c),W*0.62,H,H+64,46,null);
     return {w:W,h:H+64+8,art:art+f.s,terms:f.terms,glow:shape,zones:[{x:0,y:0,w:W,h:H,r:rx}]};
+  },
+  /* Micros Tele : le chevalet est une bobine ovale (dessus en fibre noire) posée sur une plaque métallique à trois trous de fixation,
+     les fils sortent par deux œillets de la plaque. Le manche est un petit capot chromé sur une embase noire à deux oreilles,
+     œillets dans la languette du bas. Le dessin suit la position choisie (chevalet ou manche). Cotes en mm, version 6 cordes. */
+  _tele(c){
+    const n=puStr(c),pitch=({6:10.4,7:10,8:9.8})[n],ext=(n-1)*pitch-5*10.4,X=v=>(v*S).toFixed(1),pt=a=>a.map(([x,y])=>X(x)+','+X(y)).join(' ');
+    const bridge=(c.props.position||'chevalet')==='chevalet',m=c.props.magnet==='N'?'N':'S',pc=poleCol(m);
+    const cv=COVERS[c.props.cover]||(bridge?COVERS.noir:COVERS.chrome);
+    const poles=(cx,cy,ghost)=>`<g class="polb"${ghost?' opacity=".6"':''}><title>Aimant : pôle ${m==='N'?'nord':'sud'} côté cordes${ghost?' (plots cachés sous le capot)':''}</title>${poleRow(n,cx*S,cy*S,pitch*S,2.5*S,pc,false,m)}</g>`;
+    const eye=(x,y)=>`<circle cx="${X(x)}" cy="${X(y)}" r="${X(1.9)}" fill="#d9dcdf" stroke="#6f7479" stroke-width="1.2"/><circle cx="${X(x)}" cy="${X(y)}" r="${X(0.8)}" fill="#3a3d40"/>`;
+    const holeAt=(x,y)=>`<circle cx="${X(x)}" cy="${X(y)}" r="${X(1.7)}" fill="#f4f4f2" stroke="#4d5155" stroke-width="1.2"/>`;
+    const ts=termsOf(c);let art='',shape,zone,W,e1,e2,bot;
+    if(bridge){
+      /* Plaque d’origine (plan fourni) : acier cuivré, environ 74 × 38 mm. Sommet arrondi portant le trou du haut, deux lobes arrondis
+         sur les côtés, flancs obliques, encoche rectangulaire au milieu du bord du bas pour le passage des fils.
+         Trous taraudés 6-32 : deux en bas à 43,7 mm (1,72 po) l’un de l’autre, un en haut, 28,7 mm (1,13 po) plus haut. */
+      const PW=74+ext,k=PW/74,cx=PW/2,mx=x=>cx+(x-37)*k,bw=70+ext,bh=18,bx=cx-bw/2,by=7,hy=31.9;
+      const half=[['L',29.4,30.4],['Q',27.6,30.4,27.6,32.2],['L',27.6,38.2],['L',14.5,38.2],['Q',12,38.2,10.5,35.8],['L',0.6,17],['Q',0,11,7.5,8.2],['L',33,0.8]];
+      const f=v=>X(v),pl=[`M${f(mx(37))},${f(30.4)}`];
+      half.forEach(c=>pl.push(c[0]==='L'?`L${f(mx(c[1]))},${f(c[2])}`:`Q${f(mx(c[1]))},${f(c[2])} ${f(mx(c[3]))},${f(c[4])}`));
+      pl.push(`Q${f(mx(37))},${f(-0.4)} ${f(mx(41))},${f(0.8)}`);
+      /* moitié droite : symétrique de la gauche, parcourue en sens inverse */
+      const rev=[['L',7.5,8.2],['Q',0,11,0.6,17],['L',10.5,35.8],['Q',12,38.2,14.5,38.2],['L',27.6,38.2],['L',27.6,32.2],['Q',27.6,30.4,29.4,30.4]];
+      rev.forEach(c=>pl.push(c[0]==='L'?`L${f(mx(74-c[1]))},${f(c[2])}`:`Q${f(mx(74-c[1]))},${f(c[2])} ${f(mx(74-c[3]))},${f(c[4])}`));
+      pl.push('Z');
+      e1=[cx-5.5,27.6];e2=[cx+5.5,27.6];bot=38.2;W=PW*S;
+      art+=`<path d="${pl.join(' ')}" fill="#a3a7ab" stroke="#5f6468" stroke-width="1.5" stroke-linejoin="round"><title>Plaque de fond en acier cuivré (à relier à la masse)</title></path>`;
+      art+=holeAt(cx-21.85*k,hy)+holeAt(cx+21.85*k,hy)+holeAt(cx,hy-28.7);
+      art+=`<path d="M${X(cx-12)},${X(by+bh-1)} L${X(e1[0])},${X(e1[1])} M${X(cx+12)},${X(by+bh-1)} L${X(e2[0])},${X(e2[1])}" stroke="#b5652b" stroke-width="2" stroke-linecap="round"/>`;
+      art+=eye(...e1)+eye(...e2);
+      shape=`<rect x="${X(bx)}" y="${X(by)}" width="${X(bw)}" height="${X(bh)}" rx="${X(bh/2)}"/>`;
+      art+=`<g fill="${cv.f}" stroke="${cv.s}" stroke-width="1.6">${shape}</g>`+poles(cx,by+bh/2,false);
+      zone={x:bx*S,y:by*S,w:bw*S,h:bh*S,r:bh/2*S};
+    }else{
+      const L0=84+ext,mid=L0/2;
+      e1=[mid-5,25.5];e2=[mid+5,25.5];bot=29;W=L0*S;
+      art+=`<path d="M${X(8)},${X(3.3)} H${X(L0-8)} A${X(8)},${X(8.7)} 0 0 1 ${X(L0-8)},${X(20.7)} H${X(mid+12)} L${X(mid+8)},${X(29)} H${X(mid-8)} L${X(mid-12)},${X(20.7)} H${X(8)} A${X(8)},${X(8.7)} 0 0 1 ${X(8)},${X(3.3)} Z" fill="#232323" stroke="#5a5a5a" stroke-width="1.4"><title>Embase en fibre noire</title></path>`;
+      art+=holeAt(4.2,12)+holeAt(L0-4.2,12)+eye(...e1)+eye(...e2);
+      shape=`<rect x="${X(9)}" y="${X(4)}" width="${X(L0-18)}" height="${X(16)}" rx="${X(7.5)}"/>`;
+      const chrome=c.props.cover==='chrome'||!COVERS[c.props.cover];
+      art+=`<g fill="${cv.f}" stroke="${cv.s}" stroke-width="1.6">${shape}</g>`;
+      if(chrome)art+=`<rect x="${X(13)}" y="${X(6.2)}" width="${X(L0-26)}" height="${X(3.2)}" rx="${X(1.6)}" fill="#fff" opacity=".55"/><rect x="${X(13)}" y="${X(15.4)}" width="${X(L0-26)}" height="${X(2)}" rx="${X(1)}" fill="#7d8287" opacity=".35"/>`;
+      art+=poles(mid,12,true);
+      zone={x:9*S,y:4*S,w:(L0-18)*S,h:16*S,r:7.5*S};
+    }
+    if(!c.props.noiseless)art+=windMark(13,bot*S+16,c.props.winding==='rw');
+    const fy=bot*S+60;let fs='',terms=[];
+    if(ts.length===2){const cx=(e1[0]+e2[0])/2*S,gap=Math.max(52,(e2[0]-e1[0])*S);const f=fanFrom([[ts[0],e1[0]*S,e1[1]*S+6,cx-gap/2],[ts[1],e2[0]*S,e2[1]*S+6,cx+gap/2]],fy);fs=f.s;terms=f.terms;}
+    else{const f=fan(ts,(e1[0]+e2[0])/2*S,e1[1]*S+6,fy,46,null);fs=f.s;terms=f.terms;}
+    return {w:W,h:fy+8,art:art+fs,terms,glow:shape,zones:[zone]};
   },
   _hb(c){
     const bass=c.props.kind==='bass',act=c.type==='active',cv=COVERS[c.props.cover]||COVERS.noir;
@@ -2347,6 +2786,7 @@ function chipsSVG(c){
     if(!sh)out+=`<g class="rothandle" data-rot="${c.id}" transform="translate(${c.x+g.w+8},${c.y+LABH-4})"><title>Tourner de 45°</title><circle r="13"/><path d="M-5.5,-3.5 A6.5,6.5 0 1 1 -6,3.5" /><path class="ar" d="M-9,-6.5 L-5.5,-3.5 L-2,-7.2"/></g>`;
     /* Corbeille : coin bas gauche du cadre de sélection, symétrique de la flèche de rotation */
     const ty=sh?c.y+g.h-46:c.y+g.h-LABH+4;
+    if(!sh&&swapFam(c.type))out+=`<g class="rothandle swaphandle" data-swap="${c.id}" transform="translate(${c.x+g.w+8},${ty})"><title>Interchanger cette pièce</title><circle r="13"/><rect class="sq" x="-7.5" y="-7.5" width="15" height="15" rx="2.5"/><path d="M-4.6,-1.6 V-3.2 H4.2 M2.2,-5.4 L4.4,-3.2 L2.2,-1 M4.6,1.6 V3.2 H-4.2 M-2.2,5.4 L-4.4,3.2 L-2.2,1"/></g>`;
     out+=`<g class="rothandle delhandle" data-del="${c.id}" transform="translate(${c.x-8},${ty})"><title>Supprimer cette pièce (Suppr)</title><circle r="13"/><path d="M-6.2,-4.6 H6.2 M-2.4,-4.6 V-6.6 H2.4 V-4.6 M-4.6,-4.6 L-3.8,6.4 H3.8 L4.6,-4.6 M-1.4,-2 V4 M1.4,-2 V4"/></g>`;}
   return out;
 }
@@ -2461,6 +2901,7 @@ svg.addEventListener('pointerdown',e=>{
   if(SIM.pick&&e.button<=0){const hit=e.target.closest('.hit');if(hit){const k=SIM.pick;SIM.pick=null;setProbe(k,hit.dataset.comp+'|'+hit.dataset.term);if(tab==='osc'||tab==='mm')pane.querySelectorAll('[data-opick]').forEach(x=>x.setAttribute('aria-pressed','false'));toast('Sonde posée');return;}}
   if(e.button>0||pinch)return;
   const rh=e.target.closest('[data-rot]');if(rh){rotateComp(rh.dataset.rot,45);return;}
+  const swh=e.target.closest('[data-swap]');if(swh){openSwap(swh.dataset.swap);return;}
   const dh=e.target.closest('[data-del]');if(dh){if(sel&&sel.id===dh.dataset.del){delSel();toast('Pièce supprimée : Annuler la remet');}return;}
   const bh=e.target.closest('[data-bend]');if(bh){const w=P.wires.find(x=>x.id===bh.dataset.bend);if(w){try{svg.setPointerCapture(e.pointerId);}catch(_){}const p=toWorld(e);drag={mode:'bend',w,p0:p,b0:{...(w.bend||{x:0,y:0})},sx:e.clientX,sy:e.clientY,moved:false,snap:snap()};}return;}
   const shh=e.target.closest('[data-shh]');if(shh){const [id,k]=shh.dataset.shh.split('|'),c=byId(id);if(c){try{svg.setPointerCapture(e.pointerId);}catch(_){}drag={mode:'shres',c,k,r0:shieldRect(c),sx:e.clientX,sy:e.clientY,moved:false,snap:snap()};}return;}
@@ -2581,7 +3022,7 @@ const KW={single:'micro simple bobinage single coil strat tele',hb4:'micro humbu
   kill:'kill switch bouton poussoir coupe son',spst:'interrupteur on off',preamp:'preampli preamp actif basse bartolini delano sonar vaudoo dubbeldoo trippeldoo xpure buffer tampon egaliseur eq agmpb',cap:'condensateur condo capa tonalite treble bleed orange drop sprague 715p papier huile pio oil paper jupiter vitamin q yellow mallory mustard 150 ceramique',res:'resistance treble bleed',
   jack:'jack sortie mono',jack_st:'jack sortie stereo actif',battery:'pile 9v batterie alimentation',bus:'masse etoile bus',joint:'jonction cosse relais epissure',bridgegnd:'masse chevalet cordes',megaS:'schaller megaswitch s st s+t selecteur 5 positions',megaT:'schaller megaswitch t st s+t selecteur 3 positions',gndsym:'masse symbole etoile terre',amp:'ampli amplificateur test ecoute son oscilloscope banc'};
 LIBFLAT.forEach(it=>{it.id='b:'+it.type+':'+slug(it.label);});
-let FAVS=LS.get('etabli.favs',[]),UPARTS=LS.get('etabli.parts',[]),UTPLS=LS.get('etabli.tpls',[]),libQ='';
+let FAVS=LS.get('etabli.favs',[]).map(id=>id==='b:single:'+slug('Simple Tele')?'b:single:'+slug('Simple Tele chevalet'):id),UPARTS=LS.get('etabli.parts',[]),UTPLS=LS.get('etabli.tpls',[]),libQ='';
 const saveFavs=()=>LS.set('etabli.favs',FAVS),saveParts=()=>LS.set('etabli.parts',UPARTS),saveTpls=()=>LS.set('etabli.tpls',UTPLS);
 function libAll(){return LIBFLAT.concat(UPARTS.filter(u=>TYPES[u.type]).map(u=>({...u,cat:TYPES[u.type].cat,user:true})));}
 function libById(id){return libAll().find(x=>x.id===id);}
@@ -2612,14 +3053,20 @@ function renderLibList(){
     if(mine.length)h+=sect('mine',`<span class="dot" style="background:var(--copper)"></span>Mes pièces <small class="cnt">${mine.length}</small>`,mine.map(libRow).join(''));
     h+=LIB.map(g=>{const its=LIBFLAT.filter(x=>x.cat===g.cat);return sect(g.cat,`<span class="dot c-${g.cat}"></span>${g.title} <small class="cnt">${its.length}</small>`,its.map(libRow).join(''));}).join('');
   }
-  $('#libList').innerHTML=h;
+  $('#libList').innerHTML=h;syncLibAll();
 }
+/* Tout déplier / tout replier les catégories de la bibliothèque */
+const libKeys=()=>['fav',...(libAll().some(x=>x.user)?['mine']:[]),...LIB.map(g=>g.cat)];
+function syncLibAll(){const b=$('#libAll');if(!b)return;const open=libKeys().some(k=>!COLL.has(k));
+  b.title=open?'Tout replier':'Tout déplier';b.setAttribute('aria-label',b.title);b.hidden=!!libQ.trim();
+  b.innerHTML=open?'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 20l5-5 5 5M7 4l5 5 5-5"/></svg>':'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 15l5 5 5-5M7 9l5-5 5 5"/></svg>';}
 function renderLib(){
   if(!$('#libList')){
-    $('#lib').innerHTML=`<div class="lib-search"><input type="search" id="libQ" placeholder="Rechercher une pièce…" aria-label="Rechercher une pièce" autocomplete="off"></div><div id="libList"></div>
+    $('#lib').innerHTML=`<div class="lib-search"><input type="search" id="libQ" placeholder="Rechercher…" aria-label="Rechercher une pièce" autocomplete="off"><button class="lib-all" id="libAll" type="button"></button></div><div id="libList"></div>
     <p class="lib-note">Touchez une pièce pour la poser au centre, ou glissez-la sur l’établi. Lâchée sur un fil, elle se branche dedans.</p>
     <button class="btn small lib-manage" data-presets="1">Gérer mes préréglages</button>`;
     $('#libQ').addEventListener('input',e=>{libQ=e.target.value;renderLibList();});
+    $('#libAll').onclick=()=>{const ks=libKeys(),open=ks.some(k=>!COLL.has(k));ks.forEach(k=>open?COLL.add(k):COLL.delete(k));LS.set('etabli.libcoll',[...COLL]);renderLibList();};
     $('#libQ').addEventListener('keydown',e=>{if(e.key==='Escape'){e.target.value='';libQ='';renderLibList();}});
   }
   renderLibList();
@@ -2764,6 +3211,7 @@ addEventListener('pointercancel',e=>{if(libDrag&&!libDrag.on){libDrag=null;retur
 
 /* Inspecteur */
 function renderInsp(){
+  if(SWAP&&!(sel&&sel.kind==='comp'&&sel.id===SWAP.id))SWAP=null;
   document.querySelectorAll('.tab').forEach(t=>t.setAttribute('aria-selected',String(t.dataset.tab===tab)));
   const pane=$('#pane');
   if(document.body.classList.contains('osclock'))tab='osc';
@@ -2790,7 +3238,50 @@ function fieldHTML(obj,f,attr){
   if(f.type==='check')return `<label class="chk"><input type="checkbox" ${attr}="${f.k}"${v?' checked':''}> ${f.label}</label>`;
   return '';
 }
+/* ===== Interchanger : panneau de choix, miniatures des pièces de la même famille ===== */
+let SWAP=null;
+function openSwap(id){
+  const c=byId(id);if(!c)return;SWAP={id,res:null};sel={kind:'comp',id};tab='piece';
+  if(innerWidth<=900){if(!$('#insp').classList.contains('open'))openDrawer('insp');}else if(document.body.classList.contains('noinsp'))setNoInsp(false);
+  render();renderInsp();const pn=$('#pane');if(pn)pn.scrollTop=0;
+}
+function swapCands(c){const f=swapFam(c.type);if(!f)return [];const bass=(P.meta.instrument||'guitare')==='basse';
+  const isBassPu=it=>it.type==='pbass'||['jbass','bass'].includes((it.props||{}).kind);
+  const others=P.comps.filter(x=>x.id!==c.id&&TYPES[x.type].cat==='micro'),act=P.comps.some(x=>x.id!==c.id&&(x.type==='active'||x.type==='preamp'))||c.type==='active';
+  const nStr=others.length?puStr(others[0]):(TYPES[c.type].cat==='micro'?puStr(c):null);
+  return libAll().filter(it=>{if(!f.t.includes(it.type))return false;const pr=it.props||{};
+    if(f.k==='micro'){if(isBassPu(it)!==bass&&it.type!=='active')return false;
+      if(nStr){const t=makeComp(it.type,{...pr,...(pr.strings?{}:{strings:nStr})},0,0);if(puStr(t)!==nStr)return false;}}
+    if(f.k==='pot'){if(it.type==='balance'&&(!bass||P.comps.filter(x=>TYPES[x.type].cat==='micro').length<2))return false;if(pr.value==='25k'&&!act)return false;}
+    if(f.k==='jack'&&it.type==='jack'&&act)return false;
+    return true;});}
+function swapIsCurrent(c,it){if(c.type!==it.type)return false;return Object.entries(it.props||{}).every(([k,v])=>k==='name'||k==='position'||k==='role'||JSON.stringify(c.props[k])===JSON.stringify(v));}
+const THUMBS={};
+function partThumb(it){const k=it.type+JSON.stringify(it.props);if(THUMBS[k])return THUMBS[k];
+  const t=makeComp(it.type,JSON.parse(JSON.stringify(it.props||{})),0,0),g=geom(t),y0=LABH-4,h=Math.max(20,g.h-LABH+8);
+  return THUMBS[k]=`<svg viewBox="-6 ${y0} ${g.w+12} ${h}" preserveAspectRatio="xMidYMid meet" aria-hidden="true"><g transform="${g.artT}">${g.art}</g></svg>`;}
+function swapPane(c){
+  const T=TYPES[c.type],f=swapFam(c.type),cands=swapCands(c),r=SWAP.res;
+  const res=r?`<div class="swap-res"><p>La pièce est maintenant : <b>${esc(TYPES[c.type].name)}</b>${displayName(c)!==TYPES[c.type].name?` (« ${esc(displayName(c))} »)`:''}. ${r.kept} fil${r.kept>1?'s':''} repris${r.added?`, ${r.added} ajouté${r.added>1?'s':''} (bobines en série, tresse à la masse)`:''}.</p>
+    ${r.auto?`<div class="awq awq-ok"><p><b>Recâblé aussitôt</b> <small>selon « ${esc(r.auto)} »${r.why.filter(w=>!/non repris/.test(w)).length?` (${esc(r.why.filter(w=>!/non repris/.test(w)).join(' ; '))})`:''}.</small></p>${r.autoN>1?'<p style="margin-top:6px"><button class="btn small" data-x="swapauto">Choisir un autre schéma</button></p>':''}</div>`:r.ask?`<div class="awq"><p><b>Quelques questions à régler</b> <small>dans la fenêtre du câblage automatique (${esc(r.why.join(' ; '))}).</small> <button class="btn small" data-x="swapauto">Rouvrir</button></p></div>`:r.why.length?`<div class="awq awq-open"><p><b>Le câblage doit être adapté</b> <small>${esc(r.why.join(' ; '))}.</small></p><div class="seg awq-c awq-v"><button data-x="swapauto">Adapter avec le câblage automatique (les questions utiles vous seront posées)</button><button data-x="swapkeep">Garder tel quel, je termine à la main</button></div></div>`:'<p class="okq">Toutes les connexions ont été reprises à l’identique.</p>'}</div>`:'';
+  return `<div class="ph"><span class="dot c-${T.cat}"></span><div><h2>Interchanger « ${esc(displayName(c))} »</h2><p class="muted">${esc(T.name)} · choisissez le ${esc(f.label)} qui le remplace. Les fils sont repris quand les cosses se correspondent ; sinon, les questions nécessaires sont posées.</p></div></div>
+  ${res}<div class="swapgrid">${cands.map(it=>`<button type="button" class="swapt" data-swapto="${esc(it.id)}" aria-pressed="${swapIsCurrent(c,it)}" title="${esc(it.label)}">${partThumb(it)}<b>${esc(it.label)}</b></button>`).join('')}</div>
+  <p style="margin-top:12px"><button class="btn" data-x="swapback">Retour aux réglages de la pièce</button></p>`;
+}
+function doSwap(itId){
+  const c=byId(SWAP&&SWAP.id),it=libAll().find(x=>x.id===itId);if(!c||!it)return;
+  if(swapIsCurrent(c,it)){toast('C’est déjà cette pièce.');return;}
+  let r;commit(()=>{r=swapPart(P,c,it.type,it.props);sel={kind:'comp',id:r.nc.id};});
+  /* Le câblage doit changer : on recâble aussitôt avec le câblage automatique (schéma le plus proche de l’établi).
+     S’il reste des questions (pièce manquante, rôle d’un switch, valeur…), la fenêtre s’ouvre pour y répondre. */
+  if(r.why.length){awPrepare();const R=recipeById(AW.id);
+    if(R){const I=awIssues(R);
+      if(!I.open){applyAuto({quiet:true});r.auto=R.label;r.autoN=awList().length;}
+      else{r.ask=R.label;SWAP={id:r.nc.id,res:r};sel={kind:'comp',id:r.nc.id};renderInsp();autoDlg();return;}}}
+  SWAP={id:r.nc.id,res:r};sel={kind:'comp',id:r.nc.id};syncTop&&syncTop();render();renderInsp();const pn=$('#pane');if(pn)pn.scrollTop=0;
+}
 function paneSel(){
+  if(SWAP&&sel&&sel.kind==='comp'&&sel.id===SWAP.id){const c=byId(sel.id);if(c)return swapPane(c);}
   if(sel&&sel.kind==='comp'){const c=byId(sel.id);if(c)return compPane(c);}
   if(sel&&sel.kind==='wire'){const w=P.wires.find(x=>x.id===sel.id);if(w)return wirePane(w);}
   return overviewPane();
@@ -2914,7 +3405,7 @@ function overviewPane(){
     <label class="fld"><span>Notes d’atelier</span><textarea data-meta="notes" placeholder="Client, instrument, contraintes de cavité, demandes particulières…">${esc(P.meta.notes)}</textarea></label>
   </div>
   <h3>Prise en main</h3>
-  <p><b>Câblage auto</b> (en haut) câble tout d’un coup selon un schéma : Fender, Gibson ou Schaller Megaswitch. Il reprend les pièces déjà posées et ajoute celles qui manquent.</p>
+  <p><b>Câblage auto</b> (en haut) reconnaît la combinaison de vos micros (H, S, HS, HSS…) et propose les schémas qui lui correspondent : Fender, Gibson ou Schaller Megaswitch. Il câble avec les pièces posées sur l’établi ; s’il en manque ou s’il y en a en trop, il vous demande avant d’ajouter, de remplacer ou de supprimer quoi que ce soit.</p>
   <p>Posez une pièce depuis la bibliothèque. Tirez ensuite un fil depuis une cosse jusqu’à une autre : les cosses s’entourent de cuivre quand vous approchez.</p>
   <p>Glissez une pièce de la bibliothèque sur un fil : il s’allume en cuivre, et au relâchement l’outil propose de la brancher dans le bon sens. Un volume prend l’entrée sur la cosse 3 et la sortie sur la 2, une tonalité reçoit son condensateur vers la masse, un kill switch se place entre signal et masse. Une pièce déjà posée mais pas encore câblée se dépose de la même façon.</p>
   <p>Touchez l’étiquette noire d’un sélecteur ou d’un push-pull pour changer de position. Le trajet du signal s’allume et les micros muets pâlissent.</p>
@@ -2966,6 +3457,10 @@ function paneStock(){
 const pane=$('#pane');
 function snapLvl(c,key,v){const ct=ctrlsOf(c).find(x=>x.key===key);return ct&&ct.detent&&Math.abs(v-5)<=0.5?5:v;}
 pane.addEventListener('input',e=>{const t=e.target;if(!t.matches('[data-slide]'))return;const c=byId(sel.id);const v=snapLvl(c,t.dataset.slide,+t.value);if(v!==+t.value)t.value=v;c.state[t.dataset.slide]=v;A=analyze(P);render();const k=t.dataset.slide,o=pane.querySelector(`[data-slo="${k}"]`),x=pane.querySelector(`[data-slt="${k}"]`),ct=ctrlsOf(c).find(z=>z.key===k);if(o)o.textContent=fmtLvl(v);if(x&&ct)x.textContent=ctrlTxt(c,ct);saveSoon();});
+pane.addEventListener('click',e=>{if(tab!=='piece'||!SWAP)return;
+  const t=e.target.closest('[data-swapto]');if(t){doSwap(t.dataset.swapto);return;}
+  const x=e.target.closest('[data-x]');if(!x)return;const a=x.dataset.x;
+  if(a==='swapauto'){SWAP=null;renderInsp();autoDlg();}else if(a==='swapkeep'||a==='swapback'){SWAP=null;renderInsp();}});
 pane.addEventListener('click',e=>{const b=e.target.closest('[data-capstyle]');if(!b||tab!=='piece'||!sel)return;const c=byId(sel.id);if(c&&c.type==='cap')commit(()=>{c.props.style=b.dataset.capstyle;});});
 pane.addEventListener('keydown',e=>{const t=e.target;if(!t.matches('[data-vother]'))return;if(e.key==='Enter'){e.preventDefault();applyVOther(t);}else if(e.key==='Escape'){e.preventDefault();VEDIT=null;renderInsp();}});
 pane.addEventListener('focusin',e=>{if(e.target.matches('input[type=text],textarea'))pendingSnap=snap();});
@@ -3034,25 +3529,225 @@ new ResizeObserver(()=>document.documentElement.style.setProperty('--topH',$('#t
 const dlg=$('#dlg');
 const EKLIS_LOGO_INNER='<g transform="matrix(0,-14.0088,-14.0088,0,485.91,15.6128)"><path d="M-0.987,-0.988C-1.536,-0.988 -1.982,-0.547 -1.982,-0.002C-1.982,0.544 -1.536,0.987 -0.987,0.987C-0.438,0.987 0.007,0.544 0.007,-0.002C0.007,-0.547 -0.438,-0.988 -0.987,-0.988" style="fill-rule:nonzero;"/></g><g transform="matrix(0,-14.0088,-14.0088,0,468.94,69.8633)"><path d="M-0.987,-0.987C-1.537,-0.987 -1.983,-0.545 -1.983,0.001C-1.983,0.547 -1.537,0.987 -0.987,0.987C-0.437,0.987 0.008,0.547 0.008,0.001C0.008,-0.545 -0.437,-0.987 -0.987,-0.987" style="fill-rule:nonzero;"/></g><g transform="matrix(0,-14.0088,-14.0088,0,558.813,109.037)"><path d="M-0.987,-0.987C-1.537,-0.987 -1.983,-0.545 -1.983,0.001C-1.983,0.546 -1.537,0.987 -0.987,0.987C-0.438,0.987 0.008,0.546 0.008,0.001C0.008,-0.545 -0.438,-0.987 -0.987,-0.987" style="fill-rule:nonzero;"/></g><g transform="matrix(0,-14.0088,-14.0088,0,579.963,55.9301)"><path d="M-0.987,-0.987C-1.537,-0.987 -1.983,-0.547 -1.983,0.001C-1.983,0.546 -1.537,0.987 -0.987,0.987C-0.438,0.987 0.008,0.546 0.008,0.001C0.008,-0.547 -0.438,-0.987 -0.987,-0.987" style="fill-rule:nonzero;"/></g><g transform="matrix(14.0088,0,0,14.0088,195.47,922.191)"><path d="M0,7.404C-0.782,7.454 -1.497,7.542 -2.126,7.665C-2.667,7.768 -3.183,7.911 -3.657,8.083C-4.187,8.278 -4.497,8.559 -4.579,8.919L-4.619,9.09L-4.452,9.145C-4.237,9.216 -3.998,9.253 -3.742,9.253C-3.595,9.253 -3.439,9.24 -3.28,9.216C-2.855,9.155 -2.426,9.044 -2.005,8.885C-1.589,8.729 -1.187,8.544 -0.812,8.331C-0.442,8.126 -0.128,7.929 0.123,7.755L0.689,7.358L0,7.404ZM25.942,11.265C24.203,11.265 22.449,11.143 20.729,10.909C19.005,10.669 17.438,10.402 16.071,10.11C14.698,9.82 13.143,9.424 11.446,8.932C10.158,8.587 9.01,8.309 8.028,8.104C7.042,7.894 6.18,7.731 5.467,7.612C4.738,7.489 4.12,7.41 3.631,7.379C3.142,7.341 2.744,7.325 2.449,7.325L1.559,7.241L1.501,7.285C0.908,7.725 0.353,8.089 -0.146,8.366C-0.644,8.641 -1.117,8.858 -1.552,9.01C-1.983,9.159 -2.382,9.266 -2.738,9.325C-3.095,9.383 -3.405,9.411 -3.658,9.411C-4.476,9.411 -4.704,9.309 -4.764,9.266C-4.842,9.213 -4.935,9.126 -4.935,9.038C-4.935,8.787 -4.814,8.561 -4.568,8.348C-4.295,8.114 -3.937,7.903 -3.501,7.723C-3.061,7.54 -2.576,7.382 -2.06,7.256C-1.542,7.128 -1.046,7.02 -0.586,6.938C-0.124,6.852 0.275,6.793 0.6,6.758C1.007,6.716 1.14,6.706 1.182,6.706L1.248,6.706C1.276,6.706 1.3,6.705 1.32,6.701L1.368,6.692L1.379,6.682C1.419,6.667 1.448,6.638 1.47,6.609C2.146,6.04 2.803,5.305 3.423,4.423C4.058,3.521 4.657,2.551 5.204,1.546C5.75,0.54 6.256,-0.468 6.711,-1.454C7.129,-2.361 7.493,-3.169 7.794,-3.861C7.851,-3.843 7.919,-3.825 8,-3.796C8.191,-3.74 8.39,-3.661 8.589,-3.566C8.783,-3.47 8.966,-3.351 9.131,-3.206C9.266,-3.09 9.332,-2.96 9.332,-2.811C9.332,-2.742 9.323,-2.667 9.303,-2.585C9.286,-2.508 9.247,-2.416 9.189,-2.314C8.882,-1.824 8.532,-1.261 8.143,-0.636C7.758,-0.015 7.333,0.633 6.88,1.289C6.424,1.952 5.959,2.605 5.499,3.231C5.038,3.855 4.573,4.411 4.114,4.883C3.832,5.169 3.559,5.43 3.305,5.662C3.047,5.897 2.801,6.139 2.575,6.383L2.289,6.692L2.709,6.706C3.657,6.741 4.667,6.828 5.711,6.964C6.763,7.099 7.754,7.249 8.658,7.399C9.714,7.588 10.756,7.788 11.754,7.991C14.037,8.42 16.397,8.821 18.771,9.192C21.151,9.559 23.62,9.747 26.108,9.747C28.157,9.747 29.884,9.628 31.247,9.396C32.605,9.163 33.727,8.899 34.582,8.603C35.458,8.311 36.189,7.971 36.756,7.592C36.783,7.698 36.795,7.802 36.795,7.905C36.795,8.144 36.74,8.351 36.625,8.537C36.505,8.729 36.364,8.889 36.203,9.014C36.004,9.202 35.795,9.344 35.569,9.457C34.821,9.897 33.944,10.237 32.956,10.473C31.954,10.711 30.967,10.891 30.023,11.012C29.075,11.13 28.215,11.203 27.471,11.228C26.723,11.255 26.209,11.265 25.942,11.265" style="fill-rule:nonzero;"/></g><g transform="matrix(14.0088,0,0,14.0088,549.116,354.128)"><path d="M0,8.866C0.041,8.825 0.08,8.786 0.119,8.746C0.274,8.591 0.422,8.441 0.564,8.297C0.586,8.274 0.61,8.25 0.633,8.228C0.793,8.064 0.947,7.908 1.092,7.758C1.118,7.732 1.141,7.708 1.165,7.683C1.293,7.553 1.414,7.427 1.53,7.306C1.551,7.286 1.57,7.264 1.59,7.244C1.855,6.97 2.09,6.721 2.297,6.501C2.312,6.485 2.325,6.47 2.34,6.455C2.544,6.237 2.721,6.043 2.871,5.874C2.88,5.864 2.889,5.854 2.897,5.844C2.967,5.766 3.03,5.694 3.088,5.627C3.093,5.621 3.098,5.616 3.102,5.611C3.164,5.537 3.219,5.471 3.27,5.411C3.272,5.407 3.274,5.404 3.276,5.401C3.321,5.345 3.361,5.296 3.396,5.25C3.401,5.243 3.406,5.235 3.412,5.228C3.482,5.135 3.532,5.061 3.563,5.007C3.564,5.001 3.567,4.996 3.569,4.991C3.58,4.968 3.59,4.948 3.592,4.932C3.594,4.93 3.595,4.928 3.595,4.925C3.599,4.908 3.597,4.896 3.592,4.888C3.592,4.886 3.59,4.885 3.588,4.884C3.582,4.878 3.574,4.875 3.563,4.874C3.563,4.874 3.563,4.871 3.559,4.871L3.557,4.873C3.527,4.874 3.487,4.887 3.434,4.912C3.431,4.915 3.426,4.917 3.42,4.92C3.366,4.946 3.304,4.982 3.23,5.027C3.225,5.03 3.219,5.034 3.213,5.038C3.138,5.085 3.053,5.142 2.959,5.206C2.945,5.216 2.936,5.223 2.922,5.233C2.828,5.298 2.728,5.37 2.62,5.449C2.611,5.455 2.603,5.461 2.594,5.468C2.486,5.549 2.37,5.635 2.251,5.726C2.238,5.737 2.224,5.748 2.209,5.758C2.086,5.851 1.961,5.95 1.83,6.052C1.818,6.061 1.808,6.071 1.796,6.079C1.669,6.178 1.539,6.281 1.409,6.385C1.396,6.396 1.381,6.407 1.367,6.419C1.23,6.527 1.092,6.638 0.955,6.749C0.945,6.758 0.935,6.766 0.926,6.774C0.784,6.887 0.644,7.002 0.506,7.115C0.503,7.116 0.502,7.118 0.5,7.119C-0.232,7.717 -0.904,8.28 -1.266,8.582C-1.328,8.634 -1.379,8.678 -1.422,8.714C-1.428,8.719 -1.436,8.724 -1.441,8.729C-1.483,8.764 -1.516,8.791 -1.53,8.803C-1.938,9.126 -11.545,17.492 -16.59,27.577C-16.59,27.577 -15.241,18.804 -10.67,6.53C-8.725,1.308 -2.954,-13.129 -2.037,-15.236C-1.164,-17.246 1.284,-22.326 0.599,-23.48L-2.133,-25.279C-2.133,-25.279 -1.857,-24.978 -4.838,-16.419L-7.819,-7.859C-7.819,-7.859 -11.096,0.313 -15.229,13.622C-19.361,26.933 -18.612,33.518 -17.171,33.748L-17.137,33.748C-17.103,33.748 -17.073,33.739 -17.041,33.735C-17.006,33.732 -16.969,33.732 -16.936,33.723C-16.9,33.713 -16.869,33.695 -16.835,33.68C-16.805,33.669 -16.773,33.658 -16.746,33.641C-16.713,33.623 -16.684,33.596 -16.653,33.569C-16.627,33.548 -16.601,33.53 -16.575,33.506C-16.545,33.475 -16.516,33.432 -16.487,33.395C-16.464,33.366 -16.441,33.34 -16.418,33.307C-16.388,33.264 -16.357,33.206 -16.326,33.155C-16.307,33.119 -16.287,33.09 -16.267,33.054C-16.233,32.991 -16.197,32.914 -16.163,32.841C-16.146,32.807 -16.129,32.777 -16.113,32.741C-16.07,32.647 -16.026,32.539 -15.98,32.436C-15.969,32.411 -15.959,32.389 -15.949,32.364C-15.891,32.228 -15.831,32.082 -15.766,31.925C-15.766,31.925 -13.56,26.801 -9.485,20.582C-8.556,22.52 -6.019,27.494 -2.045,32.987C-1.207,34.145 -0.584,33.748 -0.584,33.748C-0.584,33.748 -5.043,26.449 -7.525,17.722C-5.532,14.943 -3.203,12.069 -0.559,9.428C-0.363,9.232 -0.18,9.047 0,8.866" style="fill-rule:nonzero;"/></g><g transform="matrix(14.0088,0,0,14.0088,485.31,18.5)"><path d="M0,1.946C0.538,1.946 0.973,1.51 0.973,0.973C0.973,0.436 0.538,0 0,0C-0.537,0 -0.972,0.436 -0.972,0.973C-0.972,1.51 -0.537,1.946 0,1.946" style="fill-rule:nonzero;"/></g><g transform="matrix(14.0088,0,0,14.0088,468.49,71.7713)"><path d="M0,1.945C0.538,1.945 0.971,1.51 0.971,0.972C0.971,0.435 0.538,0 0,0C-0.538,0 -0.973,0.435 -0.973,0.972C-0.973,1.51 -0.538,1.945 0,1.945" style="fill-rule:nonzero;"/></g><g transform="matrix(14.0088,0,0,14.0088,577.791,58.187)"><path d="M0,1.945C0.538,1.945 0.973,1.51 0.973,0.973C0.973,0.436 0.538,0 0,0C-0.537,0 -0.972,0.436 -0.972,0.973C-0.972,1.51 -0.537,1.945 0,1.945" style="fill-rule:nonzero;"/></g><g transform="matrix(-14.0088,0,0,14.0088,557.091,137.655)"><path d="M-0.002,-1.946C0.535,-1.946 0.972,-1.51 0.972,-0.973C0.972,-0.436 0.535,0 -0.002,0C-0.538,0 -0.974,-0.436 -0.974,-0.973C-0.974,-1.51 -0.538,-1.946 -0.002,-1.946" style="fill-rule:nonzero;"/></g><g transform="matrix(14.0088,0,0,14.0088,374.964,748.972)"><path d="M0,-28.022C0.401,-29.165 0.771,-30.199 1.106,-31.121C-0.698,-31.532 -10.765,-33.511 -14.086,-27.389C-16.142,-23.599 -13.361,-19.897 -12.903,-18.895C-12.445,-17.892 -11.481,-16.871 -13.727,-15.675C-15.973,-14.479 -29.267,-8.014 -25.233,1.25C-23.811,4.52 -19.393,5.489 -16.539,5.436C-12.407,5.359 -9.09,3.641 -7.516,2.813C-7.569,1.795 -7.537,0.627 -7.424,-0.666C-8.217,0.086 -9.954,1.537 -12.41,2.448C-15.839,3.717 -20.656,3.93 -22.198,0.051C-25.279,-7.706 -13.732,-13.505 -12.826,-13.913C-9.995,-15.192 -10.153,-16.54 -11.323,-19.366C-13.019,-23.466 -13.151,-25.877 -11.255,-27.95C-9.398,-29.982 -4.488,-30.358 0,-28.022" style="fill-rule:nonzero;"/></g><g transform="matrix(14.0088,0,0,14.0088,961.049,341.754)"><path d="M0,32.239C-5.388,32.766 -7.255,29.903 -5.978,27.718C-5.267,26.5 -4.25,25.61 -1.01,25.38C-1.01,25.38 -0.478,24.497 -1.145,24.559C-1.511,24.593 -3.007,24.583 -4.519,24.905C-2.911,22.165 0.044,18.097 2.046,15.167C2.2,15.892 2.427,16.659 2.768,17.46C4.397,21.288 8.389,31.415 0,32.239M4.876,12.657C5.153,11.397 5.342,10.962 4.592,10.152C3.841,9.341 3.054,8.707 3.054,8.707C2.141,8.137 1.831,8.899 1.923,9.693C1.948,9.904 1.903,10.282 1.857,10.791C0.39,13.608 -3.093,20.284 -5.757,25.259C-6.536,25.55 -7.232,25.966 -7.661,26.573C-8.251,27.411 -8.466,28.618 -8.253,29.835C-8.538,30.341 -8.769,30.731 -8.929,30.985C-9.642,32.114 -12.993,33.66 -15.507,32.19C-17.54,31.005 -17.559,27.745 -16.354,25.286C-14.975,22.63 -13.405,19.757 -11.915,17.126C-11.62,16.604 -10.321,13.9 -10.405,13.384C-10.405,13.384 -11.929,12.352 -12.991,11.543C-12.991,11.543 -13.206,12.604 -13.653,13.7C-15.288,17.711 -19.395,26.94 -20.372,28.646C-22.132,31.723 -24.438,32.942 -26.203,32.583C-28.196,32.178 -28.659,30.754 -27.544,27.179C-26.427,23.608 -24.784,19.354 -22.767,14.363C-20.22,8.063 -15.943,0.195 -16.688,-1.994L-19.233,-3.81C-19.233,-3.81 -19.686,-0.685 -21.6,4.298C-21.6,4.298 -24.828,13.127 -27.878,21.666C-28.972,24.731 -30.39,29.157 -29.803,31.823C-29.254,34.313 -26.319,35.108 -23.794,34.2C-21.711,33.447 -19.626,31.586 -18.66,29.88C-18.403,31.512 -17.466,34.634 -14.063,34.497C-11.7,34.403 -9.954,33.807 -7.927,30.964C-7.509,31.982 -6.764,32.925 -5.644,33.557C-3.164,34.96 5.05,36.049 7.165,28.725C9.278,21.401 4.601,13.918 4.876,12.657" style="fill-rule:nonzero;"/></g><g transform="matrix(14.0088,0,0,14.0088,821.782,443.589)"><path d="M0,3.811C1.052,3.811 1.905,2.958 1.905,1.905C1.905,0.853 1.052,0 0,0C-1.052,0 -1.905,0.853 -1.905,1.905C-1.905,2.958 -1.052,3.811 0,3.811" style="fill-rule:nonzero;"/></g><g transform="matrix(14.0088,0,0,14.0088,332.096,953.94)"><path d="M0,2.121C0.081,1.902 0.158,1.685 0.233,1.472C0.421,0.941 0.579,0.496 0.704,0.139C0.83,-0.219 0.933,-0.519 1.011,-0.76C1.09,-1.004 1.153,-1.207 1.198,-1.374C1.243,-1.539 1.284,-1.703 1.32,-1.863C1.445,-1.848 1.577,-1.832 1.714,-1.82C1.851,-1.808 2.015,-1.804 2.206,-1.804C2.42,-1.804 2.597,-1.808 2.738,-1.82C2.878,-1.832 3.009,-1.848 3.13,-1.863C2.973,-1.504 2.84,-1.196 2.731,-0.94C2.622,-0.68 2.523,-0.442 2.436,-0.225C2.348,-0.006 2.264,0.21 2.185,0.424C2.105,0.639 2.011,0.888 1.903,1.176C1.828,1.387 1.765,1.566 1.714,1.71C1.665,1.851 1.621,1.975 1.584,2.074C1.547,2.173 1.521,2.256 1.504,2.323C1.487,2.391 1.476,2.457 1.467,2.521C1.444,2.694 1.486,2.842 1.594,2.959C1.702,3.08 1.863,3.139 2.077,3.139C2.18,3.139 2.3,3.117 2.437,3.072C2.574,3.028 2.714,2.957 2.858,2.853C3.003,2.751 3.147,2.613 3.292,2.443C3.438,2.269 3.57,2.06 3.691,1.804C3.801,1.566 3.918,1.291 4.042,0.977C4.166,0.664 4.285,0.34 4.4,0.006C4.515,-0.326 4.623,-0.654 4.725,-0.982C4.826,-1.307 4.91,-1.6 4.976,-1.863C5.085,-1.848 5.194,-1.832 5.304,-1.82C5.413,-1.808 5.568,-1.804 5.766,-1.804C5.98,-1.804 6.153,-1.808 6.287,-1.82C6.418,-1.832 6.545,-1.848 6.667,-1.863C6.441,-1.289 6.24,-0.756 6.06,-0.26C5.881,0.236 5.713,0.713 5.56,1.168C5.405,1.624 5.259,2.074 5.124,2.514C4.987,2.955 4.85,3.393 4.714,3.828C4.597,3.814 4.481,3.805 4.366,3.805L3.443,3.805C3.308,3.805 3.184,3.814 3.071,3.828C3.163,3.671 3.235,3.531 3.287,3.406C3.339,3.283 3.397,3.115 3.465,2.9C3.382,2.988 3.275,3.094 3.144,3.223C3.012,3.35 2.854,3.469 2.668,3.586C2.482,3.7 2.266,3.796 2.018,3.871C1.77,3.948 1.487,3.984 1.17,3.984C0.693,3.984 0.34,3.875 0.11,3.656C-0.119,3.439 -0.21,3.147 -0.163,2.782C-0.134,2.56 -0.08,2.338 0,2.121" style="fill-rule:nonzero;"/></g><g transform="matrix(14.0088,0,0,14.0088,469.168,899.763)"><path d="M0,7.797C-0.162,7.834 -0.339,7.852 -0.529,7.852C-0.729,7.852 -0.912,7.822 -1.079,7.77C-1.247,7.713 -1.392,7.634 -1.513,7.529C-1.635,7.426 -1.725,7.294 -1.783,7.131C-1.84,6.969 -1.856,6.785 -1.83,6.576C-1.817,6.483 -1.801,6.389 -1.781,6.291C-1.761,6.197 -1.73,6.09 -1.692,5.971C-1.652,5.852 -1.607,5.715 -1.556,5.567C-1.504,5.416 -1.44,5.233 -1.366,5.018C-1.226,4.613 -1.084,4.211 -0.942,3.815C-0.799,3.418 -0.657,3.018 -0.518,2.612C-0.629,2.612 -0.747,2.614 -0.869,2.617C-0.993,2.623 -1.146,2.629 -1.33,2.637C-1.285,2.533 -1.25,2.443 -1.225,2.368C-1.199,2.295 -1.163,2.172 -1.118,2.004C-1.032,2.014 -0.951,2.02 -0.876,2.024C-0.801,2.027 -0.731,2.028 -0.668,2.028L-0.323,2.028C-0.269,1.854 -0.211,1.654 -0.149,1.428C-0.09,1.202 -0.021,0.962 0.051,0.707C0.259,0.635 0.435,0.574 0.581,0.524C0.726,0.472 0.866,0.42 1,0.367C1.134,0.318 1.271,0.259 1.417,0.192C1.56,0.123 1.733,0.042 1.935,-0.055L2.017,0.053C1.929,0.242 1.853,0.416 1.789,0.57C1.725,0.725 1.664,0.879 1.605,1.029C1.545,1.18 1.488,1.334 1.438,1.492C1.385,1.652 1.327,1.832 1.261,2.028L1.701,2.028C1.78,2.028 1.872,2.027 1.975,2.024C2.079,2.02 2.195,2.014 2.324,2.004C2.261,2.117 2.215,2.229 2.186,2.339C2.155,2.449 2.13,2.548 2.11,2.637C2,2.629 1.898,2.623 1.803,2.617C1.708,2.614 1.618,2.612 1.53,2.612L1.066,2.612C1.016,2.758 0.932,2.99 0.813,3.322C0.695,3.651 0.572,3.996 0.446,4.357C0.32,4.719 0.207,5.051 0.104,5.358C-0.001,5.662 -0.066,5.861 -0.093,5.959C-0.16,6.156 -0.208,6.314 -0.239,6.428C-0.269,6.543 -0.291,6.653 -0.306,6.756C-0.333,6.971 -0.295,7.121 -0.19,7.207C-0.087,7.296 0.068,7.34 0.274,7.34C0.401,7.34 0.526,7.323 0.649,7.29L0.491,7.686C0.327,7.726 0.164,7.762 0,7.797" style="fill-rule:nonzero;"/></g><g transform="matrix(14.0088,0,0,14.0088,561.73,980.124)"><path d="M0,-5.047C-0.262,-4.336 -0.525,-3.585 -0.787,-2.791C-0.428,-3.17 -0.061,-3.442 0.313,-3.608C0.688,-3.769 1.057,-3.85 1.422,-3.85C1.898,-3.85 2.251,-3.735 2.48,-3.51C2.709,-3.283 2.797,-2.968 2.744,-2.565C2.724,-2.406 2.682,-2.219 2.618,-2.004C2.555,-1.789 2.485,-1.574 2.409,-1.356C2.333,-1.138 2.256,-0.926 2.178,-0.725C2.101,-0.523 2.035,-0.35 1.986,-0.207C1.938,-0.08 1.85,0.172 1.722,0.548C1.593,0.928 1.447,1.396 1.288,1.959C1.156,1.945 1.016,1.935 0.869,1.935L0.047,1.935C-0.092,1.935 -0.277,1.945 -0.51,1.959C-0.398,1.721 -0.301,1.5 -0.215,1.293C-0.129,1.088 -0.045,0.882 0.038,0.68C0.119,0.478 0.204,0.264 0.293,0.037C0.383,-0.189 0.486,-0.453 0.604,-0.756C0.641,-0.85 0.689,-0.973 0.746,-1.123C0.807,-1.276 0.864,-1.428 0.921,-1.588C0.977,-1.745 1.026,-1.897 1.068,-2.035C1.109,-2.173 1.136,-2.277 1.145,-2.352C1.169,-2.533 1.131,-2.682 1.029,-2.795C0.93,-2.911 0.764,-2.968 0.535,-2.968C0.328,-2.968 0.137,-2.918 -0.039,-2.819C-0.215,-2.723 -0.375,-2.598 -0.521,-2.445C-0.669,-2.295 -0.795,-2.127 -0.902,-1.945C-1.01,-1.762 -1.102,-1.584 -1.18,-1.409C-1.299,-1.163 -1.418,-0.879 -1.535,-0.552C-1.652,-0.227 -1.766,0.098 -1.869,0.42C-1.975,0.738 -2.068,1.041 -2.153,1.322C-2.238,1.605 -2.303,1.818 -2.344,1.959C-2.484,1.945 -2.623,1.935 -2.758,1.935L-3.59,1.935C-3.749,1.935 -3.905,1.945 -4.058,1.959C-3.866,1.461 -3.666,0.924 -3.456,0.348C-3.246,-0.227 -3.038,-0.811 -2.83,-1.399C-2.624,-1.984 -2.422,-2.561 -2.225,-3.129C-2.028,-3.697 -1.848,-4.23 -1.684,-4.725C-1.521,-5.223 -1.377,-5.667 -1.25,-6.06C-1.123,-6.451 -1.025,-6.767 -0.953,-7.006C-0.83,-6.99 -0.698,-6.977 -0.562,-6.965C-0.424,-6.95 -0.268,-6.946 -0.094,-6.946C0.065,-6.946 0.22,-6.95 0.367,-6.965C0.516,-6.977 0.658,-6.99 0.796,-7.006C0.528,-6.41 0.263,-5.757 0,-5.047" style="fill-rule:nonzero;"/></g><g transform="matrix(14.0088,0,0,14.0088,680.79,997.4)"><path d="M0,-4.286C-0.079,-4.476 -0.265,-4.57 -0.558,-4.57C-0.757,-4.57 -0.938,-4.515 -1.099,-4.403C-1.26,-4.295 -1.405,-4.147 -1.537,-3.966C-1.667,-3.78 -1.784,-3.573 -1.886,-3.339C-1.987,-3.103 -2.081,-2.87 -2.167,-2.632C-2.104,-2.622 -2.039,-2.615 -1.968,-2.613C-1.897,-2.61 -1.829,-2.606 -1.766,-2.606L-0.837,-2.606C-0.75,-2.606 -0.649,-2.61 -0.538,-2.613C-0.429,-2.615 -0.308,-2.622 -0.179,-2.632C-0.142,-2.734 -0.099,-2.872 -0.048,-3.046C0.003,-3.223 0.041,-3.413 0.069,-3.62C0.1,-3.872 0.077,-4.095 0,-4.286M0.353,-0.12C0.298,-0.009 0.226,0.157 0.133,0.378C-0.145,0.558 -0.44,0.675 -0.757,0.728C-1.074,0.783 -1.392,0.811 -1.708,0.811C-2.169,0.811 -2.562,0.739 -2.884,0.602C-3.208,0.464 -3.463,0.271 -3.649,0.025C-3.835,-0.223 -3.962,-0.506 -4.026,-0.827C-4.093,-1.149 -4.102,-1.482 -4.057,-1.833C-4.007,-2.22 -3.891,-2.611 -3.71,-2.999C-3.528,-3.39 -3.286,-3.737 -2.984,-4.048C-2.682,-4.357 -2.325,-4.608 -1.909,-4.804C-1.497,-4.998 -1.03,-5.097 -0.515,-5.097C0.223,-5.097 0.755,-4.899 1.082,-4.507C1.407,-4.113 1.53,-3.598 1.448,-2.964C1.429,-2.813 1.397,-2.661 1.358,-2.507C1.319,-2.35 1.278,-2.196 1.233,-2.048C0.735,-2.062 0.316,-2.073 -0.024,-2.083C-0.364,-2.092 -0.665,-2.094 -0.927,-2.094L-1.845,-2.094C-1.979,-2.094 -2.138,-2.092 -2.323,-2.083C-2.351,-1.987 -2.376,-1.884 -2.397,-1.772C-2.421,-1.661 -2.438,-1.548 -2.453,-1.436C-2.516,-0.959 -2.454,-0.575 -2.269,-0.289C-2.085,-0.001 -1.741,0.144 -1.242,0.144C-1.019,0.144 -0.765,0.093 -0.479,-0.007C-0.19,-0.103 0.083,-0.272 0.343,-0.511L0.511,-0.429C0.46,-0.331 0.406,-0.228 0.353,-0.12" style="fill-rule:nonzero;"/></g><g transform="matrix(14.0088,0,0,14.0088,780.344,985.703)"><path d="M0,-2.701C-0.084,-2.74 -0.207,-2.761 -0.375,-2.761C-0.62,-2.761 -0.83,-2.715 -1.005,-2.625C-1.178,-2.533 -1.327,-2.419 -1.448,-2.285C-1.568,-2.149 -1.667,-2.004 -1.742,-1.847C-1.817,-1.695 -1.88,-1.553 -1.928,-1.428C-2.032,-1.174 -2.162,-0.814 -2.318,-0.349C-2.474,0.115 -2.675,0.754 -2.924,1.561C-3.039,1.547 -3.174,1.537 -3.324,1.537L-4.23,1.537C-4.372,1.537 -4.504,1.547 -4.625,1.561C-4.23,0.594 -3.859,-0.377 -3.517,-1.348C-3.172,-2.322 -2.875,-3.249 -2.625,-4.131C-2.516,-4.115 -2.397,-4.099 -2.268,-4.088C-2.139,-4.075 -1.994,-4.071 -1.835,-4.071C-1.676,-4.071 -1.539,-4.075 -1.422,-4.088C-1.307,-4.099 -1.19,-4.115 -1.078,-4.131C-1.162,-3.906 -1.242,-3.685 -1.318,-3.464C-1.395,-3.24 -1.471,-3.019 -1.549,-2.795C-1.488,-2.89 -1.398,-3.019 -1.277,-3.182C-1.156,-3.346 -1.012,-3.506 -0.84,-3.666C-0.669,-3.824 -0.477,-3.963 -0.262,-4.082C-0.047,-4.199 0.182,-4.262 0.428,-4.262C0.538,-4.262 0.633,-4.248 0.709,-4.223C0.785,-4.199 0.852,-4.169 0.91,-4.131C0.732,-3.851 0.604,-3.603 0.522,-3.385C0.443,-3.168 0.377,-2.916 0.323,-2.629L0.211,-2.58C0.152,-2.619 0.081,-2.662 0,-2.701" style="fill-rule:nonzero;"/></g><g transform="matrix(14.0088,0,0,14.0088,838.964,1003.81)"><path d="M0,-8.263C0.198,-8.441 0.424,-8.531 0.679,-8.531C0.932,-8.531 1.134,-8.443 1.286,-8.267C1.438,-8.092 1.497,-7.878 1.465,-7.626C1.432,-7.37 1.317,-7.156 1.12,-6.982C0.923,-6.807 0.696,-6.72 0.442,-6.72C0.188,-6.72 -0.015,-6.808 -0.167,-6.987C-0.317,-7.167 -0.376,-7.378 -0.345,-7.626C-0.313,-7.87 -0.198,-8.083 0,-8.263M-0.582,-5.38C-0.438,-5.367 -0.281,-5.364 -0.114,-5.364C0.093,-5.364 0.267,-5.367 0.406,-5.38C0.546,-5.392 0.679,-5.408 0.798,-5.423C0.686,-5.167 0.538,-4.8 0.353,-4.32C0.166,-3.839 -0.022,-3.322 -0.219,-2.766C-0.413,-2.211 -0.599,-1.659 -0.772,-1.112C-0.948,-0.563 -1.083,-0.104 -1.179,0.268C-1.312,0.255 -1.448,0.245 -1.592,0.245L-2.563,0.245C-2.709,0.245 -2.848,0.255 -2.976,0.268C-2.806,-0.128 -2.619,-0.592 -2.42,-1.122C-2.221,-1.656 -2.028,-2.189 -1.843,-2.724C-1.658,-3.261 -1.49,-3.769 -1.336,-4.249C-1.183,-4.73 -1.069,-5.119 -1,-5.423C-0.868,-5.408 -0.728,-5.392 -0.582,-5.38" style="fill-rule:nonzero;"/></g><g transform="matrix(14.0088,0,0,14.0088,925.465,997.4)"><path d="M0,-4.286C-0.078,-4.476 -0.264,-4.57 -0.557,-4.57C-0.756,-4.57 -0.936,-4.515 -1.098,-4.403C-1.258,-4.295 -1.404,-4.147 -1.535,-3.966C-1.666,-3.78 -1.783,-3.573 -1.885,-3.339C-1.986,-3.103 -2.08,-2.87 -2.167,-2.632C-2.105,-2.622 -2.037,-2.615 -1.967,-2.613C-1.896,-2.61 -1.828,-2.606 -1.766,-2.606L-0.835,-2.606C-0.749,-2.606 -0.648,-2.61 -0.537,-2.613C-0.426,-2.615 -0.307,-2.622 -0.178,-2.632C-0.141,-2.734 -0.098,-2.872 -0.047,-3.046C0.004,-3.223 0.043,-3.413 0.07,-3.62C0.102,-3.872 0.079,-4.095 0,-4.286M0.354,-0.12C0.299,-0.009 0.227,0.157 0.135,0.378C-0.143,0.558 -0.439,0.675 -0.756,0.728C-1.072,0.783 -1.39,0.811 -1.708,0.811C-2.168,0.811 -2.561,0.739 -2.883,0.602C-3.207,0.464 -3.461,0.271 -3.646,0.025C-3.835,-0.223 -3.96,-0.506 -4.025,-0.827C-4.092,-1.149 -4.102,-1.482 -4.057,-1.833C-4.006,-2.22 -3.889,-2.611 -3.707,-2.999C-3.527,-3.39 -3.284,-3.737 -2.983,-4.048C-2.682,-4.357 -2.322,-4.608 -1.908,-4.804C-1.494,-4.998 -1.029,-5.097 -0.514,-5.097C0.225,-5.097 0.758,-4.899 1.084,-4.507C1.408,-4.113 1.531,-3.598 1.449,-2.964C1.43,-2.813 1.398,-2.661 1.359,-2.507C1.32,-2.35 1.277,-2.196 1.234,-2.048C0.737,-2.062 0.316,-2.073 -0.023,-2.083C-0.363,-2.092 -0.664,-2.094 -0.926,-2.094L-1.842,-2.094C-1.979,-2.094 -2.138,-2.092 -2.32,-2.083C-2.35,-1.987 -2.375,-1.884 -2.396,-1.772C-2.418,-1.661 -2.438,-1.548 -2.453,-1.436C-2.514,-0.959 -2.453,-0.575 -2.268,-0.289C-2.084,-0.001 -1.74,0.144 -1.24,0.144C-1.019,0.144 -0.764,0.093 -0.477,-0.007C-0.189,-0.103 0.084,-0.272 0.344,-0.511L0.512,-0.429C0.461,-0.331 0.406,-0.228 0.354,-0.12" style="fill-rule:nonzero;"/></g>';
 /* Accueil : liens à renseigner. contact = adresse e-mail ou lien ; contrib = lien Ko-fi, Liberapay, PayPal.me… */
-const EKLIS={contact:'',contrib:'',version:'Bêta'};
+/* contact : adresse de réception, jamais affichée dans l’outil (servira seulement si l’on choisit « Envoyer avec ma messagerie »).
+   feedback : adresse du script d’envoi installé chez l’hébergeur (contact.php). Vide : l’app web essaie « contact.php » à côté d’elle. */
+const EKLIS={contact:['logiciel','eklislutherie.re'],feedback:'',contrib:'',version:'Bêta 0.22'};
 const eklisLogo=(cls,lab)=>`<svg class="${cls}" viewBox="0 0 1080 1080" fill="currentColor" role="img" aria-label="${lab||'Eklis Lutherie'}" style="fill-rule:evenodd;clip-rule:evenodd">${EKLIS_LOGO_INNER}</svg>`;
+/* ===== Guide utilisateur (ouvert depuis la fenêtre d’accueil) =====
+   Les illustrations sont dessinées par l’établi lui-même (miniatures des pièces, poignées, plan de l’écran) : elles restent justes quand l’interface évolue. */
+const G_ICON={
+  rot:'<circle r="13"/><path d="M-5.5,-3.5 A6.5,6.5 0 1 1 -6,3.5"/><path d="M-9,-6.5 L-5.5,-3.5 L-2,-7.2"/>',
+  del:'<circle r="13"/><path d="M-6.2,-4.6 H6.2 M-2.4,-4.6 V-6.6 H2.4 V-4.6 M-4.6,-4.6 L-3.8,6.4 H3.8 L4.6,-4.6 M-1.4,-2 V4 M1.4,-2 V4"/>',
+  swap:'<circle r="13"/><rect class="sq" x="-7.5" y="-7.5" width="15" height="15" rx="2.5"/><path d="M-4.6,-1.6 V-3.2 H4.2 M2.2,-5.4 L4.4,-3.2 L2.2,-1 M4.6,1.6 V3.2 H-4.2 M-2.2,5.4 L-4.4,3.2 L-2.2,1"/>'};
+const gIco=(k,s=30)=>`<svg class="g-ico" viewBox="-15 -15 30 30" width="${s}" height="${s}" aria-hidden="true"><g class="rothandle${k==='swap'?' swaphandle':''}">${G_ICON[k]}</g></svg>`;
+const gThumb=label=>{const it=libAll().find(x=>x.label===label);return it?`<figure class="g-th">${partThumb(it)}<figcaption>${esc(label)}</figcaption></figure>`:'';};
+function gMap(){
+  const z=(n,x,y)=>`<g transform="translate(${x},${y})"><circle r="11" class="g-n"/><text y="4.5" text-anchor="middle">${n}</text></g>`;
+  return `<svg class="g-map" viewBox="0 0 640 330" role="img" aria-label="Plan de l’écran">
+  <rect x="2" y="2" width="636" height="326" rx="10" class="g-bg"/>
+  <rect x="2" y="2" width="636" height="34" rx="10" class="g-bar"/><text x="18" y="24" class="g-t">Établi électronique</text>
+  ${['Modèle','Câblage auto','Projets','Enregistrer','Fiche d’atelier'].map((t,i)=>`<rect x="${250+i*76}" y="9" width="70" height="20" rx="5" class="g-btn${i===4?' g-hot':''}"/><text x="${285+i*76}" y="23" text-anchor="middle" class="g-s${i===4?' g-ink':''}">${t}</text>`).join('')}
+  <rect x="8" y="44" width="120" height="278" rx="6" class="g-pan"/>${[0,1,2,3,4,5].map(i=>`<rect x="18" y="${80+i*30}" width="${70+((i*23)%30)}" height="10" rx="3" class="g-line"/>`).join('')}<rect x="16" y="52" width="104" height="18" rx="4" class="g-btn"/><text x="24" y="65" class="g-s">Rechercher…</text>
+  <rect x="136" y="44" width="352" height="278" rx="6" class="g-mat"/>
+  <rect x="160" y="80" width="120" height="34" rx="17" class="g-pu"/><rect x="330" y="150" width="120" height="34" rx="17" class="g-pu"/>
+  <circle cx="200" cy="230" r="24" class="g-pot"/><circle cx="270" cy="230" r="24" class="g-pot"/>
+  <path d="M220,114 C230,170 200,190 200,206 M390,184 C380,230 300,250 270,206" class="g-wire"/>
+  <rect x="146" y="52" width="92" height="20" rx="6" class="g-btn"/><text x="192" y="66" text-anchor="middle" class="g-s">Circuit cohérent</text>
+  <rect x="378" y="52" width="102" height="34" rx="6" class="g-dark"/><text x="386" y="66" class="g-s g-w">Vous entendez</text><text x="386" y="80" class="g-s g-c">Manche ∥ Chevalet</text>
+  <rect x="146" y="290" width="150" height="24" rx="6" class="g-dark"/><text x="156" y="306" class="g-s g-w">Positions : pos 1 · 2 · 3</text>
+  <rect x="318" y="290" width="162" height="24" rx="6" class="g-dark"/><text x="328" y="306" class="g-s g-w">1 cm · Masses · Tapis · − Ajuster +</text>
+  <rect x="496" y="44" width="136" height="278" rx="6" class="g-pan"/>${['Pièce','Analyse','Stock','Oscillo','Multimètre'].map((t,i)=>`<text x="${504+(i%3)*44}" y="${62+Math.floor(i/3)*16}" class="g-s">${t}</text>`).join('')}${[0,1,2,3,4].map(i=>`<rect x="506" y="${110+i*36}" width="116" height="24" rx="4" class="g-line"/>`).join('')}
+  ${z(1,236,19)}${z(2,68,40)}${z(3,312,128)}${z(4,366,69)}${z(5,222,280)}${z(6,400,280)}${z(7,564,96)}${z(8,252,62)}
+  </svg>`;
+}
+function gFrame(){return `<div class="g-frame"><div class="g-fbox">${(()=>{const it=libAll().find(x=>x.label==='Simple Tele chevalet');return it?partThumb(it):'';})()}
+  <span class="g-h g-h-rot">${gIco('rot',28)}</span><span class="g-h g-h-del">${gIco('del',28)}</span><span class="g-h g-h-swap">${gIco('swap',28)}</span></div>
+  <ul class="g-legend"><li>${gIco('rot',22)} <b>Tourner</b> de 45° (touche R)</li><li>${gIco('del',22)} <b>Supprimer</b> la pièce (Suppr)</li><li>${gIco('swap',22)} <b>Interchanger</b> contre une pièce de la même famille</li></ul></div>`;}
+function gWire(){return `<svg class="g-wsvg" viewBox="0 0 460 120" role="img" aria-label="Tirer un fil">
+  <circle cx="70" cy="60" r="7" class="g-term"/><circle cx="70" cy="60" r="13" class="g-ring"/><text x="70" y="98" text-anchor="middle" class="g-s">cosse de départ</text>
+  <path d="M70,60 C175,0 285,120 390,60" class="g-wire2"/><circle cx="230" cy="60" r="8" class="g-bend"/><text x="230" y="22" text-anchor="middle" class="g-s">poignée du fil : le courber</text>
+  <circle cx="390" cy="60" r="7" class="g-term"/><circle cx="390" cy="60" r="13" class="g-ring"/><text x="390" y="98" text-anchor="middle" class="g-s">cosse d’arrivée</text></svg>`;}
+function gScope(){let d='';for(let x=0;x<=300;x+=3){const y=50-30*Math.sin(x/18)*Math.exp(-x/420)-6*Math.sin(x/5.5);d+=(x?'L':'M')+x+','+y.toFixed(1);}
+  return `<svg class="g-scope" viewBox="0 0 300 100" role="img" aria-label="Oscilloscope">${[1,2,3,4,5].map(i=>`<line x1="${i*50}" y1="0" x2="${i*50}" y2="100"/>`).join('')}${[1,2,3].map(i=>`<line x1="0" y1="${i*25}" x2="300" y2="${i*25}"/>`).join('')}<path d="${d}"/></svg>`;}
+const gCodes=()=>`<div class="g-codes">${['H','S','HS','SS','HSS','HSH','SSS'].map(c=>`<span>${c}</span>`).join('')}</div>`;
+const gKey=k=>`<kbd>${k}</kbd>`;
+const GUIDE=[
+ ['ecran','L’écran',()=>`${gMap()}
+  <ol class="g-ol"><li><b>Barre du haut</b> : modèles, type d’instrument, annuler / rétablir, câblage automatique, projets, enregistrement, thème clair ou sombre, fiche d’atelier.</li>
+  <li><b>Bibliothèque</b> : toutes les pièces, classées par famille, avec recherche et favoris.</li>
+  <li><b>L’établi</b> : le plan de câblage, à l’échelle (la règle « 1 cm » le rappelle).</li>
+  <li><b>Vous entendez</b> : les micros qui sonnent dans la position actuelle.</li>
+  <li><b>Positions</b> : les positions des sélecteurs et switchs, à toucher pour les essayer.</li>
+  <li><b>Barre du bas</b> : masses en fils ou en symboles, fond tapis ou papier, zoom, « Ajuster » pour tout voir.</li>
+  <li><b>Panneau de droite</b> : réglages de la pièce choisie, analyse, stock, oscilloscope et multimètre.</li>
+  <li><b>État du circuit</b> : « Circuit cohérent » ou le nombre d’erreurs et de conseils ; un toucher ouvre l’analyse.</li></ol>
+  <p>Les boutons en haut à gauche de l’établi masquent la bibliothèque, le panneau de droite, ou passent en plein écran.</p>`],
+ ['projet','Démarrer un projet',()=>`<p><b>Partir d’un modèle</b> (Strat, HSS, Les Paul, Tele, EMG, Jazz Bass, P-Bass…) pose et câble un instrument complet, prêt à modifier. Choisissez d’abord <b>Guitare</b> ou <b>Basse</b> : la bibliothèque, les schémas et les sons s’adaptent.</p>
+  <p>Le panneau de droite, sans pièce sélectionnée, montre la fiche du projet : nom, client, instrument (modèle, numéro de série), statut et notes d’atelier.</p>
+  <p><b>Projets</b> retrouve tous vos travaux, avec recherche par client ou instrument. Ils sont enregistrés automatiquement sur cet appareil. <b>Enregistrer</b> crée en plus un fichier <code>.json</code> à ranger où vous voulez, ou à envoyer à un collègue. La <b>sauvegarde complète</b> réunit projets, pièces personnelles, modèles et stock en un seul fichier : faites-en une de temps en temps, et avant de changer d’appareil.</p>
+  <p>Un montage réussi peut devenir votre propre modèle : <b>Projets → Enregistrer comme modèle</b>.</p>`],
+ ['pieces','Poser et régler les pièces',()=>`<p>Touchez une pièce de la bibliothèque pour la poser, ou faites-la glisser à l’endroit voulu. Le bouton à côté de la recherche replie ou déplie toutes les familles ; l’étoile range une pièce dans vos <b>Favoris</b>.</p>
+  <div class="g-row">${gThumb('Simple bobinage Strat')}${gThumb('Humbucker 4 conducteurs')}${gThumb('Simple Tele chevalet')}</div>
+  <p>Touchez une pièce posée pour la sélectionner : un cadre pointillé apparaît avec trois poignées.</p>${gFrame()}
+  <p>Le panneau <b>Pièce</b> règle tout ce qui compte pour le câblage : nom, <b>marque</b> (qui fixe le code couleur des fils), position sur l’instrument, nombre de cordes, valeur et courbe des potentiomètres, modèle des condensateurs.</p>
+  <p>Sur les micros, chaque plot porte son pôle : <span class="g-pole g-n2">N</span> rouge pour nord, <span class="g-pole g-s2">S</span> bleu pour sud. Le petit repère à côté de la bobine indique le sens du bobinage (<b>std</b> ou <b>RW</b>, inversé). Sur un humbucker, les vis et les plots sont dessinés différemment, et chaque bobine affiche le trajet de ses fils.</p>`],
+ ['cabler','Câbler à la main',()=>`<p>Tirez un fil depuis une cosse jusqu’à une autre : les cosses s’entourent de cuivre quand vous approchez.</p>${gWire()}
+  <ul class="g-ul"><li><b>Courber un fil</b> : sélectionnez-le et tirez sa poignée, pour aérer le plan.</li>
+  <li><b>Insérer une pièce sur un fil</b> : faites-la glisser sur le fil, il s’allume en cuivre. Au relâchement, l’établi la branche dans le bon sens : un volume prend l’entrée sur la cosse 3 et la sortie sur la 2, une tonalité reçoit son condensateur vers la masse.</li>
+  <li><b>Masses : fils ou symboles</b> (barre du bas) : les retours à la masse peuvent être dessinés comme des fils ou remplacés par le symbole ⏚, plus lisible.</li>
+  <li><b>Blindage cuivre</b> (famille « Connectique et masse ») : un rectangle de cuivre sous les pièces, à redimensionner par ses coins. Les potentiomètres et switchs posés dessus prennent leur masse par le cuivre. L’établi signale alors les fils de masse en double, qui créent des boucles de masse, et le jack posé sur le cuivre.</li></ul>`],
+ ['auto','Câblage automatique',()=>`<p><b>Câblage auto</b> reconnaît la combinaison de vos micros, lue du chevalet vers le manche : H pour humbucker, S pour simple (Strat, Tele, P90).</p>${gCodes()}
+  <p>Il propose les schémas qui lui correspondent : Fender (sélecteur à lame), Gibson (toggle, deux volumes), Schaller Megaswitch, variantes avec split. Le plus proche de votre établi est signalé. Vous pouvez aussi choisir une autre combinaison pour la préparer.</p>
+  <p><b>Il câble avec les pièces posées et ne rajoute rien sans demander.</b> Avant de câbler, il pose les questions utiles :</p>
+  <ul class="g-ul"><li><b>Pièce manquante</b> : ajouter une pièce neuve, remplacer une pièce présente, ou câbler sans (une tonalité, par exemple).</li>
+  <li><b>Pièce en plus</b> : quel rôle lui donner ? Un kill switch devient un coupe-son ; un mini-switch peut faire un split, une inversion de phase, une mise en série ; un condensateur peut faire un treble bleed. Sinon : la laisser non câblée ou la supprimer.</li>
+  <li><b>Règles d’atelier</b> : volume en courbe A (log), tonalité en B (linéaire), valeur d’usage selon les micros (250 kΩ pour des simples, 500 kΩ pour des humbuckers, 25 kΩ pour des actifs). Pour chaque potentiomètre hors règle : conserver ou remplacer.</li></ul>
+  <p>Une pièce déjà bien câblée n’est pas redemandée. Le bouton « Câbler l’établi » reste grisé tant qu’une question attend sa réponse. Tout se défait d’un coup avec ${gKey('Ctrl')}+${gKey('Z')}.</p>`],
+ ['swap','Interchanger une pièce',()=>`<p>Pour faire évoluer un instrument, sélectionnez la pièce et touchez la poignée ${gIco('swap',22)} en bas à droite du cadre. Le panneau de droite présente, en miniatures, les pièces de la même famille : micros, potentiomètres (dont push-pull et point milieu), sélecteurs (lame, toggle, Megaswitch), switchs, condensateurs, jacks, préamplis.</p>
+  <p>Touchez la nouvelle pièce : elle prend la place de l’ancienne, garde son nom et sa position, et les fils sont repris quand les cosses se correspondent. Si le câblage doit changer (sélecteur différent, humbucker à la place d’un simple…), l’établi recâble dans la foulée, ou ouvre le câblage automatique s’il faut répondre à une question, comme le rôle du switch d’un push-pull.</p>`],
+ ['verifier','Vérifier le circuit',()=>`<p>Touchez l’étiquette noire d’un sélecteur ou d’un push-pull, ou utilisez la barre <b>Positions</b> : le trajet du signal s’allume en cuivre, et les micros muets pâlissent. L’encadré <b>Vous entendez</b> nomme ce qui sonne : « ∥ » pour des micros en parallèle, « en série » pour des micros en série.</p>
+  <p>L’onglet <b>Analyse</b> passe toutes les positions en revue et classe ce qu’il trouve :</p>
+  <ul class="g-ul"><li><b>Erreurs</b> : court-circuit, aucun son, cosse indispensable non câblée.</li>
+  <li><b>Avertissements</b> : micros hors phase, position muette, boucle de masse, pile non reliée.</li>
+  <li><b>Conseils</b> : codes couleur à confirmer, courbe ou valeur de potentiomètre, treble bleed possible…</li></ul>
+  <p>Chaque ligne désigne la pièce concernée sur l’établi, et propose souvent la correction en un bouton. Pour la position en cours, il indique aussi le niveau, la phase, la tonalité active et le <b>bruit de fond</b> : présent, réduit ou annulé (humbucking).</p>`],
+ ['ecouter','Écouter et mesurer',()=>`${gScope()}<p>L’onglet <b>Oscillo</b> fait entendre l’instrument tel qu’il est câblé : accord ouvert, accord de puissance, note seule ou arpège, avec la position et les potentiomètres actuels. Ajoutez un <b>amplificateur de test</b> (il se branche seul sur le jack) pour choisir le son de l’ampli et la longueur du câble. L’oscilloscope montre le <b>signal</b> dans le temps, ou la <b>réponse</b> en fréquence : de quoi comparer une tonalité, un treble bleed ou deux valeurs de condensateur. Deux sondes se posent sur n’importe quelle cosse.</p>
+  <p>« Verrouiller sur l’oscilloscope » ne garde à l’écran que l’oscilloscope et les commandes de l’instrument : pratique sur iPad pour comparer les positions.</p>
+  <p>L’onglet <b>Multimètre</b> mesure, comme au banc, la résistance ou la continuité (avec le bip) entre deux cosses. Il donne surtout les <b>valeurs attendues au jack</b>, à comparer avec votre vrai multimètre avant de refermer l’instrument.</p>`],
+ ['atelier','Préparer l’atelier',()=>`<p>L’onglet <b>Stock</b> liste les pièces à prévoir pour le projet. Indiquez ce que vous avez à l’atelier : l’établi calcule ce qu’il faut commander. Le stock vaut pour tous vos projets.</p>
+  <p>La <b>Fiche d’atelier</b> réunit sur une page le schéma, la liste numérotée des soudures (à cocher au fil du travail), le son de chaque position et les pièces. Imprimez-la, enregistrez-la en PDF ou téléchargez-la : elle se pose à côté du fer.</p>`],
+ ['raccourcis','Raccourcis clavier',()=>`<table class="t g-keys"><tbody>
+  ${[['Ctrl+Z / Ctrl+Y','annuler, rétablir'],['Ctrl+S','enregistrer'],['Ctrl+O','ouvrir'],['Ctrl+D','dupliquer la pièce'],['Suppr','supprimer la sélection'],['R / Maj+R','tourner de 45°'],['B','masquer la bibliothèque'],['D','masquer le panneau de droite'],['F','plein écran'],['Molette, pincement','zoomer'],['Glisser le fond','se déplacer']].map(([k,v])=>`<tr><td>${k.split(/( \/ |, )/).map(x=>/ \/ |, /.test(x)?x:x.split('+').map(gKey).join('+')).join('')}</td><td>${v}</td></tr>`).join('')}
+  </tbody></table><p class="muted">Sur iPad : touchez pour sélectionner, faites glisser pour déplacer, pincez pour zoomer, faites glisser le fond de l’établi pour vous déplacer.</p>`],
+ ['faq','Questions fréquentes',()=>`<dl class="g-faq">
+  <dt>Mes projets sont-ils en sécurité ?</dt><dd>Ils sont enregistrés automatiquement sur cet appareil, mais pas ailleurs. Pour les garder ou changer d’appareil, faites une <b>sauvegarde complète</b> (Projets), ou enregistrez chaque projet en fichier.</dd>
+  <dt>Pourquoi « codes couleur à confirmer » ?</dt><dd>Les couleurs des fils changent selon les marques et les séries. Choisissez la marque dans le panneau Pièce, et vérifiez la notice du micro : en cas de doute, la notice a raison.</dd>
+  <dt>Deux micros ensemble sonnent creux.</dt><dd>Ils sont hors phase : un bobinage ou un aimant est inversé. L’analyse le signale ; corrigez le bobinage (std / RW) ou l’aimant (N / S), ou inversez chaud et froid d’un des micros.</dd>
+  <dt>Le câblage automatique me pose beaucoup de questions.</dt><dd>Il ne touche à rien sans votre accord. Les boutons « Ajouter toutes les pièces manquantes » et « Remplacer tous les potentiomètres hors règle » répondent en une fois.</dd>
+  <dt>Puis-je câbler à ma façon, hors des schémas ?</dt><dd>Oui : tout peut se câbler à la main, et l’analyse vérifie n’importe quel montage. Les schémas ne sont qu’un point de départ.</dd>
+  <dt>Le son de l’oscilloscope est-il celui de ma guitare ?</dt><dd>C’est une simulation électrique fidèle du câblage (micros, potentiomètres, condensateurs, câble, ampli). Elle compare très bien deux montages, mais ne remplace pas l’écoute de l’instrument fini.</dd>
+  <dt>Comment retrouver cette aide ?</dt><dd>Touchez le logo en haut à gauche, puis « Guide utilisateur ».</dd></dl>`]
+];
+function guideDlg(start){
+  openDlg('Guide utilisateur',`<div class="guide"><nav class="g-toc" aria-label="Sommaire">${GUIDE.map(([id,t],i)=>`<button data-g="${id}"><span>${i+1}</span>${esc(t)}</button>`).join('')}</nav>
+    <div class="g-body" id="gBody">${GUIDE.map(([id,t,f],i)=>`<section class="g-sec" id="g-${id}"><h3><span>${i+1}</span>${esc(t)}</h3>${f()}</section>`).join('')}</div></div>`,
+    `<button class="btn" data-x="gwelcome">Retour à l’accueil</button><button class="btn primary" data-d="close">Fermer le guide</button>`);
+  dlg.classList.add('wide','guide-dlg');
+  const body=$('#gBody'),toc=dlg.querySelectorAll('.g-toc button');
+  const mark=()=>{let cur=GUIDE[0][0];GUIDE.forEach(([id])=>{const el=$('#g-'+id);if(el&&el.offsetTop-body.offsetTop<=body.scrollTop+40)cur=id;});toc.forEach(b=>b.setAttribute('aria-current',String(b.dataset.g===cur)));};
+  body.addEventListener('scroll',mark,{passive:true});mark();
+  dlg.querySelector('.g-toc').addEventListener('click',e=>{const b=e.target.closest('[data-g]');if(!b)return;const el=$('#g-'+b.dataset.g);if(el)body.scrollTo({top:el.offsetTop-body.offsetTop-6,behavior:'smooth'});});
+  if(start){const el=$('#g-'+start);if(el)body.scrollTop=el.offsetTop-body.offsetTop-6;}
+}
+
+
+/* ===== Contact / Amélioration : formulaire de retour classé par catégorie =====
+   Envoi vers le script de l’hébergeur (contact.php) : l’adresse de réception reste sur le serveur.
+   Sans connexion ou sans script, on propose la messagerie de l’appareil ou de copier le texte. */
+const FB_ZONES=['Établi, pièces et fils','Bibliothèque','Câblage automatique','Interchanger une pièce','Analyse','Oscilloscope et son','Multimètre','Stock','Fiche d’atelier, impression, PDF','Projets et enregistrement','Installation, iPad, ordinateur','Autre'];
+const FB_ZONE={k:'zone',l:'Partie de l’outil concernée',type:'select',opts:FB_ZONES};
+const FB_CATS=[
+ {k:'bug',ico:'⚠',t:'Signaler un problème',d:'Quelque chose ne marche pas comme prévu',fields:[FB_ZONE,
+   {k:'grav',l:'Gravité',type:'seg',opts:['Gênant','Bloquant','J’ai perdu du travail']},
+   {k:'what',l:'Ce qui s’est passé',type:'area',req:true,ph:'Ex. : après avoir interchangé le sélecteur, le micro manche ne sonne plus.'},
+   {k:'exp',l:'Ce que vous attendiez',type:'area',ph:'Ex. : que le manche reste câblé.'},
+   {k:'proj',l:'Joindre le projet en cours, pour reproduire le problème',type:'check',def:true}]},
+ {k:'idea',ico:'✦',t:'Proposer une amélioration',d:'Une idée, une fonction qui vous manque',fields:[FB_ZONE,
+   {k:'imp',l:'Importance pour vous',type:'seg',opts:['Pratique','Important','Indispensable']},
+   {k:'what',l:'Votre idée',type:'area',req:true,ph:'Ex. : pouvoir imprimer la fiche d’atelier en A5.'},
+   {k:'why',l:'Dans quelle situation en auriez-vous besoin ?',type:'area'}]},
+ {k:'part',ico:'◎',t:'Pièce ou marque manquante',d:'Un micro, un potentiomètre, un code couleur…',fields:[
+   {k:'ptype',l:'Type de pièce',type:'seg',opts:['Micro','Potentiomètre','Sélecteur ou switch','Condensateur','Jack','Préampli','Autre']},
+   {k:'brand',l:'Marque',type:'text',req:true,ph:'Ex. : Bare Knuckle'},{k:'model',l:'Modèle ou référence',type:'text',ph:'Ex. : Mule'},
+   {k:'colors',l:'Code couleur des fils, si vous le connaissez',type:'text',ph:'Ex. : rouge chaud, blanc et noir reliés, vert masse'},
+   {k:'link',l:'Lien vers la notice ou la fiche produit',type:'text',ph:'https://…'},{k:'what',l:'Remarques',type:'area'}]},
+ {k:'wiring',ico:'⌁',t:'Schéma de câblage',d:'Un schéma à ajouter ou à corriger',fields:[
+   {k:'inst',l:'Instrument',type:'seg',opts:['Guitare','Basse']},{k:'cfg',l:'Micros, du chevalet vers le manche',type:'text',ph:'Ex. : HSS, HH, PJ'},
+   {k:'src',l:'Source du schéma',type:'text',ph:'Ex. : schéma Seymour Duncan, Fender, votre propre montage'},
+   {k:'what',l:'Le schéma souhaité ou la correction',type:'area',req:true},
+   {k:'proj',l:'Joindre le projet en cours (le schéma déjà câblé sur l’établi)',type:'check',def:true}]},
+ {k:'q',ico:'?',t:'Poser une question',d:'Sur l’outil ou sur un câblage',fields:[FB_ZONE,{k:'what',l:'Votre question',type:'area',req:true}]},
+ {k:'other',ico:'✉',t:'Autre message',d:'Un mot, un remerciement…',fields:[{k:'what',l:'Votre message',type:'area',req:true}]}];
+const FB={cat:null,v:{},state:'form',err:''};
+const fbCat=()=>FB_CATS.find(c=>c.k===FB.cat);
+const fbMail=()=>EKLIS.contact.join('@');
+function fbField(f){const v=FB.v[f.k]??(f.type==='check'?f.def:f.type==='seg'||f.type==='select'?'':'');const id='fb_'+f.k;
+  if(f.type==='check')return `<label class="chk fb-chk"><input type="checkbox" data-fb="${f.k}"${v?' checked':''}> ${esc(f.l)}</label>`;
+  const lab=`<label class="fl" for="${id}">${esc(f.l)}${f.req?' <span class="fb-req">*</span>':''}</label>`;
+  if(f.type==='seg')return `<div class="fb-f">${lab}<div class="seg fb-seg">${f.opts.map(o=>`<button type="button" data-fbseg="${f.k}|${esc(o)}" aria-pressed="${v===o}">${esc(o)}</button>`).join('')}</div></div>`;
+  if(f.type==='select')return `<div class="fb-f">${lab}<select id="${id}" data-fb="${f.k}"><option value="">Choisir…</option>${f.opts.map(o=>`<option${v===o?' selected':''}>${esc(o)}</option>`).join('')}</select></div>`;
+  if(f.type==='area')return `<div class="fb-f">${lab}<textarea id="${id}" data-fb="${f.k}" rows="4" placeholder="${esc(f.ph||'')}">${esc(v)}</textarea></div>`;
+  return `<div class="fb-f">${lab}<input id="${id}" type="text" data-fb="${f.k}" value="${esc(v)}" placeholder="${esc(f.ph||'')}"></div>`;}
+function fbBody(){
+  if(FB.state==='sent')return `<div class="fb-done"><div class="fb-ok">✓</div><h3>Merci, votre retour est bien parti !</h3><p>Il arrive directement chez Eklis Lutherie. ${FB.v.email?'Une réponse vous sera envoyée à l’adresse indiquée.':''}</p></div>`;
+  const c=fbCat();
+  return `<p class="muted">Votre retour arrive directement chez Eklis Lutherie et fait avancer l’établi. Quel genre de retour ?</p>
+  <div class="fb-cats">${FB_CATS.map(x=>`<button type="button" class="fb-cat" data-fbcat="${x.k}" aria-pressed="${FB.cat===x.k}"><span class="fb-ico">${x.ico}</span><b>${esc(x.t)}</b><small>${esc(x.d)}</small></button>`).join('')}</div>
+  ${c?`<div class="fb-form"><h3 class="dh">${esc(c.t)}</h3>${c.fields.map(fbField).join('')}
+  <h3 class="dh">Pour vous répondre <small class="muted">(facultatif)</small></h3>
+  <div class="fb-two">${fbField({k:'name',l:'Votre nom',type:'text'})}${fbField({k:'email',l:'Votre e-mail',type:'text',ph:'pour recevoir une réponse'})}</div>
+  ${fbField({k:'tech',l:'Joindre les informations techniques (version de l’établi, appareil, navigateur)',type:'check',def:true})}
+  <input class="fb-hp" type="text" data-fb="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+  ${FB.err?`<div class="awq awq-open fb-err"><p><b>L’envoi n’a pas abouti.</b> <small>${esc(FB.err)}</small></p><div class="seg awq-c"><button data-x="fbsend">Réessayer</button><button data-x="fbmail">Envoyer avec ma messagerie</button><button data-x="fbcopy">Copier le texte</button></div><p class="muted awq-n">Avec la messagerie, le projet joint n’est pas transmis : enregistrez-le d’abord (bouton Enregistrer) et ajoutez le fichier au message.</p></div>`:''}
+  </div>`:''}`;
+}
+function feedbackDlg(){FB.state='form';FB.err='';
+  openDlg('Contact / Amélioration',`<div id="fbBox">${fbBody()}</div>`,`<button class="btn dlg-left" data-x="gwelcome">Retour à l’accueil</button><button class="btn" data-d="close">Annuler</button><button class="btn primary" data-x="fbsend" id="fbSend">Envoyer</button>`);
+  dlg.classList.add('wide');fbSync();}
+function fbRender(){const b=$('#fbBox');if(!b)return;const sc=b.parentElement.scrollTop;b.innerHTML=fbBody();b.parentElement.scrollTop=sc;fbSync();}
+function fbMissing(){const c=fbCat();if(!c)return ['le type de retour'];const m=c.fields.filter(f=>f.req&&!String(FB.v[f.k]||'').trim()).map(f=>f.l.toLowerCase());
+  if(FB.v.email&&!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(FB.v.email.trim()))m.push('une adresse e-mail valide');return m;}
+function fbSync(){const s=$('#fbSend');if(!s)return;if(FB.state==='sent'){s.textContent='Fermer';s.dataset.x='fbclose';return;}const m=fbMissing();s.disabled=!!m.length||FB.state==='sending';s.textContent=FB.state==='sending'?'Envoi…':'Envoyer';s.title=m.length?'À remplir : '+m.join(', '):'';}
+function fbPayload(){const c=fbCat(),val=k=>FB.v[k]??(c.fields.find(f=>f.k===k)||{}).def;
+  const fields=c.fields.filter(f=>f.type!=='check').map(f=>[f.l,String(FB.v[f.k]||'').trim()]).filter(x=>x[1]);
+  const wantProj=c.fields.some(f=>f.k==='proj')&&val('proj')!==false,tech=FB.v.tech!==false;
+  return {v:1,category:c.t,fields,name:String(FB.v.name||'').trim(),email:String(FB.v.email||'').trim(),website:String(FB.v.website||''),
+    tech:tech?{version:EKLIS.version,app:DESK?'application de bureau ('+DESK.platform+')':matchMedia('(display-mode: standalone)').matches?'app web installée':'navigateur',
+      appareil:navigator.userAgent,ecran:innerWidth+' × '+innerHeight,instrument:P.meta.instrument||'guitare',pieces:P.comps.length,fils:P.wires.length}:null,
+    project:wantProj?{name:(P.meta.name||'projet')+'.json',json:JSON.stringify(P)}:null};}
+function fbText(d){return `${d.category}\n\n${d.fields.map(([l,v])=>`${l} : ${v}`).join('\n')}${d.name||d.email?`\n\nDe : ${[d.name,d.email].filter(Boolean).join(', ')}`:''}${d.tech?`\n\n— Informations techniques —\n${Object.entries(d.tech).map(([k,v])=>`${k} : ${v}`).join('\n')}`:''}`;}
+async function fbSend(){
+  if(fbMissing().length)return;const d=fbPayload();FB.state='sending';FB.err='';fbSync();
+  const url=EKLIS.feedback||(/^https?:$/.test(location.protocol)&&!/claude/.test(location.hostname)?'contact.php':'');
+  try{if(!url)throw new Error('le service d’envoi n’est pas encore en place sur ce poste.');
+    const ctl=new AbortController(),tm=setTimeout(()=>ctl.abort(),20000);
+    const r=await fetch(url,{method:'POST',headers:{'Content-Type':'text/plain;charset=UTF-8'},body:JSON.stringify(d),signal:ctl.signal});clearTimeout(tm);
+    let j=null;try{j=await r.json();}catch(_){}
+    if(!r.ok||!j||!j.ok)throw new Error(j&&j.error?j.error:r.status===404?'le service d’envoi n’est pas encore installé chez l’hébergeur.':'le serveur a répondu par une erreur ('+r.status+').');
+    FB.state='sent';fbRender();toast('Merci, votre retour est bien parti !');
+  }catch(e){FB.state='form';FB.err=e.name==='AbortError'?'le serveur ne répond pas.':/fetch|network|load/i.test(e.message)?'pas de connexion Internet, ou service injoignable.':e.message;fbRender();const er=dlg.querySelector('.fb-err');if(er)er.scrollIntoView({behavior:'smooth',block:'nearest'});}
+}
+dlg.addEventListener('input',e=>{const t=e.target.closest('[data-fb]');if(!t||!$('#fbBox'))return;FB.v[t.dataset.fb]=t.type==='checkbox'?t.checked:t.value;fbSync();});
+dlg.addEventListener('change',e=>{const t=e.target.closest('[data-fb]');if(!t||!$('#fbBox'))return;FB.v[t.dataset.fb]=t.type==='checkbox'?t.checked:t.value;fbSync();});
+dlg.addEventListener('click',e=>{if(!$('#fbBox'))return;
+  const c=e.target.closest('[data-fbcat]');if(c){FB.cat=c.dataset.fbcat;FB.err='';fbRender();const f=dlg.querySelector('.fb-form');if(f)f.scrollIntoView({behavior:'smooth',block:'start'});return;}
+  const sg=e.target.closest('[data-fbseg]');if(sg){const [k,v]=sg.dataset.fbseg.split('|');FB.v[k]=FB.v[k]===v?'':v;fbRender();return;}
+  const x=e.target.closest('[data-x]');if(!x)return;const a=x.dataset.x;
+  if(a==='fbsend')fbSend();
+  else if(a==='fbclose'){FB.v={};FB.cat=null;dlg.close();}
+  else if(a==='fbmail'){const d=fbPayload();let body=fbText(d);if(body.length>1800)body=body.slice(0,1800)+'\n[…]';window.open('mailto:'+fbMail()+'?subject='+encodeURIComponent('[Établi] '+d.category)+'&body='+encodeURIComponent(body),'_blank','noopener');}
+  else if(a==='fbcopy'){const t=fbText(fbPayload());(navigator.clipboard?navigator.clipboard.writeText(t):Promise.reject()).then(()=>toast('Texte copié : collez-le dans un e-mail ou un message.')).catch(()=>toast('Copie impossible ici.'));}
+});
+
 function aboutDlg(){
   const off=LS.get('etabli.nowelcome',false);
   openDlg('Bienvenue',`<div class="about">${eklisLogo('about-logo')}
     <div class="about-t"><h3>Bienvenue à l’établi&nbsp;!</h3>
-    <p>Posez vos micros, potentiomètres et sélecteurs, tirez vos fils : l’établi vérifie pour vous la phase, les masses et le trajet du signal, et vous laisse écouter le résultat à l’oscilloscope avant même de chauffer le fer.</p>
+    <p>Posez vos micros, potentiomètres et sélecteurs, tirez vos fils : l’établi vérifie pour vous la phase, les masses et le trajet du signal, vous laisse écouter le résultat via l’amplificateur et propose l’analyse des courbes de tension à l’oscilloscope avant même de chauffer le fer.</p>
     <p>Cette version bêta est entre les mains de luthiers : vos essais et vos retours façonneront la suite.</p>
     <p class="about-sig">Bon câblage, et que vos soudures soient brillantes&nbsp;!<br><span>Eklis Lutherie · Établi électronique, version ${esc(EKLIS.version)}</span></p>
     <label class="chk"><input type="checkbox" id="noWelcome"${off?' checked':''}><span>Ne plus afficher cette fenêtre au démarrage</span></label>
     <p class="muted" style="font-size:13px;margin-top:6px">Cette fenêtre reste accessible en touchant le logo de l’établi, en haut à gauche.</p></div></div>`,
-  `<button class="btn" data-x="contact">Contact</button><button class="btn" data-x="contrib">Contribuer</button><button class="btn primary" data-d="close">Commencer</button>`);
+  `<button class="btn dlg-left" data-x="guide">Guide utilisateur</button><button class="btn" data-x="contact">Contact/Amélioration</button><button class="btn" data-x="contrib">Contribuer</button><button class="btn primary" data-d="close">Commencer</button>`);
   dlg.classList.add('wide');
   $('#noWelcome').addEventListener('change',e=>LS.set('etabli.nowelcome',e.target.checked));
 }
 dlg.addEventListener('click',e=>{const b=e.target.closest('[data-x]');if(!b)return;const a=b.dataset.x;
-  if(a==='contact'){const c=EKLIS.contact.trim();if(!c){toast('Contact à venir : le lien sera ajouté prochainement');return;}window.open(c.includes('@')&&!/^https?:/.test(c)?'mailto:'+c+'?subject='+encodeURIComponent('Établi électronique'):c,'_blank','noopener');}
+  if(a==='contact')feedbackDlg();
+  else if(a==='guide')guideDlg();
+  else if(a==='gwelcome')aboutDlg();
   else if(a==='contrib'){const c=EKLIS.contrib.trim();if(!c){toast('Contribution à venir : le lien sera ajouté prochainement');return;}window.open(c,'_blank','noopener');}});
-function openDlg(title,body,foot){$('#dlgBody').innerHTML=`<div class="dlg-h"><h2>${title}</h2><button class="btn small" data-d="close">Fermer</button></div><div class="dlg-b">${body}</div>${foot?`<div class="dlg-f">${foot}</div>`:''}`;if(!dlg.open)dlg.showModal();}
+function openDlg(title,body,foot){dlg.classList.remove('wide','guide-dlg');$('#dlgBody').innerHTML=`<div class="dlg-h"><h2>${title}</h2><button class="btn small" data-d="close">Fermer</button></div><div class="dlg-b">${body}</div>${foot?`<div class="dlg-f">${foot}</div>`:''}`;if(!dlg.open)dlg.showModal();}
 $('#projBtn').onclick=projectsDlg;
 $('#ficheBtn').onclick=()=>{openDlg('Fiche d’atelier',`<div class="fichebox">${ficheHTML()}</div>`,`<button class="btn" data-d="dlfiche" title="Fiche à ouvrir dans un navigateur">Télécharger (.html)</button><button class="btn" data-d="pdf">Enregistrer en PDF</button><button class="btn primary" data-d="print">Imprimer</button>`);};
 dlg.addEventListener('click',e=>{
@@ -3353,55 +4048,142 @@ function renderPlist(){
     return `<li class="${p.id===P.id?'cur':''}"><div class="nm"><b>${esc(m.name||'Sans nom')}</b><small>${[m.guitar,st?st[1]:'',m.file?'fichier : '+m.file:'',(p.id===P.id?'ouvert, ':'')+'modifié le '+fmt(p.updated)].filter(Boolean).map(esc).join(' · ')}</small></div>${p.id===P.id?'':`<button class="btn small" data-d="open" data-id="${p.id}">Ouvrir</button>`}<button class="btn small" data-d="copy" data-id="${p.id}">Dupliquer</button><button class="btn small danger" data-d="rm" data-id="${p.id}">Supprimer</button></li>`;}).join('')}</ul>`).join(''):`<p class="muted">Aucun projet ne correspond.</p>`;
 }
 /* ===== Câblage automatique ===== */
-const AW={cfg:'all',id:null,replace:true,layout:true},PREV={};
-function recipePreview(R){if(!PREV[R.id]){const Q=recipeProject(R);PREV[R.id]=analyze(Q).rows.map(r=>({k:r.label,d:r.r.desc}));}return PREV[R.id];}
-function bestRecipe(){
-  const pick=P.comps.filter(c=>TYPES[c.type].cat==='micro');
-  let best=null,bs=-1e9;
-  RECIPES.forEach(R=>{if(R.inst!==(P.meta.instrument||'guitare'))return;const m=matchRecipe(P,R);const mp=Object.keys(R.parts).filter(r=>TYPES[R.parts[r].type].cat==='micro');
-    const kd=r=>R.parts[r].props.kind||(TYPES[R.parts[r].type].defaults().kind),kb=mp.filter(r=>{const c=m.map[r]&&P.comps.find(x=>x.id===m.map[r]);return c&&c.props.kind===kd(r);}).length;
-    const mm=mp.filter(r=>m.map[r]).length,sc=mm*10+kb*2-(R.alt?4:0)-m.missing.length-m.unused.filter(c=>TYPES[c.type].cat==='micro').length*12+Object.keys(m.map).length;if(sc>bs){bs=sc;best=R;}});
-  return pick.length?best:(P.meta.instrument==='basse'?recipeById('jbass'):recipeById('sss_fender'));
+const AW={code:null,id:null,replace:true,layout:false,dec:{}},PREV={};
+function recipePreview(R){const k=R.id+'|'+JSON.stringify(R.parts)+'|'+R.w+'|'+R.g;if(!PREV[k]){const Q=recipeProject(R);PREV[k]=analyze(Q).rows.map(r=>({k:r.label,d:r.r.desc}));}return PREV[k];}
+const awBass=()=>(P.meta.instrument||'guitare')==='basse';
+function awList(){
+  if(awBass())return genBass(bassPickups(P)).concat(RECIPES.filter(R=>R.inst==='basse'));
+  const pus=guitarPickups(P);return proposalsFor(AW.code,pus.length===AW.code.length?pus:null);
+}
+/* Note de proximité : moins il manque de pièces et moins il en reste, plus le schéma colle à l’établi */
+function awScore(R){const m=matchRecipe(P,R);return m.missing.length*3+m.unused.length+(R.gen?0:0.5)+(R.alt?1:0);}
+const valTxt=sp=>{const v=sp.props.value;if(!v)return '';return sp.type==='cap'?v.replace(/n$/,' nF').replace(/u$/,' µF'):v.replace(/k$/,' kΩ').replace(/M$/,' MΩ');};
+const roleTxt=(R,r)=>{const sp=R.parts[r],T=TYPES[sp.type];return {n:sp.props.name||T.name,d:(T.cat==='micro'?puWord(sp):T.cat==='switch'&&sp.props.name?'':T.name.toLowerCase())+(valTxt(sp)?' '+valTxt(sp):'')};};
+/* Ce que le schéma demande et que l’établi n’a pas, ou l’inverse : rien n’est ajouté, remplacé ni supprimé sans réponse */
+function awIssues(R){
+  const m=matchRecipe(P,R),dec=AW.dec,skip=new Set();
+  m.missing.forEach(r=>{if(dec[r]==='skip'){skip.add(r);if(TONE_PAIR[r])skip.add(TONE_PAIR[r]);}});
+  const repSrc=new Set(m.missing.map(r=>dec[r]).filter(d=>d&&d.startsWith('rep:')).map(d=>d.slice(4)));
+  const q=[];
+  m.missing.forEach(r=>{if(skip.has(r)&&dec[r]!=='skip')return;const sp=R.parts[r],cat=TYPES[sp.type].cat;
+    q.push({kind:'miss',r,cands:m.unused.filter(c=>TYPES[c.type].cat===cat&&(!repSrc.has(c.id)||dec[r]==='rep:'+c.id)),opt:OPTIONAL_ROLES.has(r),val:dec[r]||''});});
+  /* Pièces en plus : à quoi servent-elles ? */
+  const base=pruneRecipe(R,skip),extras=m.unused.filter(c=>!repSrc.has(c.id));
+  const fnOf=c=>{const v=dec['u:'+c.id]||'';return v.startsWith('fn:')?v.slice(3):null;};
+  /* on garde les choix encore valables, dans l’ordre (les résistances après les condensateurs) */
+  const ord=c=>c.type==='res'?1:0,chosen=[];
+  extras.slice().sort((a,b)=>ord(a)-ord(b)).forEach(c=>{const f=fnOf(c);if(!f)return;const ok=extraFuncs(base,c,chosen.map(x=>x.fn)).some(o=>o[0]===f);if(ok)chosen.push({c,fn:f});else delete dec['u:'+c.id];});
+  /* Pièce en plus déjà câblée et cohérente avec ce schéma : on garde sa fonction sans reposer la question */
+  const NW=wireNets(P),baseMap={...m.map};skip.forEach(r=>delete baseMap[r]);const wasWired=new Set(),auto=new Set();
+  extras.slice().sort((a,b)=>ord(a)-ord(b)||(!!b.props.autoFn-!!a.props.autoFn)).forEach(c=>{
+    if(dec['u:'+c.id]||!P.wires.some(w=>w.a.c===c.id||w.b.c===c.id))return;wasWired.add(c.id);
+    const fs=extraFuncs(base,c,chosen.map(x=>x.fn)).map(o=>o[0]).sort((a,b)=>(b===c.props.autoFn)-(a===c.props.autoFn));
+    for(const f of fs){let k=0;const mods=[...chosen,{c,fn:f}].map(x=>({id:x.c.id,c:x.c,type:x.c.type,fn:x.fn,role:'X'+(++k)}));
+      const me=mods[mods.length-1],e=applyMods(base,mods),role=f.startsWith('pp>')?'V':me.role;
+      if(modCoherent(P,c,role,e.R,{...baseMap,...e.map},NW)){chosen.push({c,fn:f});auto.add(c.id);break;}}});
+  /* Push-pull à la place d’un potentiomètre simple du schéma : quel rôle pour son switch ? */
+  const ppM=Object.entries(m.map).filter(([r,id])=>!skip.has(r)&&R.parts[r].type==='pot'&&byId(id)&&byId(id).type==='pushpull').map(([r,id])=>({r,c:byId(id)}));
+  const ppFuncs=(r,others)=>extraFuncs(base,{type:'mini2',props:{}},others).map(([f,l,n])=>[`pp@${r}>${f}`,l,n.replace(/^Levier basculé/,'Bouton tiré')]);
+  ppM.forEach(({r,c})=>{const v=dec['u:'+c.id];if(v&&v.startsWith('fn:')){if(ppFuncs(r,chosen.map(x=>x.fn)).some(o=>o[0]===v.slice(3)))chosen.push({c,fn:v.slice(3)});else delete dec['u:'+c.id];}});
+  ppM.forEach(({r,c})=>{if(dec['u:'+c.id]||chosen.some(x=>x.c.id===c.id))return;const sws=['a1','b1','c1','a2','b2','c2'];if(!P.wires.some(w=>(w.a.c===c.id&&sws.includes(w.a.t))||(w.b.c===c.id&&sws.includes(w.b.t))))return;wasWired.add(c.id);
+    for(const [f] of ppFuncs(r,chosen.map(x=>x.fn))){let k=0;const mods=[...chosen,{c,fn:f}].map(x=>({id:x.c.id,c:x.c,type:x.c.type,fn:x.fn,role:'X'+(++k)}));const e=applyMods(base,mods);
+      if(modCoherent(P,c,r,e.R,{...baseMap,...e.map},NW)){chosen.push({c,fn:f});auto.add(c.id);break;}}});
+  ppM.forEach(({r,c})=>{const others=chosen.filter(x=>x.c.id!==c.id).map(x=>x.fn),mine=chosen.find(x=>x.c.id===c.id),d=dec['u:'+c.id];
+    q.push({kind:'extra',pp:r,c,funcs:ppFuncs(r,others),val:auto.has(c.id)?'fn:'+mine.fn:(d==='ask'?'':d||''),auto:auto.has(c.id),incoh:wasWired.has(c.id)&&!auto.has(c.id)});});
+  extras.forEach(c=>{const others=chosen.filter(x=>x.c.id!==c.id).map(x=>x.fn),mine=chosen.find(x=>x.c.id===c.id);
+    const d=dec['u:'+c.id];q.push({kind:'extra',c,funcs:extraFuncs(base,c,others),val:auto.has(c.id)?'fn:'+mine.fn:(d==='ask'?'':d||''),auto:auto.has(c.id),incoh:wasWired.has(c.id)&&!auto.has(c.id)});});
+  let k=0;const mods=chosen.map(x=>({id:x.c.id,c:x.c,type:x.c.type,fn:x.fn,role:'X'+(++k)}));
+  const eff=applyMods(base,mods),map={...m.map,...eff.map};skip.forEach(r=>delete map[r]);
+  /* Courbes : volume en A (log), tonalité en B (lin). Un potentiomètre de l’établi qui ne suit pas la règle : conserver ou remplacer ? */
+  Object.entries(map).forEach(([r,id])=>{const c=byId(id),sp=eff.R.parts[r];if(!c||!sp)return;const exp=TAPER_RULE[sp.props.role];
+    if(exp&&TAPER_POTS.has(c.type)&&TAPER_POTS.has(sp.type)&&(c.props.taper||'A')!==exp&&c.props.taperKeep!==(c.props.taper||'A'))q.push({kind:'taper',c,r,exp,role:sp.props.role,val:dec['tp:'+c.id]||''});
+    /* Valeur d’usage pour ces micros (250 kΩ simples, 500 kΩ humbuckers, 25 kΩ actifs) : conserver ou remplacer ? */
+    if(TAPER_POTS.has(c.type)&&TAPER_POTS.has(sp.type)&&TAPER_RULE[sp.props.role]&&sp.props.value&&c.props.value&&c.props.value!==sp.props.value&&c.props.valueKeep!==c.props.value)q.push({kind:'pval',c,r,exp:sp.props.value,val:dec['pv:'+c.id]||''});});
+  const idle=Object.entries(m.map).filter(([r,id])=>skip.has(r)||(eff.map[r]&&eff.map[r]!==id)).map(([r,id])=>byId(id));
+  const moved=Object.entries(m.map).map(([r,id])=>[byId(id),R.parts[r]]).filter(([c,sp])=>TYPES[c.type].cat==='micro'&&sp.props.position&&(c.props.position||'chevalet')!==sp.props.position);
+  return {m,q,skip,idle,moved,mods,eff:eff.R,map,open:q.filter(x=>!x.val).length};
+}
+function awPrepare(){
+  const pus=guitarPickups(P),bc=pus.map(puLetter).join('');
+  AW.code=/^[HS]{1,3}$/.test(bc)?bc:(AW.code||'SSS');AW.dec={};
+  const list=awList();AW.id=list.length?list.slice().sort((a,b)=>awScore(a)-awScore(b))[0].id:null;AW.best=AW.id;
+  return {pus,bc,list};
 }
 function autoDlg(){
-  AW.id=AW.id&&recipeById(AW.id)?AW.id:(bestRecipe()||RECIPES[0]).id;AW.best=(bestRecipe()||{}).id;
-  openDlg('Câblage automatique',`<div class="aw"><div class="aw-l"><div class="seg aw-f">${[['all','Tous']].concat(RECIPE_CFG).map(([k,l])=>`<button data-awcfg="${k}" aria-pressed="${AW.cfg===k}">${esc(l)}</button>`).join('')}</div><div id="awList" class="aw-list"></div></div><div class="aw-r" id="awDet"></div></div>`,
+  const {pus,bc}=awPrepare();
+  const head=awBass()?`<p class="muted">Schémas de basse. Choisissez celui qui correspond à vos micros.</p>`:
+    `<div class="aw-bench">${pus.length?(pus.length<=3?`Votre établi : <b>${bc}</b> <small>${esc(codeDesc(bc))}</small>`:`<b>${pus.length} micros</b> sur l’établi : choisissez la combinaison à câbler.`):'Aucun micro sur l’établi : choisissez une combinaison.'}</div>
+    <div class="aw-codes">${GUITAR_CODES.map((g,i)=>`<div class="aw-cg"><span class="awc-n">${i+1} micro${i?'s':''}</span><div class="seg">${g.map(c=>`<button data-awcode="${c}" aria-pressed="${AW.code===c}" title="${esc(codeDesc(c))}">${c}${c===bc?'<i class="awc-me" aria-label="votre établi"></i>':''}</button>`).join('')}</div></div>`).join('')}</div>
+    <p class="muted aw-hint">Lu du chevalet vers le manche : HSS = humbucker au chevalet, simples au milieu et au manche. H = humbucker, S = simple (Strat, Tele, P90).</p>`;
+  openDlg('Câblage automatique',`<div class="aw"><div class="aw-l">${head}<div id="awList" class="aw-list"></div></div><div class="aw-r" id="awDet"></div></div>`,
   `<button class="btn" data-d="close">Annuler</button><button class="btn" data-x="awnew">Nouveau projet avec ce câblage</button><button class="btn primary" data-x="awapply">Câbler l’établi</button>`);
   dlg.classList.add('wide');renderAw();
 }
 function renderAw(){
-  const list=RECIPES.filter(R=>AW.cfg==='all'||R.cfg===AW.cfg);
-  $('#awList').innerHTML=list.map(R=>`<button class="aw-item" data-awid="${R.id}" aria-pressed="${AW.id===R.id}"><b>${esc(R.label)}</b><small>${esc(R.src)}${AW.best===R.id?' · <span class="okq">le plus proche de votre établi</span>':''}</small></button>`).join('');
-  const R=recipeById(AW.id),m=matchRecipe(P,R),pv=recipePreview(R);
-  const nm=r=>{const sp=R.parts[r];return (sp.props.name||TYPES[sp.type].name)+(TYPES[sp.type].cat==='micro'?' ('+TYPES[sp.type].name.toLowerCase()+')':'');};
-  const found=Object.entries(m.map),miss=m.missing;
+  const list=awList();
+  if(!list.some(R=>R.id===AW.id)){AW.id=list.length?list.slice().sort((a,b)=>awScore(a)-awScore(b))[0].id:null;AW.dec={};}
+  $('#awList').innerHTML=list.map(R=>`<button class="aw-item" data-awid="${R.id}" aria-pressed="${AW.id===R.id}"><b>${esc(R.label)}</b><small>${esc(R.src)}${AW.best===R.id?' · <span class="okq">le plus proche de votre établi</span>':''}</small></button>`).join('')||'<p class="muted">Aucun schéma pour cette combinaison.</p>';
+  const ap=dlg.querySelector('[data-x=awapply]');
+  if(!AW.id){$('#awDet').innerHTML='';if(ap)ap.disabled=true;return;}
+  const R=recipeById(AW.id),I=awIssues(R),pv=recipePreview(I.eff),m=I.m;
+  const nm=r=>{const t=roleTxt(R,r);return t.n+(t.d?' ('+t.d+')':'');};
+  const found=Object.entries(m.map).filter(([r,id])=>!I.skip.has(r)&&!(I.map[r]&&I.map[r]!==id));
+  const qHTML=I.q.map(x=>{
+    if(x.kind==='miss'){const t=roleTxt(R,x.r),opts=[['add','Ajouter une pièce neuve'],...x.cands.map(c=>['rep:'+c.id,`Remplacer « ${displayName(c)} »`]),...(x.opt?[['skip','Câbler sans']]:[])];
+      return `<div class="awq${x.val?'':' awq-open'}"><p><b>Il manque : ${esc(t.n)}</b> <small>${esc(t.d)}</small></p><div class="seg awq-c">${opts.map(([v,l])=>`<button data-awq="${x.r}|${v}" aria-pressed="${x.val===v}">${esc(l)}</button>`).join('')}</div>${x.val==='skip'&&TONE_PAIR[x.r]?`<p class="muted awq-n">${/^T/.test(x.r)?'Le condensateur de cette tonalité':'La tonalité de ce condensateur'} ne sera pas câblé${/^T/.test(x.r)?'':'e'} non plus.</p>`:''}</div>`;}
+    if(x.kind==='pval'){const has=valTxt({type:'pot',props:{value:x.c.props.value}}),want=valTxt({type:'pot',props:{value:x.exp}});return `<div class="awq${x.val?'':' awq-open'}"><p><b>« ${esc(displayName(x.c))} »</b> <small>${esc(has)} ; avec ces micros, ${esc(want)} est la valeur d’usage</small></p><div class="seg awq-c"><button data-awq="pv:${x.c.id}|keep" aria-pressed="${x.val==='keep'}">Conserver ${esc(has)}</button><button data-awq="pv:${x.c.id}|fix" aria-pressed="${x.val==='fix'}">Remplacer par un ${esc(want)}</button></div></div>`;}
+    if(x.kind==='taper'){const has=x.c.props.taper||'A';return `<div class="awq${x.val?'':' awq-open'}"><p><b>« ${esc(displayName(x.c))} »</b> <small>courbe ${esc(taperTxt(has))} ; la règle veut ${x.role==='tone'?'une tonalité':'un volume'} en ${esc(taperTxt(x.exp))}</small></p><div class="seg awq-c"><button data-awq="tp:${x.c.id}|keep" aria-pressed="${x.val==='keep'}">Conserver ${esc(taperTxt(has))}</button><button data-awq="tp:${x.c.id}|fix" aria-pressed="${x.val==='fix'}">Remplacer par un ${esc(taperTxt(x.exp))}</button></div></div>`;}
+    const nmc=displayName(x.c),sel=x.funcs.find(f=>'fn:'+f[0]===x.val);
+    if(x.pp&&!x.auto)return `<div class="awq${x.val?'':' awq-open'}"><p><b>Switch du push-pull « ${esc(nmc)} »</b> <small>${x.incoh?'câblé, mais pas de façon cohérente avec ce schéma : ':''}quel rôle lui donner ?</small></p><div class="seg awq-c awq-v">${x.funcs.map(([f,l])=>`<button data-awq="u:${x.c.id}|fn:${f}" aria-pressed="${x.val==='fn:'+f}">${esc(l)}</button>`).join('')}</div><div class="seg awq-c"><button data-awq="u:${x.c.id}|keep" aria-pressed="${x.val==='keep'}">Laisser le switch non câblé</button></div>${sel?`<p class="muted awq-n">${esc(sel[2])}</p>`:''}</div>`;
+    if(x.auto)return `<div class="awq awq-ok"><p><b>${x.pp?'Switch du push-pull ':''}« ${esc(nmc)} »</b> <small>déjà câblé${x.pp?'':'e'} : ${esc(sel?sel[1]:'')}, gardé${x.pp?'':'e'} tel${x.pp?'':'le'} quel${x.pp?'':'le'}</small> <button class="btn small" data-awq="u:${x.c.id}|ask">Changer</button></p></div>`;
+    return `<div class="awq${x.val?'':' awq-open'}"><p><b>« ${esc(nmc)} »</b> <small>${x.incoh?'est câblée, mais pas d’une façon cohérente avec ce schéma : quel rôle lui donner ?':x.funcs.length?'n’est pas dans ce schéma : quel rôle lui donner ?':'n’a pas de rôle possible dans ce schéma'}</small></p><div class="seg awq-c awq-v">${x.funcs.map(([f,l])=>`<button data-awq="u:${x.c.id}|fn:${f}" aria-pressed="${x.val==='fn:'+f}">${esc(l)}</button>`).join('')}</div><div class="seg awq-c"><button data-awq="u:${x.c.id}|keep" aria-pressed="${x.val==='keep'}">Laisser sur l’établi, non câblée</button><button data-awq="u:${x.c.id}|del" aria-pressed="${x.val==='del'}">Supprimer</button></div>${sel?`<p class="muted awq-n">${esc(sel[2])}</p>`:''}</div>`;}).join('');
   $('#awDet').innerHTML=`<h3 class="dh">${esc(R.label)}</h3><p class="muted">${esc(R.src)}</p>${R.note?`<p class="help">${esc(R.note)}</p>`:''}
   <h3 class="dh">Positions obtenues</h3><div class="tbl-wrap"><table class="t"><tbody>${pv.map(r=>`<tr><td>${esc(r.k)}</td><td>${esc(r.d)}</td></tr>`).join('')}</tbody></table></div>
-  <h3 class="dh">Pièces</h3>
-  ${found.length?`<p><b>Reprises de l’établi (${found.length}) :</b> ${found.map(([r,id])=>esc(displayName(byId(id)))+' → '+esc(nm(r))).join(', ')}</p>`:''}
-  ${miss.length?`<p><b>Ajoutées (${miss.length}) :</b> ${miss.map(r=>esc(nm(r))).join(', ')}</p>`:'<p class="okq">Toutes les pièces sont déjà sur l’établi.</p>'}
-  ${m.unused.length?`<p class="muted">Non utilisées, laissées en place : ${m.unused.map(c=>esc(displayName(c))).join(', ')}</p>`:''}
-  <label class="chk" style="margin-top:8px"><input type="checkbox" id="awRep"${AW.replace?' checked':''}> Remplacer les fils existants des pièces reprises</label>
+  <h3 class="dh">Pièces de l’établi utilisées</h3>
+  ${found.length?`<p>${found.map(([r,id])=>esc(displayName(byId(id)))+' → '+esc(nm(r))).join(', ')}</p>`:'<p class="muted">Aucune pour l’instant.</p>'}
+  ${I.moved.length?`<p class="help">${I.moved.map(([c,sp])=>`« ${esc(displayName(c))} » passera en position ${esc(sp.props.position)}.`).join(' ')}</p>`:''}
+  ${I.idle.length?`<p class="muted">Laissées sans câblage : ${I.idle.map(c=>esc(displayName(c))).join(', ')}.</p>`:''}
+  ${I.q.length?`<h3 class="dh">Avant de câbler${I.open?` <span class="awq-cnt">${I.open} question${I.open>1?'s':''}</span>`:''}</h3>${I.q.some(x=>x.kind==='miss'&&!x.val)||I.q.filter(x=>(x.kind==='taper'||x.kind==='pval')&&!x.val).length>1?`<p class="aw-quick">${I.q.some(x=>x.kind==='miss'&&!x.val)?'<button class="btn small" data-x="awaddall">Ajouter toutes les pièces manquantes</button>':''}${I.q.filter(x=>(x.kind==='taper'||x.kind==='pval')&&!x.val).length>1?' <button class="btn small" data-x="awtaperall">Remplacer tous les potentiomètres hors règle</button>':''}</p>`:''}${qHTML}`:'<p class="okq">Toutes les pièces nécessaires sont sur l’établi, aucune n’est en trop.</p>'}
+  <label class="chk" style="margin-top:10px"><input type="checkbox" id="awRep"${AW.replace?' checked':''}> Remplacer les fils existants des pièces utilisées</label>
   <label class="chk" style="margin-top:6px"><input type="checkbox" id="awLay"${AW.layout?' checked':''}> Ranger les pièces selon le schéma</label>
   <p class="muted" style="font-size:12.5px;margin-top:8px">Tout le câblage reste modifiable ensuite, et Ctrl+Z annule l’opération d’un coup.</p>`;
   $('#awRep').onchange=e=>{AW.replace=e.target.checked;};$('#awLay').onchange=e=>{AW.layout=e.target.checked;};
+  if(ap){ap.disabled=I.open>0;ap.textContent=I.open?`Répondez ${I.open>1?'aux questions':'à la question'} (${I.open})`:'Câbler l’établi';}
 }
-function applyAuto(){
-  const R=recipeById(AW.id);if(!R)return;
+function applyAuto(o={}){
+  const R=recipeById(AW.id);if(!R)return;const I=awIssues(R);if(I.open){if(!o.quiet)renderAw();return;}
   const xs=P.comps.map(c=>c.x),ys=P.comps.map(c=>c.y),ox=AW.layout||!xs.length?0:Math.min(...xs)-40,oy=AW.layout||!ys.length?0:Math.min(...ys);
-  const shBefore=P.comps.filter(c=>c.type==='shield').map(sh=>[sh,shieldMembers(P,sh).map(c=>c.id)]);let pruned=[];
-  let res;commit(()=>{res=applyRecipe(P,R,{replace:AW.replace,layout:AW.layout,ox,oy,place:(c,x,y)=>placeFree(c,x,y)});
+  const shBefore=P.comps.filter(c=>c.type==='shield').map(sh=>[sh,shieldMembers(P,sh).map(c=>c.id)]);let pruned=[],res,nAdd=0,nRep=0,nDel=0,nTap=0,nVal=0;
+  const dropComp=id=>{P.wires=P.wires.filter(w=>w.a.c!==id&&w.b.c!==id);const i=P.comps.findIndex(c=>c.id===id);if(i>=0)P.comps.splice(i,1);};
+  commit(()=>{
+    const map={...I.map};
+    I.m.missing.forEach(r=>{if(I.skip.has(r))return;const d=AW.dec[r],sp=R.parts[r],[lx,ly]=R.L[r]||[0,0],props=JSON.parse(JSON.stringify(sp.props));
+      if(d&&d.startsWith('rep:')){const old=byId(d.slice(4));if(!old)return;
+        if(TYPES[old.type].cat==='pot'&&TYPES[sp.type].cat==='pot'){if(old.props.value)props.value=old.props.value;if(!TAPER_RULE[props.role]&&old.props.taper)props.taper=old.props.taper;}
+        const c=makeComp(sp.type,props,old.x,old.y);c.rot=old.rot||sp.rot||0;const i=P.comps.indexOf(old);dropComp(old.id);P.comps.splice(Math.max(0,i),0,c);map[r]=c.id;nRep++;}
+      else{const c=makeComp(sp.type,props,ox+lx,oy+ly);if(sp.rot)c.rot=sp.rot;placeFree(c,ox+lx,oy+ly);P.comps.push(c);map[r]=c.id;nAdd++;}});
+    res=applyRecipe(P,I.eff,{map,replace:AW.replace,layout:AW.layout,ox,oy,place:(c,x,y)=>placeFree(c,x,y)});
+    I.q.filter(x=>x.kind==='extra'&&x.val==='del').forEach(x=>{dropComp(x.c.id);nDel++;});
+    I.mods.forEach(x=>{const c=byId(x.id);if(c)c.props.autoFn=x.fn;});
+    I.q.filter(x=>x.kind==='pval').forEach(x=>{const c=byId(x.c.id);if(!c)return;if(x.val==='fix'){c.props.value=x.exp;delete c.props.valueKeep;nVal++;}else c.props.valueKeep=c.props.value;});
+    I.q.filter(x=>x.kind==='taper').forEach(x=>{const c=byId(x.c.id);if(!c)return;if(x.val==='fix'){c.props.taper=x.exp;delete c.props.taperKeep;nTap++;}else c.props.taperKeep=c.props.taper||'A';});
     if(AW.layout)shBefore.forEach(([sh,ids])=>{const l=ids.map(id=>P.comps.find(c=>c.id===id)).filter(Boolean);if(l.length)shieldFit(sh,l);});
     pruned=shieldPrune(P);P.meta.instrument=R.inst;{const am=P.comps.find(c=>c.type==='amp');if(am){const j=P.comps.find(c=>c.type==='jack'||c.type==='jack_st');if(j&&AW.layout)placeFree(am,j.x+geom(j).w+120,j.y);connectAmp(P,am);}}sel=null;});
-  dlg.close();syncTop();setTimeout(fitView,30);toast(`Câblage « ${R.label} » appliqué : ${Object.keys(res.map).length-res.missing.length} pièce(s) reprise(s), ${res.missing.length} ajoutée(s)`+(res.pol&&res.pol.length?`, bobinage et aimant de ${res.pol.length} micro(s) réglés comme le montage d’origine`:'')+(pruned.length?`, ${pruned.length} fil(s) de masse retiré(s) : le blindage fait la liaison`:''));
+  if(o.quiet)syncTop();else{dlg.close();syncTop();setTimeout(fitView,30);}
+  const nMod=I.mods.length,nNew=res.missing.length;nAdd+=nNew;const used=Object.keys(res.map).length-nAdd-nRep-nMod,bits=[`${used} pièce${used>1?'s':''} de l’établi utilisée${used>1?'s':''}`];if(nMod)bits.push(`${nMod} pièce${nMod>1?'s':''} en plus intégrée${nMod>1?'s':''}`);
+  if(nAdd)bits.push(`${nAdd} ajoutée${nAdd>1?'s':''}`);if(nRep)bits.push(`${nRep} remplacée${nRep>1?'s':''}`);if(nDel)bits.push(`${nDel} supprimée${nDel>1?'s':''}`);if(nVal)bits.push(`${nVal} potentiomètre${nVal>1?'s':''} passé${nVal>1?'s':''} à la valeur d’usage`);if(nTap)bits.push(`${nTap} potentiomètre${nTap>1?'s':''} remplacé${nTap>1?'s':''} par la bonne courbe (volume A, tonalité B)`);if(I.skip.size)bits.push(`${I.skip.size} laissée${I.skip.size>1?'s':''} de côté`);
+  toast(`Câblage « ${R.label} » appliqué : ${bits.join(', ')}`+(res.pol&&res.pol.length?`, bobinage et aimant de ${res.pol.length} micro(s) réglés comme le montage d’origine`:'')+(pruned.length?`, ${pruned.length} fil(s) de masse retiré(s) : le blindage fait la liaison`:''));
 }
 $('#autoBtn').onclick=autoDlg;
-dlg.addEventListener('close',()=>dlg.classList.remove('wide'));
+dlg.addEventListener('close',()=>dlg.classList.remove('wide','guide-dlg'));
 dlg.addEventListener('click',e=>{
-  const c=e.target.closest('[data-awcfg]');if(c){AW.cfg=c.dataset.awcfg;dlg.querySelectorAll('[data-awcfg]').forEach(b=>b.setAttribute('aria-pressed',String(b===c)));const l=RECIPES.filter(R=>AW.cfg==='all'||R.cfg===AW.cfg);if(l.length&&!l.some(R=>R.id===AW.id))AW.id=l[0].id;renderAw();return;}
-  const it=e.target.closest('[data-awid]');if(it){AW.id=it.dataset.awid;renderAw();return;}
+  const c=e.target.closest('[data-awcode]');if(c){AW.code=c.dataset.awcode;AW.dec={};dlg.querySelectorAll('[data-awcode]').forEach(b=>b.setAttribute('aria-pressed',String(b===c)));const l=awList();AW.id=l.length?l.slice().sort((a,b)=>awScore(a)-awScore(b))[0].id:null;renderAw();return;}
+  const it=e.target.closest('[data-awid]');if(it){if(AW.id!==it.dataset.awid){AW.id=it.dataset.awid;AW.dec={};}renderAw();return;}
+  const qb=e.target.closest('[data-awq]');if(qb){const [k,v]=qb.dataset.awq.split('|');AW.dec[k]=v;const sc=$('#awDet').scrollTop;renderAw();$('#awDet').scrollTop=sc;return;}
   const x=e.target.closest('[data-x]');if(!x)return;const a=x.dataset.x;
   if(a==='awapply')applyAuto();
+  else if(a==='awtaperall'){const R=recipeById(AW.id);if(R)awIssues(R).q.forEach(x=>{if(x.kind==='taper'&&!x.val)AW.dec['tp:'+x.c.id]='fix';if(x.kind==='pval'&&!x.val)AW.dec['pv:'+x.c.id]='fix';});const sc=$('#awDet').scrollTop;renderAw();$('#awDet').scrollTop=sc;}
+  else if(a==='awaddall'){const R=recipeById(AW.id);if(R)awIssues(R).q.forEach(x=>{if(x.kind==='miss'&&!x.val)AW.dec[x.r]='add';});const sc=$('#awDet').scrollTop;renderAw();$('#awDet').scrollTop=sc;}
   else if(a==='awnew'){const R=recipeById(AW.id);saveNow();loadProject(recipeProject(R));dlg.close();toast(`Nouveau projet : ${R.label}`);}
   else if(a==='dosave')doSaveAs();
   else if(a==='open')openProjectFile();

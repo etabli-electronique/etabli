@@ -1,6 +1,6 @@
-// Établi électronique 0.20.0 : fonctionne hors ligne après la première ouverture.
+// Établi électronique 0.22.0 : fonctionne hors ligne après la première ouverture.
 // Page : réseau d’abord (les mises à jour arrivent dès qu’il y a du réseau), sinon la copie gardée en mémoire.
-const CACHE='etabli-0.20.0';
+const CACHE='etabli-0.22.0';
 const FILES=["./","index.html","manifest.webmanifest","icons/favicon.png","icons/apple-touch-icon.png","icons/app-192.png","icons/app-512.png","icons/icon-192.png","icons/icon-512.png"];
 self.addEventListener('install',e=>{e.waitUntil(caches.open(CACHE).then(c=>c.addAll(FILES)).then(()=>self.skipWaiting()));});
 self.addEventListener('activate',e=>{e.waitUntil(caches.keys().then(ks=>Promise.all(ks.filter(k=>k!==CACHE).map(k=>caches.delete(k)))).then(()=>self.clients.claim()));});
